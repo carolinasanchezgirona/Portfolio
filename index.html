@@ -2,58 +2,262 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-        content="Portfolio profesional de Carolina Sánchez Girona">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Portfolio profesional de Carolina Sánchez Girona, psicóloga, neuropsicóloga y estudiante de Ingeniería Biomédica."
+  >
+
   <title>Carolina Sánchez Girona</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-    <h1>Carolina Sánchez Girona</h1>
-    <p>Neuropsychology · Dementia · Biomedical Engineering</p>
 
-    <nav>
-      <a href="#about">Sobre mí</a>
-      <a href="#publications">Publicaciones</a>
-      <a href="#engineering">Ingeniería biomédica</a>
-      <a href="#contact">Contacto</a>
-    </nav>
+  <!-- MENÚ PRINCIPAL -->
+  <header class="site-header">
+    <div class="container navigation">
+
+      <a class="name" href="#home">
+        Carolina Sánchez Girona
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <a href="#about">Sobre mí</a>
+        <a href="#areas">Áreas</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#publications">Publicaciones</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+
+    </div>
   </header>
 
-  <main>
-    <section id="about">
-      <h2>Sobre mí</h2>
-      <p>
-        Psicóloga General Sanitaria y neuropsicóloga clínica especializada
-        en deterioro cognitivo y demencias. Actualmente inicio mi formación
-        en Ingeniería Biomédica para integrar práctica clínica, neurociencia
-        y tecnología.
-      </p>
+
+  <main id="home">
+
+    <!-- PORTADA -->
+    <section class="hero">
+      <div class="container hero-content">
+
+        <p class="eyebrow">
+          Psicología · Neuropsicología · Ingeniería Biomédica
+        </p>
+
+        <h1>
+          Building technology<br>
+          for better brain health.
+        </h1>
+
+        <p class="hero-description">
+          Combino psicología, neuropsicología, investigación científica
+          e Ingeniería Biomédica para explorar cómo la tecnología puede
+          contribuir a mejorar la salud cerebral.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary-button" href="#projects">
+            Explorar mi trabajo
+          </a>
+
+          <a class="button secondary-button" href="#about">
+            Conocer mi trayectoria
+          </a>
+        </div>
+
+      </div>
     </section>
 
-    <section id="publications">
-      <h2>Publicaciones</h2>
-      <p>Selección de artículos y publicaciones profesionales.</p>
+
+    <!-- SOBRE MÍ -->
+    <section id="about" class="content-section">
+      <div class="container two-columns">
+
+        <div>
+          <p class="section-label">01 · Sobre mí</p>
+
+          <h2>
+            Experiencia clínica y curiosidad tecnológica.
+          </h2>
+        </div>
+
+        <div class="section-text">
+          <p>
+            Soy psicóloga general sanitaria y neuropsicóloga especializada
+            en deterioro cognitivo y demencias.
+          </p>
+
+          <p>
+            Actualmente estudio Ingeniería Biomédica para ampliar mi
+            conocimiento sobre neurociencia, programación, análisis de datos
+            y tecnologías aplicadas a la salud.
+          </p>
+
+          <p>
+            Este portfolio documenta mi recorrido profesional, académico
+            y científico, además de los proyectos que iré desarrollando
+            durante esta nueva etapa.
+          </p>
+        </div>
+
+      </div>
     </section>
 
-    <section id="engineering">
-      <h2>Ingeniería biomédica</h2>
-      <p>
-        Proyectos, aprendizajes y desarrollos relacionados con programación,
-        análisis de datos, neurotecnología e ingeniería biomédica.
-      </p>
+
+    <!-- ÁREAS -->
+    <section id="areas" class="content-section soft-background">
+      <div class="container">
+
+        <p class="section-label">02 · Áreas de trabajo y aprendizaje</p>
+
+        <h2>
+          Un perfil construido entre ciencia, salud y tecnología.
+        </h2>
+
+        <div class="card-grid">
+
+          <article class="card">
+            <p class="card-number">01</p>
+            <h3>Neuropsicología</h3>
+            <p>
+              Evaluación cognitiva, deterioro cognitivo, demencias
+              y salud cerebral.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="card-number">02</p>
+            <h3>Ingeniería Biomédica</h3>
+            <p>
+              Formación en tecnología sanitaria, biosistemas,
+              dispositivos médicos e innovación.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="card-number">03</p>
+            <h3>Investigación</h3>
+            <p>
+              Publicaciones científicas, metodología, pensamiento crítico
+              y práctica basada en la evidencia.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="card-number">04</p>
+            <h3>Programación e IA</h3>
+            <p>
+              Aprendizaje de Python, análisis de datos, inteligencia
+              artificial y herramientas computacionales.
+            </p>
+          </article>
+
+        </div>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Contacto</h2>
-      <p>LinkedIn · GitHub · Correo profesional</p>
+
+    <!-- PROYECTOS -->
+    <section id="projects" class="content-section">
+      <div class="container">
+
+        <p class="section-label">03 · Proyectos</p>
+
+        <div class="section-heading-row">
+          <h2>Proyectos en desarrollo.</h2>
+
+          <p>
+            Este espacio crecerá con nuevos trabajos académicos,
+            científicos y tecnológicos.
+          </p>
+        </div>
+
+        <article class="project-card">
+          <div>
+            <p class="project-status">En construcción</p>
+
+            <h3>Portfolio de Ingeniería Biomédica</h3>
+
+            <p>
+              Registro progresivo de aprendizajes, ejercicios y proyectos
+              desarrollados durante el grado.
+            </p>
+          </div>
+
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </article>
+
+      </div>
     </section>
+
+
+    <!-- PUBLICACIONES -->
+    <section id="publications" class="content-section soft-background">
+      <div class="container">
+
+        <p class="section-label">04 · Publicaciones</p>
+        <h2>Investigación y producción científica.</h2>
+
+        <div class="publication-row">
+          <div>
+            <h3>Publicaciones científicas</h3>
+            <p>
+              Próximamente se incorporará una selección de artículos,
+              colaboraciones y trabajos académicos.
+            </p>
+          </div>
+
+          <span>Próximamente</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACTO -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+
+        <p class="section-label">05 · Contacto</p>
+
+        <h2>
+          Conectemos ciencia,<br>
+          tecnología y salud cerebral.
+        </h2>
+
+        <p>
+          Puedes encontrarme próximamente en LinkedIn, GitHub y ORCID.
+        </p>
+
+        <a
+          class="button primary-button"
+          href="mailto:TU-CORREO@EJEMPLO.COM"
+        >
+          Escribir un correo
+        </a>
+
+      </div>
+    </section>
+
   </main>
 
+
+  <!-- PIE DE PÁGINA -->
   <footer>
-    <p>© Carolina Sánchez Girona</p>
+    <div class="container footer-content">
+      <p>© 2026 Carolina Sánchez Girona</p>
+
+      <p>
+        Neuropsychology · Research · Biomedical Engineering
+      </p>
+    </div>
   </footer>
+
 </body>
 </html>
