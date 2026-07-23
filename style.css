@@ -349,14 +349,36 @@ textarea {
 .hero-image-wrapper {
   width: 100%;
   margin: 0;
+  transform: translateY(-22px);
+  animation: hero-image-enter 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.15s;
 }
 
 .hero-image {
-  width: 100%;
+  display: block;
+  width: 84%;
+  max-width: 570px;
   height: auto;
-  max-height: 650px;
+  max-height: 610px;
+  margin-inline: auto;
   object-fit: contain;
   object-position: center;
+  filter:
+    contrast(1.12)
+    saturate(1.08)
+    brightness(0.99);
+}
+
+@keyframes hero-image-enter {
+  from {
+    opacity: 0;
+    transform: translate(42px, -22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, -22px);
+  }
 }
 
 
@@ -981,6 +1003,7 @@ a:focus-visible {
   *,
   *::before,
   *::after {
+    animation: none !important;
     transition-duration: 0.01ms !important;
   }
 
