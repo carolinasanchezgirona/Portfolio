@@ -21,13 +21,9 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 
-
 <body>
 
-  <!-- =================================
-       Header
-  ================================== -->
-
+  <!-- Header -->
   <header class="site-header">
 
     <div class="container header-inner">
@@ -58,10 +54,7 @@
 
   <main id="top">
 
-    <!-- =================================
-         Hero
-    ================================== -->
-
+    <!-- Hero -->
     <section class="hero">
 
       <div class="container hero-grid">
@@ -122,10 +115,7 @@
     </section>
 
 
-    <!-- =================================
-         About
-    ================================== -->
-
+    <!-- About -->
     <section
       class="section about-section"
       id="about"
@@ -296,12 +286,9 @@
     </section>
 
 
-    <!-- =================================
-         Research
-    ================================== -->
-
+    <!-- Research -->
     <section
-      class="section section-soft"
+      class="section research-section"
       id="research"
     >
 
@@ -323,85 +310,212 @@
               Questions I want to explore.
             </h2>
 
+            <p class="section-introduction">
+              My interests connect clinical observation with emerging tools
+              from neuroscience, engineering and computation.
+            </p>
+
           </div>
 
         </header>
 
 
-        <div class="cards-grid">
+        <div class="research-layout">
 
-          <article class="research-card">
+          <!-- Featured research area -->
+          <article class="research-feature">
 
-            <p class="card-index">
-              01
-            </p>
+            <div
+              class="research-feature-visual"
+              aria-hidden="true"
+            >
 
-            <h3>
-              Neuropsychological assessment
-            </h3>
+              <div class="assessment-diagram">
 
-            <p>
-              Improving the evaluation and interpretation of cognitive
-              functioning through clinically meaningful and scientifically
-              rigorous methods.
-            </p>
+                <span class="assessment-ring ring-one"></span>
+                <span class="assessment-ring ring-two"></span>
+                <span class="assessment-ring ring-three"></span>
 
-          </article>
+                <span class="assessment-point point-one"></span>
+                <span class="assessment-point point-two"></span>
+                <span class="assessment-point point-three"></span>
+                <span class="assessment-point point-four"></span>
 
+                <span class="assessment-axis axis-horizontal"></span>
+                <span class="assessment-axis axis-vertical"></span>
 
-          <article class="research-card">
+              </div>
 
-            <p class="card-index">
-              02
-            </p>
-
-            <h3>
-              Brain health technology
-            </h3>
-
-            <p>
-              Exploring how medical devices, digital tools and engineering
-              can support neurological assessment, prevention and care.
-            </p>
-
-          </article>
+            </div>
 
 
-          <article class="research-card">
+            <div class="research-feature-content">
 
-            <p class="card-index">
-              03
-            </p>
+              <p class="research-index">
+                01
+              </p>
 
-            <h3>
-              Artificial intelligence
-            </h3>
+              <p class="research-category">
+                Clinical foundations
+              </p>
 
-            <p>
-              Investigating responsible uses of artificial intelligence
-              in cognitive assessment, clinical decision support and
-              biomedical research.
-            </p>
+              <h3>
+                Neuropsychological assessment
+              </h3>
 
-          </article>
+              <p>
+                How can cognitive assessment become more precise without
+                losing the clinical meaning of a person’s history,
+                environment and everyday functioning?
+              </p>
 
+              <ul class="research-topics">
+                <li>Cognitive profiles</li>
+                <li>Clinical interpretation</li>
+                <li>Ecological validity</li>
+              </ul>
 
-          <article class="research-card">
-
-            <p class="card-index">
-              04
-            </p>
-
-            <h3>
-              Neuroimaging and biomarkers
-            </h3>
-
-            <p>
-              Understanding how biological and imaging data may contribute
-              to earlier and more precise detection of neurological change.
-            </p>
+            </div>
 
           </article>
+
+
+          <!-- Secondary research areas -->
+          <div class="research-secondary-grid">
+
+            <article class="research-item">
+
+              <div class="research-item-top">
+
+                <p class="research-index">
+                  02
+                </p>
+
+                <div
+                  class="research-symbol research-symbol-signal"
+                  aria-hidden="true"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+              </div>
+
+              <p class="research-category">
+                Medical technology
+              </p>
+
+              <h3>
+                Brain health technology
+              </h3>
+
+              <p>
+                How can medical devices and digital tools support
+                prevention, assessment and neurological care?
+              </p>
+
+              <ul class="research-topics">
+                <li>Biomedical signals</li>
+                <li>Digital assessment</li>
+                <li>Medical devices</li>
+              </ul>
+
+            </article>
+
+
+            <article class="research-item">
+
+              <div class="research-item-top">
+
+                <p class="research-index">
+                  03
+                </p>
+
+                <div
+                  class="research-symbol research-symbol-network"
+                  aria-hidden="true"
+                >
+                  <span class="network-node network-node-one"></span>
+                  <span class="network-node network-node-two"></span>
+                  <span class="network-node network-node-three"></span>
+                  <span class="network-node network-node-four"></span>
+
+                  <span class="network-line network-line-one"></span>
+                  <span class="network-line network-line-two"></span>
+                  <span class="network-line network-line-three"></span>
+                </div>
+
+              </div>
+
+              <p class="research-category">
+                Computation
+              </p>
+
+              <h3>
+                Artificial intelligence
+              </h3>
+
+              <p>
+                How can artificial intelligence contribute to clinical
+                reasoning while remaining transparent, responsible and
+                human-centred?
+              </p>
+
+              <ul class="research-topics">
+                <li>Decision support</li>
+                <li>Explainable AI</li>
+                <li>Responsible innovation</li>
+              </ul>
+
+            </article>
+
+
+            <article class="research-item">
+
+              <div class="research-item-top">
+
+                <p class="research-index">
+                  04
+                </p>
+
+                <div
+                  class="research-symbol research-symbol-scan"
+                  aria-hidden="true"
+                >
+                  <span class="scan-circle scan-circle-one"></span>
+                  <span class="scan-circle scan-circle-two"></span>
+                  <span class="scan-circle scan-circle-three"></span>
+                  <span class="scan-line"></span>
+                </div>
+
+              </div>
+
+              <p class="research-category">
+                Biological data
+              </p>
+
+              <h3>
+                Neuroimaging and biomarkers
+              </h3>
+
+              <p>
+                How can imaging, physiological and biological data
+                contribute to earlier and more individualised detection
+                of neurological change?
+              </p>
+
+              <ul class="research-topics">
+                <li>Neuroimaging</li>
+                <li>Biomarkers</li>
+                <li>Early detection</li>
+              </ul>
+
+            </article>
+
+          </div>
 
         </div>
 
@@ -410,12 +524,9 @@
     </section>
 
 
-    <!-- =================================
-         Projects
-    ================================== -->
-
+    <!-- Projects -->
     <section
-      class="section"
+      class="section projects-section"
       id="projects"
     >
 
@@ -558,10 +669,7 @@
     </section>
 
 
-    <!-- =================================
-         Writing
-    ================================== -->
-
+    <!-- Writing -->
     <section
       class="section section-dark"
       id="writing"
@@ -663,10 +771,7 @@
     </section>
 
 
-    <!-- =================================
-         Contact
-    ================================== -->
-
+    <!-- Contact -->
     <section
       class="section contact-section"
       id="contact"
@@ -715,10 +820,7 @@
   </main>
 
 
-  <!-- =================================
-       Footer
-  ================================== -->
-
+  <!-- Footer -->
   <footer class="site-footer">
 
     <div class="container footer-inner">
