@@ -67,39 +67,276 @@
 
           <div class="hero-actions">
             <a class="button button-primary" href="#projects">
-              View projects
+              Explore my work
+              <span aria-hidden="true">↓</span>
             </a>
 
-            <a class="button button-secondary" href="#about">
-              About me
+            <a class="text-link" href="#about">
+              Meet the person behind the work
             </a>
           </div>
 
         </div>
 
-        <aside class="hero-note" aria-label="Current focus">
-          <p class="hero-note-label">
-            Current focus
+
+        <!-- Original animated knowledge network -->
+        <div class="hero-visual" aria-hidden="true">
+
+          <div class="visual-glow visual-glow-one"></div>
+          <div class="visual-glow visual-glow-two"></div>
+
+          <svg
+            class="knowledge-network"
+            viewBox="0 0 620 620"
+            role="presentation"
+          >
+
+            <defs>
+              <linearGradient
+                id="networkGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" stop-color="#2f5d73"></stop>
+                <stop offset="100%" stop-color="#e66a5a"></stop>
+              </linearGradient>
+
+              <radialGradient
+                id="nodeGradient"
+                cx="50%"
+                cy="50%"
+                r="50%"
+              >
+                <stop offset="0%" stop-color="#ffffff"></stop>
+                <stop offset="100%" stop-color="#dce8ed"></stop>
+              </radialGradient>
+
+              <filter
+                id="softGlow"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
+                <feGaussianBlur
+                  stdDeviation="5"
+                  result="blur"
+                ></feGaussianBlur>
+
+                <feMerge>
+                  <feMergeNode in="blur"></feMergeNode>
+                  <feMergeNode in="SourceGraphic"></feMergeNode>
+                </feMerge>
+              </filter>
+            </defs>
+
+
+            <!-- Outer orbital paths -->
+            <circle
+              class="orbit orbit-one"
+              cx="310"
+              cy="310"
+              r="226"
+            ></circle>
+
+            <circle
+              class="orbit orbit-two"
+              cx="310"
+              cy="310"
+              r="166"
+            ></circle>
+
+            <ellipse
+              class="orbit orbit-three"
+              cx="310"
+              cy="310"
+              rx="255"
+              ry="112"
+              transform="rotate(-28 310 310)"
+            ></ellipse>
+
+
+            <!-- Main network connections -->
+            <g class="network-lines">
+
+              <path d="M154 183 L270 135 L385 178 L472 269"></path>
+              <path d="M154 183 L201 310 L124 408"></path>
+              <path d="M270 135 L292 265 L201 310"></path>
+              <path d="M385 178 L292 265 L472 269"></path>
+              <path d="M201 310 L292 265 L369 354"></path>
+              <path d="M292 265 L472 269 L369 354"></path>
+              <path d="M201 310 L124 408 L267 475"></path>
+              <path d="M369 354 L267 475 L431 449"></path>
+              <path d="M369 354 L472 269 L507 402"></path>
+              <path d="M431 449 L507 402"></path>
+              <path d="M267 475 L316 543"></path>
+              <path d="M431 449 L316 543"></path>
+
+              <path
+                class="line-highlight line-highlight-one"
+                d="M154 183 L270 135 L385 178 L472 269"
+              ></path>
+
+              <path
+                class="line-highlight line-highlight-two"
+                d="M124 408 L267 475 L431 449 L507 402"
+              ></path>
+
+              <path
+                class="line-highlight line-highlight-three"
+                d="M201 310 L292 265 L369 354"
+              ></path>
+
+            </g>
+
+
+            <!-- Secondary connections -->
+            <g class="network-lines network-lines-secondary">
+
+              <path d="M88 283 L201 310"></path>
+              <path d="M154 183 L94 114"></path>
+              <path d="M385 178 L454 91"></path>
+              <path d="M472 269 L559 238"></path>
+              <path d="M507 402 L561 475"></path>
+              <path d="M124 408 L64 468"></path>
+              <path d="M316 543 L319 594"></path>
+
+            </g>
+
+
+            <!-- Main nodes -->
+            <g class="nodes">
+
+              <circle
+                class="node node-large node-blue"
+                cx="292"
+                cy="265"
+                r="19"
+              ></circle>
+
+              <circle
+                class="node node-medium"
+                cx="154"
+                cy="183"
+                r="11"
+              ></circle>
+
+              <circle
+                class="node node-small"
+                cx="270"
+                cy="135"
+                r="8"
+              ></circle>
+
+              <circle
+                class="node node-medium node-coral"
+                cx="385"
+                cy="178"
+                r="12"
+              ></circle>
+
+              <circle
+                class="node node-medium"
+                cx="472"
+                cy="269"
+                r="10"
+              ></circle>
+
+              <circle
+                class="node node-medium"
+                cx="201"
+                cy="310"
+                r="13"
+              ></circle>
+
+              <circle
+                class="node node-large node-blue"
+                cx="369"
+                cy="354"
+                r="17"
+              ></circle>
+
+              <circle
+                class="node node-small"
+                cx="124"
+                cy="408"
+                r="8"
+              ></circle>
+
+              <circle
+                class="node node-medium node-coral"
+                cx="267"
+                cy="475"
+                r="12"
+              ></circle>
+
+              <circle
+                class="node node-medium"
+                cx="431"
+                cy="449"
+                r="11"
+              ></circle>
+
+              <circle
+                class="node node-small"
+                cx="507"
+                cy="402"
+                r="8"
+              ></circle>
+
+              <circle
+                class="node node-small"
+                cx="316"
+                cy="543"
+                r="7"
+              ></circle>
+
+            </g>
+
+
+            <!-- Peripheral nodes -->
+            <g class="nodes nodes-secondary">
+
+              <circle cx="88" cy="283" r="5"></circle>
+              <circle cx="94" cy="114" r="5"></circle>
+              <circle cx="454" cy="91" r="6"></circle>
+              <circle cx="559" cy="238" r="5"></circle>
+              <circle cx="561" cy="475" r="5"></circle>
+              <circle cx="64" cy="468" r="4"></circle>
+              <circle cx="319" cy="594" r="5"></circle>
+
+            </g>
+
+
+            <!-- Floating information particles -->
+            <g class="particles">
+
+              <circle cx="216" cy="96" r="3"></circle>
+              <circle cx="498" cy="151" r="3"></circle>
+              <circle cx="551" cy="337" r="2.5"></circle>
+              <circle cx="180" cy="524" r="3"></circle>
+              <circle cx="82" cy="350" r="2.5"></circle>
+              <circle cx="408" cy="527" r="2.5"></circle>
+
+            </g>
+
+          </svg>
+
+          <p class="visual-caption">
+            A growing network of knowledge across brain science,
+            clinical practice and engineering.
           </p>
 
-          <p class="hero-note-text">
-            Learning how engineering, computation and medical technology
-            can expand the possibilities of neuropsychology.
-          </p>
-
-          <div class="hero-note-line"></div>
-
-          <p class="hero-note-meta">
-            Arenys de Mar · Barcelona
-          </p>
-        </aside>
+        </div>
 
       </div>
     </section>
 
 
     <!-- About -->
-    <section class="section" id="about">
+    <section class="section about-section" id="about">
       <div class="container">
 
         <div class="section-heading">
@@ -107,70 +344,106 @@
 
           <div>
             <p class="eyebrow">About</p>
-            <h2>Clinical experience, scientific curiosity and engineering.</h2>
+
+            <h2>
+              Clinical experience, scientific curiosity and engineering.
+            </h2>
           </div>
         </div>
 
-        <div class="about-grid">
 
-          <div class="about-main">
+        <div class="about-editorial">
+
+          <figure class="portrait-wrapper">
+
+            <div class="portrait-accent"></div>
+
+            <img
+              class="portrait"
+              src="assets/carolina-sanchez-girona.jpg"
+              alt="Portrait of Carolina Sánchez Girona"
+            >
+
+            <figcaption>
+              Carolina Sánchez Girona
+              <span>Psychologist · Neuropsychologist</span>
+            </figcaption>
+
+          </figure>
+
+
+          <div class="about-content">
+
             <p class="large-text">
               My work sits at the intersection of neuropsychology,
               neuroscience and technology.
             </p>
 
-            <p>
-              I am a psychologist and neuropsychologist with professional
-              experience in cognitive assessment, dementia and clinical
-              care. Alongside my clinical work, I am studying Biomedical
-              Engineering to deepen my understanding of medical devices,
-              data, artificial intelligence and the biological systems
-              underlying brain function.
-            </p>
+            <div class="about-copy">
 
-            <p>
-              I am especially interested in how interdisciplinary research
-              can contribute to earlier detection, better assessment and
-              more personalised approaches to neurological and cognitive
-              health.
-            </p>
-
-            <p>
-              This website documents my professional work, scientific
-              interests, publications and learning journey.
-            </p>
-          </div>
-
-          <div class="about-details">
-
-            <div class="detail-block">
-              <p class="detail-label">Background</p>
-              <p>Psychology and Neuropsychology</p>
-            </div>
-
-            <div class="detail-block">
-              <p class="detail-label">Currently studying</p>
-              <p>Biomedical Engineering</p>
-            </div>
-
-            <div class="detail-block">
-              <p class="detail-label">Primary interests</p>
               <p>
-                Brain health, medical technology, neuroimaging,
-                artificial intelligence and cognitive assessment
+                I am a psychologist and neuropsychologist with professional
+                experience in cognitive assessment, dementia and clinical
+                care.
               </p>
+
+              <p>
+                Alongside my clinical work, I am studying Biomedical
+                Engineering to deepen my understanding of biological
+                systems, medical devices, data, artificial intelligence
+                and the technologies shaping the future of brain health.
+              </p>
+
+              <p>
+                I am especially interested in how interdisciplinary
+                research can contribute to earlier detection, more precise
+                assessment and more personalised approaches to
+                neurological and cognitive health.
+              </p>
+
+              <p>
+                This website documents my professional work, scientific
+                interests, publications and learning journey.
+              </p>
+
             </div>
 
-            <div class="detail-block">
-              <p class="detail-label">Approach</p>
-              <p>
-                Clinical, interdisciplinary and research-oriented
-              </p>
+
+            <div class="about-details">
+
+              <div class="detail-block">
+                <p class="detail-label">Background</p>
+                <p>Psychology and Neuropsychology</p>
+              </div>
+
+              <div class="detail-block">
+                <p class="detail-label">Currently studying</p>
+                <p>Biomedical Engineering</p>
+              </div>
+
+              <div class="detail-block">
+                <p class="detail-label">Primary interests</p>
+
+                <p>
+                  Brain health, medical technology, neuroimaging,
+                  artificial intelligence and cognitive assessment
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <p class="detail-label">Approach</p>
+
+                <p>
+                  Clinical, interdisciplinary and research-oriented
+                </p>
+              </div>
+
             </div>
 
           </div>
 
         </div>
+
       </div>
     </section>
 
@@ -192,7 +465,9 @@
 
           <article class="research-card">
             <p class="card-index">01</p>
+
             <h3>Neuropsychological assessment</h3>
+
             <p>
               Improving the evaluation and interpretation of cognitive
               functioning through clinically meaningful and scientifically
@@ -202,7 +477,9 @@
 
           <article class="research-card">
             <p class="card-index">02</p>
+
             <h3>Brain health technology</h3>
+
             <p>
               Exploring how medical devices, digital tools and engineering
               can support neurological assessment, prevention and care.
@@ -211,7 +488,9 @@
 
           <article class="research-card">
             <p class="card-index">03</p>
+
             <h3>Artificial intelligence</h3>
+
             <p>
               Investigating responsible uses of artificial intelligence
               in cognitive assessment, clinical decision support and
@@ -221,7 +500,9 @@
 
           <article class="research-card">
             <p class="card-index">04</p>
+
             <h3>Neuroimaging and biomarkers</h3>
+
             <p>
               Understanding how biological and imaging data may contribute
               to earlier and more precise detection of neurological change.
@@ -229,6 +510,7 @@
           </article>
 
         </div>
+
       </div>
     </section>
 
@@ -249,12 +531,14 @@
         <div class="projects-list">
 
           <article class="project-item">
+
             <div class="project-meta">
               <p>Ongoing</p>
               <p>Biomedical Engineering</p>
             </div>
 
             <div class="project-content">
+
               <h3>Biomedical Engineering Learning Archive</h3>
 
               <p>
@@ -266,16 +550,21 @@
               <p class="project-status">
                 First projects coming soon
               </p>
+
             </div>
+
           </article>
 
+
           <article class="project-item">
+
             <div class="project-meta">
               <p>Research</p>
               <p>Neuropsychology</p>
             </div>
 
             <div class="project-content">
+
               <h3>Cognitive Assessment and Clinical Reasoning</h3>
 
               <p>
@@ -287,16 +576,21 @@
               <p class="project-status">
                 In development
               </p>
+
             </div>
+
           </article>
 
+
           <article class="project-item">
+
             <div class="project-meta">
               <p>Future project</p>
               <p>Data and AI</p>
             </div>
 
             <div class="project-content">
+
               <h3>Brain Health Data Experiments</h3>
 
               <p>
@@ -308,10 +602,13 @@
               <p class="project-status">
                 Planned
               </p>
+
             </div>
+
           </article>
 
         </div>
+
       </div>
     </section>
 
@@ -324,14 +621,20 @@
           <p class="section-number">04</p>
 
           <div>
-            <p class="eyebrow eyebrow-light">Writing and publications</p>
-            <h2>Scientific work, notes and ideas.</h2>
+            <p class="eyebrow eyebrow-light">
+              Writing and publications
+            </p>
+
+            <h2>
+              Scientific work, notes and ideas.
+            </h2>
           </div>
         </div>
 
         <div class="writing-grid">
 
           <div class="writing-intro">
+
             <p class="large-text">
               Writing is part of how I organise questions, connect
               disciplines and make complex ideas clearer.
@@ -342,37 +645,30 @@
               professional writing and notes about neuroscience,
               neuropsychology, engineering and technology.
             </p>
+
           </div>
 
           <div class="writing-links">
 
             <a class="writing-link" href="#">
-              <span>
-                Scientific publications
-              </span>
-
+              <span>Scientific publications</span>
               <span aria-hidden="true">↗</span>
             </a>
 
             <a class="writing-link" href="#">
-              <span>
-                Research notes
-              </span>
-
+              <span>Research notes</span>
               <span aria-hidden="true">↗</span>
             </a>
 
             <a class="writing-link" href="#">
-              <span>
-                Learning journal
-              </span>
-
+              <span>Learning journal</span>
               <span aria-hidden="true">↗</span>
             </a>
 
           </div>
 
         </div>
+
       </div>
     </section>
 
@@ -392,6 +688,7 @@
           </div>
 
           <div class="contact-content">
+
             <p>
               I am interested in conversations and collaborations related
               to neuropsychology, neuroscience, biomedical engineering,
@@ -404,6 +701,7 @@
             >
               contact@carolinasanchezgirona.com
             </a>
+
           </div>
 
         </div>
