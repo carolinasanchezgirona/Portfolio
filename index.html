@@ -21,7 +21,17 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 
+
 <body>
+
+  <!-- Decorative dynamic background -->
+  <div class="ambient-background" aria-hidden="true">
+    <span class="ambient-orb ambient-orb-one"></span>
+    <span class="ambient-orb ambient-orb-two"></span>
+    <span class="ambient-orb ambient-orb-three"></span>
+    <span class="ambient-grid"></span>
+  </div>
+
 
   <!-- Header -->
   <header class="site-header">
@@ -320,50 +330,41 @@
         </header>
 
 
-        <div class="research-layout">
+        <div class="research-gallery">
 
-          <!-- Featured research area -->
-          <article class="research-feature">
+          <!-- Assessment -->
+          <article class="research-card research-card-featured">
 
-            <div
-              class="research-feature-visual"
-              aria-hidden="true"
-            >
+            <figure class="research-image-wrapper">
 
-              <div class="assessment-diagram">
+              <img
+                class="research-image"
+                src="./assets/assessment.png"
+                alt="Scientific illustration representing neuropsychological assessment and cognitive networks"
+              >
 
-                <span class="assessment-ring ring-one"></span>
-                <span class="assessment-ring ring-two"></span>
-                <span class="assessment-ring ring-three"></span>
+            </figure>
 
-                <span class="assessment-point point-one"></span>
-                <span class="assessment-point point-two"></span>
-                <span class="assessment-point point-three"></span>
-                <span class="assessment-point point-four"></span>
 
-                <span class="assessment-axis axis-horizontal"></span>
-                <span class="assessment-axis axis-vertical"></span>
+            <div class="research-card-content">
+
+              <div class="research-meta">
+
+                <p class="research-index">
+                  01
+                </p>
+
+                <p class="research-category">
+                  Clinical foundations
+                </p>
 
               </div>
-
-            </div>
-
-
-            <div class="research-feature-content">
-
-              <p class="research-index">
-                01
-              </p>
-
-              <p class="research-category">
-                Clinical foundations
-              </p>
 
               <h3>
                 Neuropsychological assessment
               </h3>
 
-              <p>
+              <p class="research-question">
                 How can cognitive assessment become more precise without
                 losing the clinical meaning of a person’s history,
                 environment and everyday functioning?
@@ -380,39 +381,39 @@
           </article>
 
 
-          <!-- Secondary research areas -->
-          <div class="research-secondary-grid">
+          <!-- Brain technology -->
+          <article class="research-card">
 
-            <article class="research-item">
+            <figure class="research-image-wrapper">
 
-              <div class="research-item-top">
+              <img
+                class="research-image"
+                src="./assets/brain-tech.png"
+                alt="Scientific illustration of biomedical signals and brain health technology"
+              >
+
+            </figure>
+
+
+            <div class="research-card-content">
+
+              <div class="research-meta">
 
                 <p class="research-index">
                   02
                 </p>
 
-                <div
-                  class="research-symbol research-symbol-signal"
-                  aria-hidden="true"
-                >
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
+                <p class="research-category">
+                  Medical technology
+                </p>
 
               </div>
-
-              <p class="research-category">
-                Medical technology
-              </p>
 
               <h3>
                 Brain health technology
               </h3>
 
-              <p>
+              <p class="research-question">
                 How can medical devices and digital tools support
                 prevention, assessment and neurological care?
               </p>
@@ -423,42 +424,44 @@
                 <li>Medical devices</li>
               </ul>
 
-            </article>
+            </div>
+
+          </article>
 
 
-            <article class="research-item">
+          <!-- Artificial intelligence -->
+          <article class="research-card">
 
-              <div class="research-item-top">
+            <figure class="research-image-wrapper">
+
+              <img
+                class="research-image"
+                src="./assets/ai-network.png"
+                alt="Scientific illustration of an artificial intelligence neural network"
+              >
+
+            </figure>
+
+
+            <div class="research-card-content">
+
+              <div class="research-meta">
 
                 <p class="research-index">
                   03
                 </p>
 
-                <div
-                  class="research-symbol research-symbol-network"
-                  aria-hidden="true"
-                >
-                  <span class="network-node network-node-one"></span>
-                  <span class="network-node network-node-two"></span>
-                  <span class="network-node network-node-three"></span>
-                  <span class="network-node network-node-four"></span>
-
-                  <span class="network-line network-line-one"></span>
-                  <span class="network-line network-line-two"></span>
-                  <span class="network-line network-line-three"></span>
-                </div>
+                <p class="research-category">
+                  Computation
+                </p>
 
               </div>
-
-              <p class="research-category">
-                Computation
-              </p>
 
               <h3>
                 Artificial intelligence
               </h3>
 
-              <p>
+              <p class="research-question">
                 How can artificial intelligence contribute to clinical
                 reasoning while remaining transparent, responsible and
                 human-centred?
@@ -470,38 +473,44 @@
                 <li>Responsible innovation</li>
               </ul>
 
-            </article>
+            </div>
+
+          </article>
 
 
-            <article class="research-item">
+          <!-- Neuroimaging -->
+          <article class="research-card research-card-wide">
 
-              <div class="research-item-top">
+            <figure class="research-image-wrapper">
+
+              <img
+                class="research-image"
+                src="./assets/neuroimaging.png"
+                alt="Scientific illustration of neuroimaging and brain biomarkers"
+              >
+
+            </figure>
+
+
+            <div class="research-card-content">
+
+              <div class="research-meta">
 
                 <p class="research-index">
                   04
                 </p>
 
-                <div
-                  class="research-symbol research-symbol-scan"
-                  aria-hidden="true"
-                >
-                  <span class="scan-circle scan-circle-one"></span>
-                  <span class="scan-circle scan-circle-two"></span>
-                  <span class="scan-circle scan-circle-three"></span>
-                  <span class="scan-line"></span>
-                </div>
+                <p class="research-category">
+                  Biological data
+                </p>
 
               </div>
-
-              <p class="research-category">
-                Biological data
-              </p>
 
               <h3>
                 Neuroimaging and biomarkers
               </h3>
 
-              <p>
+              <p class="research-question">
                 How can imaging, physiological and biological data
                 contribute to earlier and more individualised detection
                 of neurological change?
@@ -513,9 +522,9 @@
                 <li>Early detection</li>
               </ul>
 
-            </article>
+            </div>
 
-          </div>
+          </article>
 
         </div>
 
