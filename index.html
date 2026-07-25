@@ -31,66 +31,53 @@
   </div>
 
 
-  <header class="site-header">
+  <nav class="site-navigation" aria-label="Main navigation">
 
-    <div class="container header-inner">
-
-      <a
-        class="site-name"
-        href="#top"
-        aria-label="Go to the homepage"
-      >
-        Carolina Sánchez Girona
-      </a>
-
-      <nav class="site-navigation" aria-label="Main navigation">
-
-  <a href="about.html">
+  <a id="nav-about" href="about.html">
     About
   </a>
 
-  <a href="research.html">
+  <a id="nav-research" href="research.html">
     Research
   </a>
 
-  <a href="projects.html">
+  <a id="nav-projects" href="projects.html">
     Projects
   </a>
 
-  <a href="writing.html">
+  <a id="nav-writing" href="writing.html">
     Writing
   </a>
 
-  <a href="#contact">
+  <a id="nav-contact" href="#contact">
     Contact
   </a>
 
 </nav>
+
 <div
   class="language-switcher"
   aria-label="Language selector"
 >
-  <a
-    href="index.html"
-    lang="en"
-    aria-current="page"
+  <button
+    id="lang-en"
+    type="button"
+    class="active"
+    aria-pressed="true"
   >
     EN
-  </a>
+  </button>
 
-  <span>/</span>
+  <span aria-hidden="true">/</span>
 
-  <a
-    href="es/index.html"
-    lang="es"
+  <button
+    id="lang-es"
+    type="button"
+    aria-pressed="false"
   >
     ES
-  </a>
+  </button>
 </div>
-    </div>
-
-  </header>
-
 
   <main id="top">
 
