@@ -1998,3 +1998,250 @@ a:focus-visible {
   }
 
 }
+/* =======================================================
+   PROJECTS PAGE
+======================================================= */
+
+.projects-page-hero {
+    padding-top: 150px;
+    padding-bottom: 80px;
+}
+
+.projects-page-hero h1 {
+    max-width: 1050px;
+    font-size: clamp(3.6rem, 7vw, 7rem);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+}
+
+.projects-page-intro {
+    max-width: 760px;
+    margin-top: 36px;
+    color: var(--text-secondary);
+    font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+    line-height: 1.75;
+}
+
+/* =======================================================
+   PROJECT GRID
+======================================================= */
+
+.projects-page-grid {
+    display: grid;
+    gap: 70px;
+    max-width: 980px;
+    margin-left: auto;
+}
+
+.projects-page-card {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 45px;
+    align-items: center;
+    padding-bottom: 55px;
+    border-bottom: 1px solid var(--border);
+}
+
+.projects-page-image {
+    display: block;
+    overflow: hidden;
+}
+
+.projects-page-image img {
+    width: 100%;
+    display: block;
+    transition: transform .45s ease;
+}
+
+.projects-page-card:hover img {
+    transform: scale(1.03);
+}
+
+.projects-page-label {
+    margin-bottom: 18px;
+    color: var(--accent);
+    font-family: "Courier New", monospace;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.projects-page-content h3 {
+    margin-bottom: 18px;
+    font-size: clamp(2rem,3vw,3rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -.04em;
+}
+
+.projects-page-content h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.projects-page-content h3 a:hover {
+    color: var(--accent);
+}
+
+.projects-page-content p {
+    margin-bottom: 24px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.projects-page-link {
+    color: var(--accent);
+    font-family: "Courier New", monospace;
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.projects-page-link:hover {
+    text-decoration: underline;
+}
+
+/* =======================================================
+   PHILOSOPHY
+======================================================= */
+
+.projects-philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 1px;
+    max-width: 980px;
+    margin-left: auto;
+    background: var(--border);
+    border: 1px solid var(--border);
+}
+
+.projects-philosophy-grid article {
+    min-height: 280px;
+    padding: 34px;
+    background: var(--background);
+}
+
+.projects-philosophy-number {
+    margin-bottom: 60px;
+    color: var(--accent);
+    font-family: "Courier New", monospace;
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+.projects-philosophy-grid h3 {
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: -.03em;
+}
+
+.projects-philosophy-grid article p:last-child {
+    color: var(--text-secondary);
+    line-height: 1.75;
+}
+
+/* =======================================================
+   FUTURE PROJECTS
+======================================================= */
+
+.future-projects-list {
+    max-width: 980px;
+    margin-left: auto;
+    border-top: 1px solid var(--border);
+}
+
+.future-project-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 34px;
+    align-items: start;
+    padding: 34px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.future-project-number {
+    color: var(--accent);
+    font-family: "Courier New", monospace;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .09em;
+}
+
+.future-project-item h3 {
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: -.03em;
+}
+
+.future-project-item p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.future-project-item span {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-family: "Courier New", monospace;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* =======================================================
+   RESPONSIVE
+======================================================= */
+
+@media (max-width:900px){
+
+.projects-page-card{
+grid-template-columns:1fr;
+gap:28px;
+}
+
+.projects-philosophy-grid{
+grid-template-columns:1fr;
+margin-left:0;
+}
+
+.future-project-item{
+grid-template-columns:1fr;
+gap:18px;
+}
+
+.projects-page-grid,
+.future-projects-list{
+margin-left:0;
+}
+
+.projects-philosophy-grid article{
+min-height:auto;
+}
+
+.projects-philosophy-number{
+margin-bottom:35px;
+}
+
+}
+
+@media (max-width:640px){
+
+.projects-page-hero{
+padding-top:110px;
+padding-bottom:60px;
+}
+
+.projects-page-hero h1{
+font-size:clamp(3rem,15vw,4.8rem);
+}
+
+}
