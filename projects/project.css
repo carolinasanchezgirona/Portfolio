@@ -1,392 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
 
-/* =======================================================
-   PROJECT PAGES
-   Carolina Sánchez Girona
-======================================================= */
+<head>
+  <meta charset="UTF-8">
 
-:root{
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    --background:#ffffff;
-    --background-soft:#f5f7f8;
+  <meta
+    name="description"
+    content="Brain Health Data Experiments by Carolina Sánchez Girona."
+  >
 
-    --text:#172026;
-    --text-light:#6d7880;
+  <title>
+    Brain Health Data Experiments | Carolina Sánchez Girona
+  </title>
 
-    --accent:#315f68;
+  <link rel="stylesheet" href="./project.css">
+</head>
 
-    --border:#dfe6e8;
+<body>
 
-    --max-width:1180px;
+  <header>
 
-    --radius:22px;
+    <div class="container header-inner">
 
-}
+      <a
+        class="brand"
+        href="../index.html"
+      >
+        Carolina Sánchez Girona
+      </a>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+      <a
+        class="back"
+        href="../index.html#projects"
+      >
+        ← Back to projects
+      </a>
 
-html{
+    </div>
 
-    scroll-behavior:smooth;
+  </header>
 
-}
 
-body{
+  <main>
 
-    background:var(--background);
+    <section class="hero">
 
-    color:var(--text);
+      <div class="container">
 
-    font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
+        <p class="eyebrow">
+          Data and Artificial Intelligence
+        </p>
 
-    line-height:1.8;
+        <h1>
+          Brain Health Data Experiments
+        </h1>
 
-}
+        <p>
+          A growing collection of small computational experiments exploring
+          biomedical signals, data visualisation, Python and responsible
+          artificial intelligence.
+        </p>
 
-img{
 
-    max-width:100%;
-    display:block;
+        <div class="status">
 
-}
+          <article class="card">
 
-a{
+            <h4>
+              Status
+            </h4>
 
-    color:inherit;
-    text-decoration:none;
+            <p>
+              Planned and in development
+            </p>
 
-}
+          </article>
 
-.container{
 
-    width:min(92%,var(--max-width));
+          <article class="card">
 
-    margin:auto;
+            <h4>
+              Focus
+            </h4>
 
-}
+            <p>
+              Biomedical data and scientific computing
+            </p>
 
-/* ================= HEADER ================= */
+          </article>
 
-header{
 
-    position:sticky;
+          <article class="card">
 
-    top:0;
+            <h4>
+              Tools
+            </h4>
 
-    z-index:100;
+            <p>
+              Python, data visualisation and signal analysis
+            </p>
 
-    backdrop-filter:blur(18px);
+          </article>
 
-    background:rgba(255,255,255,.90);
+        </div>
 
-    border-bottom:1px solid var(--border);
 
-}
+        <figure class="hero-image">
 
-.header-inner{
+          <img
+            src="../assets/brain-health-data-experiments.png"
+            alt="Python code beside biomedical signal charts and data visualisations"
+          >
 
-    display:flex;
+        </figure>
 
-    justify-content:space-between;
+      </div>
 
-    align-items:center;
+    </section>
 
-    padding:22px 0;
 
-}
+    <div class="container content">
 
-.brand{
+      <aside class="sidebar">
 
-    font-size:1.05rem;
+        <h3>
+          Contents
+        </h3>
 
-    font-weight:700;
+        <nav>
+          <a href="#overview">Project overview</a>
+          <a href="#areas">Areas of exploration</a>
+          <a href="#experiments">Future experiments</a>
+        </nav>
 
-    letter-spacing:-0.02em;
+      </aside>
 
-}
 
-.back{
+      <div>
 
-    color:var(--text-light);
+        <section id="overview">
 
-    transition:.25s;
+          <h2>
+            Project overview
+          </h2>
 
-}
+          <p>
+            This project documents my first computational explorations at the
+            intersection of biomedical engineering, neuroscience and data
+            science.
+          </p>
 
-.back:hover{
+          <p>
+            The aim is not simply to produce visualisations or code, but to
+            understand how biological and clinical information can be
+            represented, analysed and interpreted responsibly.
+          </p>
 
-    color:var(--accent);
+          <p>
+            Each experiment will include the original question, the dataset or
+            signal used, the analytical process, the limitations of the
+            approach and a reflection on its possible relevance to brain
+            health.
+          </p>
 
-}
+        </section>
 
-/* ================= HERO ================= */
 
-.hero{
+        <section id="areas">
 
-    padding:90px 0 60px;
+          <h2>
+            Areas of exploration
+          </h2>
 
-}
+          <ul>
+            <li>
+              Visualisation of physiological and biomedical signals
+            </li>
 
-.eyebrow{
+            <li>
+              Basic processing of heart-rate and pulse data
+            </li>
 
-    color:var(--accent);
+            <li>
+              Introduction to EEG and neurological signal concepts
+            </li>
 
-    text-transform:uppercase;
+            <li>
+              Exploratory analysis of cognitive and clinical datasets
+            </li>
 
-    letter-spacing:.16em;
+            <li>
+              Python workflows for scientific computing
+            </li>
 
-    font-size:.75rem;
+            <li>
+              Responsible and explainable artificial intelligence
+            </li>
+          </ul>
 
-    font-weight:700;
+        </section>
 
-    margin-bottom:20px;
 
-}
+        <section id="experiments">
 
-.hero h1{
+          <h2>
+            Future experiments
+          </h2>
 
-    font-size:clamp(3rem,7vw,6rem);
 
-    line-height:.95;
+          <article class="card">
 
-    letter-spacing:-.05em;
+            <h4>
+              Planned experiment 01
+            </h4>
 
-    font-weight:500;
+            <h3>
+              Visualising a pulse sensor signal
+            </h3>
 
-    max-width:900px;
+            <p>
+              A first experiment focused on recording, cleaning and visualising
+              pulse data obtained from a simple biomedical sensor.
+            </p>
 
-}
+          </article>
 
-.hero p{
 
-    margin-top:30px;
+          <article class="card">
 
-    max-width:760px;
+            <h4>
+              Planned experiment 02
+            </h4>
 
-    color:var(--text-light);
+            <h3>
+              Exploring biomedical time-series data
+            </h3>
 
-    font-size:1.15rem;
+            <p>
+              An introduction to the structure of time-series data, including
+              sampling, noise, peaks, trends and basic signal features.
+            </p>
 
-}
+          </article>
 
-.hero-image{
 
-    margin-top:70px;
+          <article class="card">
 
-    border-radius:var(--radius);
+            <h4>
+              Planned experiment 03
+            </h4>
 
-    overflow:hidden;
+            <h3>
+              Responsible AI for brain health
+            </h3>
 
-    border:1px solid var(--border);
+            <p>
+              A conceptual exploration of how artificial intelligence could
+              support clinical reasoning while remaining transparent,
+              interpretable and human-centred.
+            </p>
 
-}
+          </article>
 
-/* ================= CONTENT ================= */
+        </section>
 
-.content{
+      </div>
 
-    display:grid;
+    </div>
 
-    grid-template-columns:260px 1fr;
+  </main>
 
-    gap:90px;
 
-    padding:80px 0 120px;
+  <footer>
 
-}
+    <div class="container footer-inner">
 
-.sidebar{
+      <p>
+        © 2026 Carolina Sánchez Girona
+      </p>
 
-    position:sticky;
+      <p>
+        Neuropsychology · Biomedical Engineering · Research
+      </p>
 
-    top:110px;
+    </div>
 
-    align-self:start;
+  </footer>
 
-}
+</body>
 
-.sidebar h3{
-
-    font-size:.75rem;
-
-    text-transform:uppercase;
-
-    letter-spacing:.15em;
-
-    color:var(--accent);
-
-    margin-bottom:18px;
-
-}
-
-.sidebar nav{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:14px;
-
-}
-
-.sidebar a{
-
-    color:var(--text-light);
-
-    transition:.25s;
-
-}
-
-.sidebar a:hover{
-
-    color:var(--accent);
-
-}
-
-/* ================= SECTIONS ================= */
-
-section{
-
-    margin-bottom:90px;
-
-}
-
-section h2{
-
-    font-size:2.4rem;
-
-    margin-bottom:25px;
-
-    font-weight:500;
-
-    letter-spacing:-.03em;
-
-}
-
-section p{
-
-    color:var(--text-light);
-
-    margin-bottom:22px;
-
-}
-
-section ul{
-
-    padding-left:22px;
-
-}
-
-section li{
-
-    margin-bottom:12px;
-
-    color:var(--text-light);
-
-}
-
-/* ================= STATUS ================= */
-
-.status{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    margin-top:40px;
-
-}
-
-.card{
-
-    border:1px solid var(--border);
-
-    padding:24px;
-
-}
-
-.card h4{
-
-    margin-bottom:10px;
-
-    color:var(--accent);
-
-    font-size:.75rem;
-
-    letter-spacing:.12em;
-
-    text-transform:uppercase;
-
-}
-
-.card p{
-
-    margin:0;
-
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-
-    border-top:1px solid var(--border);
-
-    padding:30px 0;
-
-}
-
-.footer-inner{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    color:var(--text-light);
-
-    font-size:.85rem;
-
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-.content{
-
-grid-template-columns:1fr;
-
-gap:60px;
-
-}
-
-.sidebar{
-
-position:relative;
-
-top:auto;
-
-}
-
-.status{
-
-grid-template-columns:1fr;
-
-}
-
-.footer-inner{
-
-flex-direction:column;
-
-gap:10px;
-
-}
-
-}
+</html>
