@@ -2250,35 +2250,58 @@ font-size:clamp(3rem,15vw,4.8rem);
 ======================================================= */
 
 .language-switcher {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-left: 18px;
-  font-family: "Courier New", monospace;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    padding-left: 32px;
 }
 
-.language-switcher a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.2s ease;
+.language-switcher button {
+    background: transparent;
+    border: none;
+    padding: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+
+    cursor: pointer;
+    transition: color .2s ease;
 }
 
-.language-switcher a:hover,
-.language-switcher a[aria-current="page"] {
-  color: var(--accent);
+.language-switcher button:hover {
+    color: var(--accent);
+}
+
+.language-switcher button.active {
+    color: var(--accent);
 }
 
 .language-switcher span {
-  color: var(--border);
+    color: var(--border);
 }
 
-@media (max-width: 900px) {
+@media (max-width:900px){
 
-  .language-switcher {
-    margin-left: 0;
-  }
+.language-switcher{
+
+    margin-left:20px;
+
+}
+
+}
+
+@media (max-width:720px){
+
+.language-switcher{
+
+    width:100%;
+    justify-content:flex-end;
+    padding-left:0;
+
+}
 
 }
