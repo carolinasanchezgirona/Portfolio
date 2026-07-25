@@ -1447,3 +1447,211 @@ a:focus-visible {
   }
 
 }
+/* =======================================================
+   WRITING PAGE
+======================================================= */
+
+.writing-page-hero {
+  padding-top: 150px;
+  padding-bottom: 80px;
+}
+
+.writing-page-hero h1 {
+  max-width: 1050px;
+  font-size: clamp(3.6rem, 7vw, 7rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.writing-page-intro {
+  max-width: 780px;
+  margin-top: 36px;
+  color: var(--text-secondary);
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  line-height: 1.75;
+}
+
+/* ================= FEATURED WRITING ================= */
+
+.featured-writing {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 55px;
+  max-width: 980px;
+  margin-left: auto;
+  padding: 42px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.featured-writing-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.writing-category,
+.writing-date {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.writing-category {
+  color: var(--accent);
+}
+
+.writing-date {
+  color: var(--text-secondary);
+}
+
+.featured-writing-content h3 {
+  max-width: 760px;
+  margin-bottom: 22px;
+  font-size: clamp(2rem, 3.5vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.featured-writing-content p {
+  max-width: 720px;
+  margin-bottom: 24px;
+  color: var(--text-secondary);
+  font-size: 1.03rem;
+  line-height: 1.8;
+}
+
+.writing-status {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: "Courier New", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ================= WRITING ARCHIVE ================= */
+
+.writing-list {
+  max-width: 980px;
+  margin-left: auto;
+  border-top: 1px solid var(--border);
+}
+
+.writing-item {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 55px;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.writing-item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.writing-item-content h3 {
+  margin-bottom: 10px;
+  font-size: clamp(1.45rem, 2.3vw, 2.3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.writing-item-content p {
+  max-width: 700px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ================= EDITORIAL PRINCIPLES ================= */
+
+.writing-principles-section {
+  overflow: hidden;
+}
+
+.writing-principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  max-width: 980px;
+  margin-left: auto;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.writing-principles article {
+  min-height: 280px;
+  padding: 32px;
+  background: var(--background);
+}
+
+.writing-principle-number {
+  margin-bottom: 65px;
+  color: var(--accent);
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.writing-principles h3 {
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.writing-principles article p:last-child {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .featured-writing,
+  .writing-item {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-left: 0;
+  }
+
+  .writing-principles {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+
+  .writing-principles article {
+    min-height: auto;
+  }
+
+  .writing-principle-number {
+    margin-bottom: 35px;
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  .writing-page-hero {
+    padding-top: 110px;
+    padding-bottom: 60px;
+  }
+
+  .writing-page-hero h1 {
+    font-size: clamp(3rem, 15vw, 4.8rem);
+  }
+
+}
