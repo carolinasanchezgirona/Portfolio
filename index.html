@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -11,867 +12,584 @@
 
   <meta
     name="description"
-    content="Carolina Sánchez Girona is a psychologist, neuropsychologist and Biomedical Engineering student exploring neuroscience, technology and brain health."
+    content="Carolina Sánchez Girona is a psychologist, neuropsychologist and Biomedical Engineering student exploring neuroscience, technology, artificial intelligence and brain health."
   >
 
   <title>
     Carolina Sánchez Girona | Neuropsychology and Biomedical Engineering
   </title>
 
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-  <div class="ambient-background" aria-hidden="true">
-    <span class="ambient-orb ambient-orb-one"></span>
-    <span class="ambient-orb ambient-orb-two"></span>
-    <span class="ambient-orb ambient-orb-three"></span>
-    <span class="ambient-grid"></span>
+<header class="site-header">
+
+  <div class="container header-inner">
+
+    <a
+      class="site-name"
+      href="index.html"
+    >
+      Carolina Sánchez Girona
+    </a>
+
+
+    <nav
+      class="site-navigation"
+      aria-label="Main navigation"
+    >
+
+      <a
+        id="nav-about"
+        href="about.html"
+      >
+        About
+      </a>
+
+      <a
+        id="nav-research"
+        href="research.html"
+      >
+        Research
+      </a>
+
+      <a
+        id="nav-projects"
+        href="projects.html"
+      >
+        Projects
+      </a>
+
+      <a
+        id="nav-writing"
+        href="writing.html"
+      >
+        Writing
+      </a>
+
+      <a
+        id="nav-contact"
+        href="#contact"
+      >
+        Contact
+      </a>
+
+    </nav>
+
+
+    <div
+      class="language-switcher"
+      aria-label="Language selector"
+    >
+
+      <button
+        id="lang-en"
+        type="button"
+        class="active"
+        aria-label="View website in English"
+        aria-pressed="true"
+      >
+        EN
+      </button>
+
+      <span aria-hidden="true">
+        /
+      </span>
+
+      <button
+        id="lang-es"
+        type="button"
+        aria-label="Ver la web en español"
+        aria-pressed="false"
+      >
+        ES
+      </button>
+
+    </div>
+
   </div>
 
+</header>
 
-  <nav class="site-navigation" aria-label="Main navigation">
 
-  <a id="nav-about" href="about.html">
-    About
-  </a>
+<main>
 
-  <a id="nav-research" href="research.html">
-    Research
-  </a>
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
 
-  <a id="nav-projects" href="projects.html">
-    Projects
-  </a>
+  <section class="section home-hero">
 
-  <a id="nav-writing" href="writing.html">
-    Writing
-  </a>
+    <div class="container">
 
-  <a id="nav-contact" href="#contact">
-    Contact
-  </a>
-
-</nav>
-
-<div
-  class="language-switcher"
-  aria-label="Language selector"
->
-  <button
-    id="lang-en"
-    type="button"
-    class="active"
-    aria-pressed="true"
-  >
-    EN
-  </button>
-
-  <span aria-hidden="true">/</span>
-
-  <button
-    id="lang-es"
-    type="button"
-    aria-pressed="false"
-  >
-    ES
-  </button>
-</div>
-
-  <main id="top">
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-      <div class="container hero-grid">
-
-        <div class="hero-content">
-
-          <p class="eyebrow">
-            Neuropsychology · Biomedical Engineering · Research
-          </p>
-
-          <h1>
-            Building technology for better brain health.
-          </h1>
-
-          <p class="hero-description">
-            Psychologist, neuropsychologist and Biomedical Engineering
-            student exploring how neuroscience, engineering and artificial
-            intelligence can transform the future of brain health.
-          </p>
-
-          <div class="hero-actions">
-
-            <a
-              class="button button-primary"
-              href="#projects"
-            >
-              Explore my work
-              <span aria-hidden="true">↓</span>
-            </a>
-
-            <a
-  class="text-link"
-  href="about.html"
->
-  About me
-</a>
-
-          </div>
-
-        </div>
-
-
-        <figure class="hero-image-wrapper">
-
-          <img
-            class="hero-image"
-            src="./assets/brain-hero.png"
-            alt="Scientific illustration of a human brain surrounded by interconnected data points"
-          >
-
-        </figure>
-
-      </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section
-      class="section about-section"
-      id="about"
-    >
-
-      <div class="container">
-
-        <div class="about-editorial">
-
-          <header class="about-heading">
-
-            <p class="section-number">
-              01
-            </p>
-
-            <div>
-
-              <p class="eyebrow">
-                About
-              </p>
-
-              <h2>
-                Clinical experience, scientific curiosity and engineering.
-              </h2>
-
-            </div>
-
-          </header>
-
-
-          <figure class="portrait-wrapper">
-
-            <div class="portrait-frame">
-
-              <img
-                class="portrait"
-                src="./assets/carolina-sanchez-girona.jpg"
-                alt="Professional portrait of Carolina Sánchez Girona"
-              >
-
-            </div>
-
-            <figcaption>
-              Carolina Sánchez Girona
-
-              <span>
-                Psychologist · Neuropsychologist
-              </span>
-            </figcaption>
-
-          </figure>
-
-
-          <div class="about-introduction">
-
-            <p class="about-statement">
-              My work sits at the intersection of neuropsychology,
-              neuroscience and technology.
-            </p>
-
-            <p class="about-role-line">
-              Clinical practice informs the questions I ask.
-              Engineering expands the ways I can investigate them.
-            </p>
-
-          </div>
-
-
-          <div class="about-copy">
-
-            <div class="about-column">
-
-              <p>
-                I am a psychologist and neuropsychologist with professional
-                experience in cognitive assessment, dementia and clinical
-                care.
-              </p>
-
-              <p>
-                My clinical work has taught me to look beyond scores and
-                diagnoses, and to understand cognitive functioning within
-                the wider context of a person’s history, environment and
-                everyday life.
-              </p>
-
-            </div>
-
-
-            <div class="about-column">
-
-              <p>
-                Alongside my professional practice, I am studying Biomedical
-                Engineering to deepen my understanding of biological systems,
-                medical devices, data and artificial intelligence.
-              </p>
-
-              <p>
-                I am particularly interested in how interdisciplinary research
-                can contribute to earlier detection, more precise assessment
-                and more personalised approaches to brain health.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="about-facts">
-
-            <article class="fact-item">
-
-              <p class="fact-label">
-                Background
-              </p>
-
-              <p>
-                Psychology and Neuropsychology
-              </p>
-
-            </article>
-
-
-            <article class="fact-item">
-
-              <p class="fact-label">
-                Currently studying
-              </p>
-
-              <p>
-                Biomedical Engineering
-              </p>
-
-            </article>
-
-
-            <article class="fact-item">
-
-              <p class="fact-label">
-                Primary focus
-              </p>
-
-              <p>
-                Brain health, medical technology, neuroimaging,
-                artificial intelligence and cognitive assessment
-              </p>
-
-            </article>
-
-
-            <article class="fact-item">
-
-              <p class="fact-label">
-                Approach
-              </p>
-
-              <p>
-                Clinical, interdisciplinary and research-oriented
-              </p>
-
-            </article>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- RESEARCH -->
-
-    <section
-      class="section research-section"
-      id="research"
-    >
-
-      <div class="container">
-
-        <header class="section-heading">
-
-          <p class="section-number">
-            02
-          </p>
-
-          <div>
-
-            <p class="eyebrow">
-              Research interests
-            </p>
-
-            <h2>
-              Questions I want to explore.
-            </h2>
-
-            <p class="section-introduction">
-              My interests connect clinical observation with emerging tools
-              from neuroscience, engineering and computation.
-            </p>
-
-          </div>
-
-        </header>
-
-
-        <div class="research-gallery">
-
-          <article class="research-card">
-
-            <figure class="research-image-wrapper">
-
-              <img
-                class="research-image"
-                src="./assets/assessment.png"
-                alt="Scientific illustration representing neuropsychological assessment"
-              >
-
-            </figure>
-
-            <div class="research-card-content">
-
-              <div class="research-meta">
-                <p class="research-index">01</p>
-                <p class="research-category">Clinical foundations</p>
-              </div>
-
-              <h3>
-                Neuropsychological assessment
-              </h3>
-
-              <p class="research-question">
-                How can cognitive assessment become more precise without
-                losing the clinical meaning of a person’s history,
-                environment and everyday functioning?
-              </p>
-
-              <ul class="research-topics">
-                <li>Cognitive profiles</li>
-                <li>Clinical interpretation</li>
-                <li>Ecological validity</li>
-              </ul>
-
-            </div>
-
-          </article>
-
-
-          <article class="research-card">
-
-            <figure class="research-image-wrapper">
-
-              <img
-                class="research-image"
-                src="./assets/brain-tech.png"
-                alt="Scientific illustration of biomedical signals and brain health technology"
-              >
-
-            </figure>
-
-            <div class="research-card-content">
-
-              <div class="research-meta">
-                <p class="research-index">02</p>
-                <p class="research-category">Medical technology</p>
-              </div>
-
-              <h3>
-                Brain health technology
-              </h3>
-
-              <p class="research-question">
-                How can medical devices and digital tools support prevention,
-                assessment and neurological care?
-              </p>
-
-              <ul class="research-topics">
-                <li>Biomedical signals</li>
-                <li>Digital assessment</li>
-                <li>Medical devices</li>
-              </ul>
-
-            </div>
-
-          </article>
-
-
-          <article class="research-card">
-
-            <figure class="research-image-wrapper">
-
-              <img
-                class="research-image"
-                src="./assets/ai-network.png"
-                alt="Scientific illustration representing artificial intelligence"
-              >
-
-            </figure>
-
-            <div class="research-card-content">
-
-              <div class="research-meta">
-                <p class="research-index">03</p>
-                <p class="research-category">Computation</p>
-              </div>
-
-              <h3>
-                Artificial intelligence
-              </h3>
-
-              <p class="research-question">
-                How can artificial intelligence contribute to clinical
-                reasoning while remaining transparent, responsible and
-                human-centred?
-              </p>
-
-              <ul class="research-topics">
-                <li>Decision support</li>
-                <li>Explainable AI</li>
-                <li>Responsible innovation</li>
-              </ul>
-
-            </div>
-
-          </article>
-
-
-          <article class="research-card">
-
-            <figure class="research-image-wrapper">
-
-              <img
-                class="research-image"
-                src="./assets/neuroimaging.png"
-                alt="Scientific illustration representing neuroimaging and biomarkers"
-              >
-
-            </figure>
-
-            <div class="research-card-content">
-
-              <div class="research-meta">
-                <p class="research-index">04</p>
-                <p class="research-category">Biological data</p>
-              </div>
-
-              <h3>
-                Neuroimaging and biomarkers
-              </h3>
-
-              <p class="research-question">
-                How can imaging, physiological and biological data contribute
-                to earlier and more individualised detection of neurological
-                change?
-              </p>
-
-              <ul class="research-topics">
-                <li>Neuroimaging</li>
-                <li>Biomarkers</li>
-                <li>Early detection</li>
-              </ul>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-
-    <section
-      class="section projects-section"
-      id="projects"
-    >
-
-      <div class="container">
-
-        <header class="section-heading">
-
-          <p class="section-number">
-            03
-          </p>
-
-          <div>
-
-            <p class="eyebrow">
-              Projects
-            </p>
-
-            <h2>
-              Selected work and ongoing explorations.
-            </h2>
-
-            <p class="section-introduction">
-              A growing archive of academic work, clinical thinking and
-              computational experiments across brain health and engineering.
-            </p>
-
-          </div>
-
-        </header>
-
-
-        <div class="projects-showcase">
-
-          <!-- PROJECT 01 -->
-
-          <article class="project-showcase-item">
-
-            <figure class="project-showcase-media">
-
-              <img
-                src="./assets/biomedical-engineering-learning-archive.png"
-                alt="Technical notebook with equations, system diagrams and engineering annotations"
-              >
-
-            </figure>
-
-
-            <div class="project-showcase-content">
-
-              <div class="project-showcase-meta">
-                <span>01</span>
-                <span>Ongoing</span>
-              </div>
-
-              <p class="project-showcase-category">
-                Biomedical Engineering
-              </p>
-
-              <h3>
-                Biomedical Engineering Learning Archive
-              </h3>
-
-              <p class="project-showcase-description">
-                A curated collection of selected academic work, technical
-                exercises and reflections developed throughout my Biomedical
-                Engineering degree.
-              </p>
-
-              <ul class="project-showcase-tags">
-                <li>Algebra</li>
-                <li>Cell biology</li>
-                <li>Scientific computing</li>
-              </ul>
-
-              <a
-                class="project-showcase-link"
-                href="./projects/biomedical-engineering.html"
-                aria-label="Biomedical Engineering Learning Archive"
-              >
-                Explore project
-                <span aria-hidden="true">↗</span>
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- PROJECT 02 -->
-
-          <article class="project-showcase-item project-showcase-reverse">
-
-            <figure class="project-showcase-media">
-
-              <img
-                src="./assets/cognitive-assessment-clinical-reasoning.png"
-                alt="Editorial cognitive assessment page with score tables, profile chart and clinical notes"
-              >
-
-            </figure>
-
-
-            <div class="project-showcase-content">
-
-              <div class="project-showcase-meta">
-                <span>02</span>
-                <span>In development</span>
-              </div>
-
-              <p class="project-showcase-category">
-                Neuropsychology
-              </p>
-
-              <h3>
-                Cognitive Assessment and Clinical Reasoning
-              </h3>
-
-              <p class="project-showcase-description">
-                A structured exploration of neuropsychological assessment,
-                interpretation and the communication of cognitive findings.
-              </p>
-
-              <ul class="project-showcase-tags">
-                <li>Assessment</li>
-                <li>Clinical reasoning</li>
-                <li>Brain health</li>
-              </ul>
-
-              <a
-                class="project-showcase-link"
-                href="./projects/cognitive-assessment.html"
-                aria-label="Cognitive Assessment and Clinical Reasoning"
-              >
-                Explore project
-                <span aria-hidden="true">↗</span>
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- PROJECT 03 -->
-
-          <article class="project-showcase-item">
-
-            <figure class="project-showcase-media">
-
-              <img
-                src="./assets/brain-health-data-experiments.png"
-                alt="Python code beside biomedical signal charts and data visualisations"
-              >
-
-            </figure>
-
-
-            <div class="project-showcase-content">
-
-              <div class="project-showcase-meta">
-                <span>03</span>
-                <span>Planned</span>
-              </div>
-
-              <p class="project-showcase-category">
-                Data and AI
-              </p>
-
-              <h3>
-                Brain Health Data Experiments
-              </h3>
-
-              <p class="project-showcase-description">
-                Small computational projects exploring data visualisation,
-                Python, biomedical signals and responsible artificial
-                intelligence.
-              </p>
-
-              <ul class="project-showcase-tags">
-                <li>Python</li>
-                <li>Data visualisation</li>
-                <li>Biomedical signals</li>
-              </ul>
-
-              <a
-                class="project-showcase-link"
-                href="./projects/brain-health-data.html"
-                aria-label="Brain Health Data Experiments"
-              >
-                Explore project
-                <span aria-hidden="true">↗</span>
-              </a>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- WRITING -->
-
-    <section
-      class="section writing-section"
-      id="writing"
-    >
-
-      <div class="container">
-
-        <header class="section-heading section-heading-light">
-
-          <p class="section-number">
-            04
-          </p>
-
-          <div>
-
-            <p class="eyebrow eyebrow-light">
-              Writing and publications
-            </p>
-
-            <h2>
-              Scientific work, notes and ideas.
-            </h2>
-
-          </div>
-
-        </header>
-
-
-        <div class="writing-grid">
-
-          <div class="writing-intro">
-
-            <p class="large-text">
-              Writing is part of how I organise questions, connect disciplines
-              and make complex ideas clearer.
-            </p>
-
-            <p>
-              This section will include scientific publications, selected
-              professional writing and notes about neuroscience,
-              neuropsychology, engineering and technology.
-            </p>
-
-          </div>
-
-
-          <div class="writing-links">
-
-            <a
-              class="writing-link"
-              href="#"
-              aria-label="Scientific publications, coming soon"
-            >
-              <span>Scientific publications</span>
-              <span aria-hidden="true">↗</span>
-            </a>
-
-            <a
-              class="writing-link"
-              href="#"
-              aria-label="Research notes, coming soon"
-            >
-              <span>Research notes</span>
-              <span aria-hidden="true">↗</span>
-            </a>
-
-            <a
-              class="writing-link"
-              href="#"
-              aria-label="Learning journal, coming soon"
-            >
-              <span>Learning journal</span>
-              <span aria-hidden="true">↗</span>
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section
-      class="section contact-section"
-      id="contact"
-    >
-
-      <div class="container">
-
-        <div class="contact-grid">
-
-          <div>
-
-            <p class="eyebrow">
-              Contact
-            </p>
-
-            <h2>
-              Let’s connect ideas across disciplines.
-            </h2>
-
-          </div>
-
-
-          <div class="contact-content">
-
-            <p>
-              I am interested in conversations and collaborations related
-              to neuropsychology, neuroscience, biomedical engineering,
-              medical technology and brain health research.
-            </p>
-
-            <a
-              class="contact-email"
-              href="mailto:contact@carolinasanchezgirona.com"
-            >
-              contact@carolinasanchezgirona.com
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <footer class="site-footer">
-
-    <div class="container footer-inner">
-
-      <p>
-        © 2026 Carolina Sánchez Girona
+      <p
+        id="hero-eyebrow"
+        class="eyebrow"
+      >
+        Neuropsychology · Biomedical Engineering · Brain Health
       </p>
 
-      <p>
-        Psychology · Neuropsychology · Biomedical Engineering
+      <h1 id="hero-title">
+        Building technology for better brain health.
+      </h1>
+
+      <p
+        id="hero-intro"
+        class="home-hero-intro"
+      >
+        I am a psychologist, neuropsychologist and Biomedical Engineering
+        student. My work sits at the intersection of clinical practice,
+        neuroscience, engineering and artificial intelligence.
       </p>
 
     </div>
 
-  </footer>
+  </section>
+
+
+  <!-- =====================================================
+       ABOUT PREVIEW
+  ====================================================== -->
+
+  <section class="section">
+
+    <div class="container home-intro-grid">
+
+      <div>
+
+        <p class="eyebrow">
+          About
+        </p>
+
+        <h2>
+          Clinical experience with an interdisciplinary direction.
+        </h2>
+
+      </div>
+
+
+      <div>
+
+        <p>
+
+          My professional background is in cognitive assessment,
+          neuropsychology and dementia.
+
+        </p>
+
+        <p>
+
+          I am now expanding this clinical experience through Biomedical
+          Engineering, with a growing interest in physiological signals,
+          medical devices, scientific computing and artificial
+          intelligence.
+
+        </p>
+
+        <a
+          class="text-link"
+          href="about.html"
+        >
+          Explore my background
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       RESEARCH PREVIEW
+  ====================================================== -->
+
+  <section class="section">
+
+    <div class="container home-feature">
+
+      <div>
+
+        <p class="eyebrow">
+          Research
+        </p>
+
+        <h2>
+          Understanding the brain through clinical insight, data and technology.
+        </h2>
+
+      </div>
+
+
+      <div>
+
+        <p>
+
+          I am interested in how cognitive change can be detected
+          earlier, how clinical data can become more meaningful and how
+          technology can support professional judgement without
+          replacing it.
+
+        </p>
+
+        <a
+          class="text-link"
+          href="research.html"
+        >
+          Explore research
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       PROJECTS PREVIEW
+  ====================================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <header class="section-heading">
+
+        <p class="section-number">
+          01
+        </p>
+
+        <div>
+
+          <p class="eyebrow">
+            Projects
+          </p>
+
+          <h2>
+            Selected work.
+          </h2>
+
+        </div>
+
+      </header>
+
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+
+          <a href="projects/biomedical-engineering.html">
+
+            <img
+              src="assets/biomedical-engineering-learning-archive.png"
+              alt="Biomedical Engineering Learning Archive"
+            >
+
+          </a>
+
+
+          <p class="project-label">
+            Biomedical Engineering
+          </p>
+
+          <h3>
+
+            <a href="projects/biomedical-engineering.html">
+              Biomedical Engineering Learning Archive
+            </a>
+
+          </h3>
+
+          <p>
+
+            A long-term collection of coursework, technical notes,
+            engineering concepts and reflections connecting technology,
+            neuroscience and brain health.
+
+          </p>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <a href="projects/cognitive-assessment.html">
+
+            <img
+              src="assets/cognitive-assessment-clinical-reasoning.png"
+              alt="Cognitive Assessment and Clinical Reasoning"
+            >
+
+          </a>
+
+
+          <p class="project-label">
+            Neuropsychology
+          </p>
+
+          <h3>
+
+            <a href="projects/cognitive-assessment.html">
+              Cognitive Assessment and Clinical Reasoning
+            </a>
+
+          </h3>
+
+          <p>
+
+            An editorial project exploring how cognitive data,
+            neuropsychological interpretation and everyday functioning
+            fit together.
+
+          </p>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <a href="projects/brain-health-data.html">
+
+            <img
+              src="assets/brain-health-data-experiments.png"
+              alt="Brain Health Data Experiments"
+            >
+
+          </a>
+
+
+          <p class="project-label">
+            Data and Brain Health
+          </p>
+
+          <h3>
+
+            <a href="projects/brain-health-data.html">
+              Brain Health Data Experiments
+            </a>
+
+          </h3>
+
+          <p>
+
+            Small experiments using data analysis, visualisation and
+            physiological signals to explore questions related to
+            cognition and brain health.
+
+          </p>
+
+        </article>
+
+      </div>
+
+
+      <div class="section-link">
+
+        <a
+          class="text-link"
+          href="projects.html"
+        >
+          View all projects
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       WRITING PREVIEW
+  ====================================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <header class="section-heading">
+
+        <p class="section-number">
+          02
+        </p>
+
+        <div>
+
+          <p class="eyebrow">
+            Writing
+          </p>
+
+          <h2>
+            Notes on the brain, technology and clinical practice.
+          </h2>
+
+        </div>
+
+      </header>
+
+
+      <div class="writing-list">
+
+        <article class="writing-item">
+
+          <div class="writing-item-meta">
+
+            <p class="writing-category">
+              Learning note
+            </p>
+
+            <p class="writing-date">
+              2026
+            </p>
+
+          </div>
+
+
+          <div class="writing-item-content">
+
+            <h3>
+              Why I am studying Biomedical Engineering after years in neuropsychology
+            </h3>
+
+            <p>
+
+              A reflection on how clinical practice led me towards
+              engineering, biological measurement, data and medical
+              technology.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="writing-item">
+
+          <div class="writing-item-meta">
+
+            <p class="writing-category">
+              Neuropsychology
+            </p>
+
+            <p class="writing-date">
+              Planned
+            </p>
+
+          </div>
+
+
+          <div class="writing-item-content">
+
+            <h3>
+              Why cognitive scores are never the whole story
+            </h3>
+
+            <p>
+
+              A reflection on clinical interpretation, everyday
+              functioning and the limits of reducing cognition to a
+              single number.
+
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <div class="section-link">
+
+        <a
+          class="text-link"
+          href="writing.html"
+        >
+          Read all writing
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       CONTACT
+  ====================================================== -->
+
+  <section
+    id="contact"
+    class="section contact-section"
+  >
+
+    <div class="container contact-grid">
+
+      <div>
+
+        <p class="eyebrow">
+          Contact
+        </p>
+
+        <h2>
+          Interested in interdisciplinary work?
+        </h2>
+
+      </div>
+
+
+      <div class="contact-content">
+
+        <p>
+
+          I am open to conversations related to neuropsychology,
+          neuroscience, Biomedical Engineering, medical technology and
+          brain health research.
+
+        </p>
+
+        <a
+          class="contact-email"
+          href="mailto:contact@carolinasanchezgirona.com"
+        >
+          contact@carolinasanchezgirona.com
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-inner">
+
+    <p>
+      © 2026 Carolina Sánchez Girona
+    </p>
+
+    <p>
+      Psychology · Neuropsychology · Biomedical Engineering
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="translations.js"></script>
+<script src="language.js"></script>
 
 </body>
 
