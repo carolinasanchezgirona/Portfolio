@@ -1,1 +1,837 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Proyecto de Carolina Sánchez Girona sobre análisis de datos, señales fisiológicas, visualización y aplicaciones computacionales en salud cerebral."
+  >
+
+  <title>
+    Experimentos con datos sobre salud cerebral | Carolina Sánchez Girona
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="../../projects/project.css"
+  >
+
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header>
+
+    <div class="container header-inner">
+
+      <a
+        class="brand"
+        href="../index.html"
+      >
+        Carolina Sánchez Girona
+      </a>
+
+
+      <div
+        class="language-link"
+        aria-label="Selector de idioma"
+      >
+
+        <a href="../../projects/brain-health-data.html">
+          EN
+        </a>
+
+        <span aria-hidden="true">
+          /
+        </span>
+
+        <span class="current-language">
+          ES
+        </span>
+
+      </div>
+
+
+      <a
+        class="back"
+        href="../projects.html"
+      >
+        ← Volver a Proyectos
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <section class="container hero">
+
+    <p class="eyebrow">
+      Datos y salud cerebral
+    </p>
+
+    <h1>
+      Experimentos con datos sobre salud cerebral
+    </h1>
+
+    <p>
+
+      Una colección progresiva de pequeños experimentos de análisis,
+      visualización y procesamiento de datos aplicados a preguntas
+      relacionadas con cognición, neurociencia y salud cerebral.
+
+    </p>
+
+
+    <div class="hero-image">
+
+      <img
+        src="../../assets/brain-health-data-experiments.png"
+        alt="Experimentos con datos sobre salud cerebral"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       CONTENT
+  ====================================================== -->
+
+  <div class="container content">
+
+
+    <!-- ===================================================
+         SIDEBAR
+    ==================================================== -->
+
+    <aside class="sidebar">
+
+      <h3>
+        Contenidos
+      </h3>
+
+      <nav>
+
+        <a href="#overview">
+          Visión general
+        </a>
+
+        <a href="#motivation">
+          Motivación
+        </a>
+
+        <a href="#questions">
+          Preguntas
+        </a>
+
+        <a href="#data">
+          Tipos de datos
+        </a>
+
+        <a href="#methods">
+          Métodos
+        </a>
+
+        <a href="#experiments">
+          Experimentos
+        </a>
+
+        <a href="#principles">
+          Principios
+        </a>
+
+        <a href="#future">
+          Desarrollo futuro
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ===================================================
+         PROJECT CONTENT
+    ==================================================== -->
+
+    <main class="project-content">
+
+
+      <!-- =================================================
+           01 · OVERVIEW
+      ================================================== -->
+
+      <section id="overview">
+
+        <p class="section-label">
+          01
+        </p>
+
+        <h2>
+          Visión general
+        </h2>
+
+        <p>
+
+          Este proyecto reúne pequeños experimentos orientados a explorar
+          cómo pueden utilizarse los datos para comprender mejor diferentes
+          aspectos de la salud cerebral.
+
+        </p>
+
+        <p>
+
+          El objetivo no es construir inicialmente grandes modelos
+          predictivos, sino desarrollar una comprensión progresiva de los
+          datos: cómo se obtienen, cómo se representan, qué información
+          contienen y cuáles son sus limitaciones.
+
+        </p>
+
+        <p>
+
+          A medida que avance mi formación en Ingeniería Biomédica, el
+          proyecto incorporará técnicas más complejas de análisis de
+          señales, estadística, programación y modelado computacional.
+
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
+           02 · MOTIVATION
+      ================================================== -->
+
+      <section id="motivation">
+
+        <p class="section-label">
+          02
+        </p>
+
+        <h2>
+          Motivación
+        </h2>
+
+        <p>
+
+          La práctica neuropsicológica genera continuamente información:
+          puntuaciones cognitivas, observaciones clínicas, evolución
+          longitudinal y datos sobre funcionamiento cotidiano.
+
+        </p>
+
+        <p>
+
+          La Ingeniería Biomédica amplía este espacio incorporando otras
+          fuentes de información, como señales fisiológicas, sensores,
+          neuroimagen y datos digitales.
+
+        </p>
+
+        <p>
+
+          Me interesa especialmente comprender cómo pueden relacionarse
+          estas diferentes fuentes de datos sin perder el contexto clínico
+          que permite interpretarlas.
+
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
+           03 · QUESTIONS
+      ================================================== -->
+
+      <section id="questions">
+
+        <p class="section-label">
+          03
+        </p>
+
+        <h2>
+          Preguntas
+        </h2>
+
+
+        <div class="project-list">
+
+          <article>
+
+            <h3>
+              ¿Qué información contiene una señal?
+            </h3>
+
+            <p>
+
+              Explorar cómo una medición fisiológica puede transformarse
+              desde una señal aparentemente compleja en variables
+              interpretables.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              ¿Cómo cambia una variable con el tiempo?
+            </h3>
+
+            <p>
+
+              Analizar datos longitudinales y representar trayectorias
+              individuales de cambio.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              ¿Cómo representamos múltiples dimensiones?
+            </h3>
+
+            <p>
+
+              Investigar formas de visualizar simultáneamente información
+              cognitiva, funcional, fisiológica y contextual.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              ¿Cuándo un patrón es realmente significativo?
+            </h3>
+
+            <p>
+
+              Diferenciar asociaciones visualmente atractivas de patrones
+              que cuentan con suficiente respaldo estadístico y científico.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           04 · DATA
+      ================================================== -->
+
+      <section id="data">
+
+        <p class="section-label">
+          04
+        </p>
+
+        <h2>
+          Tipos de datos
+        </h2>
+
+
+        <div class="project-list">
+
+          <article>
+
+            <h3>
+              Datos cognitivos
+            </h3>
+
+            <p>
+
+              Puntuaciones, tiempos de respuesta, errores y otras variables
+              procedentes de tareas cognitivas y neuropsicológicas.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              Señales fisiológicas
+            </h3>
+
+            <p>
+
+              Datos procedentes de ECG, EEG, EMG, frecuencia cardíaca y
+              otros sistemas de adquisición biomédica.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              Datos longitudinales
+            </h3>
+
+            <p>
+
+              Mediciones repetidas que permiten observar cambios a lo largo
+              del tiempo y estudiar trayectorias individuales.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              Neuroimagen
+            </h3>
+
+            <p>
+
+              Exploración futura de datasets de imagen cerebral y de las
+              herramientas necesarias para procesarlos y visualizarlos.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              Datos funcionales
+            </h3>
+
+            <p>
+
+              Información relacionada con actividad cotidiana, autonomía y
+              funcionamiento en contextos reales.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           05 · METHODS
+      ================================================== -->
+
+      <section id="methods">
+
+        <p class="section-label">
+          05
+        </p>
+
+        <h2>
+          Métodos
+        </h2>
+
+        <p>
+
+          Los métodos utilizados evolucionarán junto con mi formación
+          técnica.
+
+        </p>
+
+
+        <div class="project-list">
+
+          <article>
+
+            <h3>
+              Python
+            </h3>
+
+            <p>
+
+              Programación orientada al análisis científico, procesamiento
+              de datos y automatización de pequeños experimentos.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              Estadística
+            </h3>
+
+            <p>
+
+              Análisis descriptivo e inferencial para comprender
+              distribuciones, asociaciones, variabilidad e incertidumbre.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              Visualización de datos
+            </h3>
+
+            <p>
+
+              Representaciones diseñadas para facilitar la comprensión de
+              patrones sin ocultar variabilidad o incertidumbre.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              Procesamiento de señales
+            </h3>
+
+            <p>
+
+              Exploración progresiva de filtrado, transformación,
+              extracción de características y análisis de señales
+              biomédicas.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              Modelado
+            </h3>
+
+            <p>
+
+              Desarrollo gradual de modelos matemáticos y computacionales
+              aplicados a problemas relacionados con la salud cerebral.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           06 · EXPERIMENTS
+      ================================================== -->
+
+      <section id="experiments">
+
+        <p class="section-label">
+          06
+        </p>
+
+        <h2>
+          Experimentos
+        </h2>
+
+        <p>
+
+          Esta sección crecerá progresivamente con pequeños proyectos
+          reproducibles.
+
+        </p>
+
+
+        <div class="project-list">
+
+          <article>
+
+            <p class="project-tag">
+              Planificado
+            </p>
+
+            <h3>
+              Visualización de cambio cognitivo
+            </h3>
+
+            <p>
+
+              Desarrollo de representaciones para mostrar la evolución de
+              diferentes dominios cognitivos a través de evaluaciones
+              sucesivas.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <p class="project-tag">
+              Planificado
+            </p>
+
+            <h3>
+              Análisis de una señal fisiológica
+            </h3>
+
+            <p>
+
+              Adquisición o utilización de una señal biomédica para explorar
+              su estructura, ruido, filtrado y características principales.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <p class="project-tag">
+              Planificado
+            </p>
+
+            <h3>
+              Exploración de un dataset abierto
+            </h3>
+
+            <p>
+
+              Análisis reproducible de un conjunto público de datos
+              relacionado con neurociencia o salud cerebral.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <p class="project-tag">
+              Futuro
+            </p>
+
+            <h3>
+              Neuroimagen
+            </h3>
+
+            <p>
+
+              Primeros experimentos de visualización y análisis de datasets
+              públicos de imagen cerebral.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           07 · PRINCIPLES
+      ================================================== -->
+
+      <section id="principles">
+
+        <p class="section-label">
+          07
+        </p>
+
+        <h2>
+          Principios
+        </h2>
+
+
+        <div class="project-list">
+
+          <article>
+
+            <h3>
+              Reproducibilidad
+            </h3>
+
+            <p>
+
+              Los análisis deberían poder comprenderse, repetirse y
+              revisarse.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              Interpretabilidad
+            </h3>
+
+            <p>
+
+              Un modelo complejo no es necesariamente mejor si resulta
+              imposible comprender qué información está utilizando.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              Contexto
+            </h3>
+
+            <p>
+
+              Los datos biomédicos adquieren significado cuando se
+              interpretan dentro de un contexto biológico y clínico.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              Incertidumbre
+            </h3>
+
+            <p>
+
+              La variabilidad y las limitaciones de los datos deben
+              permanecer visibles en lugar de ocultarse tras resultados
+              aparentemente precisos.
+
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <h3>
+              Privacidad
+            </h3>
+
+            <p>
+
+              Los experimentos utilizarán datos simulados, anonimizados o
+              procedentes de datasets públicos adecuados. No se publicará
+              información identificable de pacientes.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           08 · FUTURE
+      ================================================== -->
+
+      <section id="future">
+
+        <p class="section-label">
+          08
+        </p>
+
+        <h2>
+          Desarrollo futuro
+        </h2>
+
+        <p>
+
+          Este proyecto evolucionará desde pequeños ejercicios de análisis
+          y visualización hacia problemas progresivamente más complejos.
+
+        </p>
+
+        <p>
+
+          Entre las futuras líneas de trabajo se encuentran el análisis de
+          señales fisiológicas, datos longitudinales, neuroimagen y modelos
+          computacionales aplicados a salud cerebral.
+
+        </p>
+
+        <p>
+
+          A largo plazo, me interesa especialmente explorar cómo integrar
+          diferentes modalidades de información para estudiar el cambio
+          cognitivo y neurológico manteniendo la interpretabilidad de los
+          resultados.
+
+        </p>
+
+      </section>
+
+
+    </main>
+
+  </div>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <p>
+        © 2026 Carolina Sánchez Girona
+      </p>
+
+      <a href="../projects.html">
+        Volver a Proyectos
+      </a>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
