@@ -2245,3 +2245,43 @@ font-size:clamp(3rem,15vw,4.8rem);
 }
 
 }
+/* =======================================================
+   LANGUAGE LINKS
+======================================================= */
+
+.language-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: 24px;
+  flex-shrink: 0;
+
+  font-family: "Courier New", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.language-link a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.language-link a:hover {
+  color: var(--accent);
+}
+
+.language-link .current-language {
+  color: var(--accent);
+}
+
+.language-link > span:not(.current-language) {
+  color: var(--border);
+}
+
+@media (max-width: 720px) {
+  .language-link {
+    margin-left: 0;
+  }
+}
