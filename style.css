@@ -3478,3 +3478,285 @@ a:focus-visible {
   }
 
 }
+/* =========================================================
+   ABOUT PAGE · AJUSTE HERO + FOTO
+   válido para ES y EN
+   ========================================================= */
+
+.about-page .about-page-hero {
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+
+.about-page .about-page-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
+  gap: 56px;
+  align-items: center;
+}
+
+
+/* ---------------------------------------------------------
+   TEXTO
+   --------------------------------------------------------- */
+
+.about-page .about-page-intro {
+  max-width: 680px;
+}
+
+.about-page .about-page-intro .eyebrow {
+  margin-bottom: 18px;
+}
+
+.about-page .about-page-intro h1 {
+  max-width: 680px;
+  margin: 0;
+  font-size: clamp(2.9rem, 3.8vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.about-page .about-page-intro h1 span {
+  display: block;
+  margin-top: 0.06em;
+}
+
+.about-page .about-page-accent {
+  width: 84px;
+  height: 4px;
+  margin: 24px 0 24px;
+  border-radius: 999px;
+}
+
+.about-page .about-page-lead {
+  max-width: 600px;
+  font-size: 1.04rem;
+  line-height: 1.68;
+}
+
+.about-page .about-page-copy {
+  max-width: 600px;
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+
+/* ---------------------------------------------------------
+   FOTO · tratamiento más limpio y profesional
+   --------------------------------------------------------- */
+
+.about-page .about-page-photo {
+  position: relative;
+  min-height: 430px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+/* fondo suave detrás de la foto */
+.about-page .about-page-photo-bg {
+  position: absolute;
+  top: 28px;
+  right: 12px;
+  width: 88%;
+  height: 88%;
+  border-radius: 36px;
+  z-index: -2;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 184, 166, 0.10),
+      rgba(124, 58, 237, 0.12)
+    );
+}
+
+/* quitamos la forma rara inferior */
+.about-page .about-page-photo::before,
+.about-page .about-page-photo::after {
+  content: none;
+}
+
+/* la foto pasa a una card elegante */
+.about-page .about-page-photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(100%, 420px);
+  height: 470px;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 8px solid #ffffff;
+  box-shadow: 0 22px 55px rgba(23, 32, 38, 0.12);
+}
+
+/* decoración mucho más discreta */
+.about-page .about-page-photo-network {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.about-page .network-dot {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.about-page .network-dot::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  height: 1px;
+  width: 72px;
+  opacity: 0.45;
+}
+
+.about-page .network-dot-1 {
+  left: 2%;
+  top: 34%;
+  background: #14b8a6;
+}
+
+.about-page .network-dot-1::before {
+  background: linear-gradient(90deg, rgba(20, 184, 166, 0.32), transparent);
+  transform: rotate(-28deg);
+  transform-origin: left center;
+}
+
+.about-page .network-dot-2 {
+  right: 4%;
+  top: 20%;
+  background: #7c3aed;
+}
+
+.about-page .network-dot-2::before {
+  width: 88px;
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.28), transparent);
+  transform: rotate(145deg);
+  transform-origin: left center;
+}
+
+.about-page .network-dot-3 {
+  right: 0;
+  top: 56%;
+  background: #14b8a6;
+}
+
+.about-page .network-dot-3::before {
+  width: 60px;
+  background: linear-gradient(90deg, rgba(20, 184, 166, 0.25), transparent);
+  transform: rotate(195deg);
+  transform-origin: left center;
+}
+
+.about-page .network-dot-4 {
+  right: 22%;
+  bottom: 15%;
+  background: #f97360;
+}
+
+.about-page .network-dot-4::before {
+  width: 54px;
+  background: linear-gradient(90deg, rgba(249, 115, 96, 0.22), transparent);
+  transform: rotate(0deg);
+  transform-origin: left center;
+}
+
+
+/* ---------------------------------------------------------
+   ÁREAS
+   --------------------------------------------------------- */
+
+.about-page .about-page-areas {
+  padding-top: 34px;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  .about-page .about-page-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.82fr);
+    gap: 40px;
+  }
+
+  .about-page .about-page-intro h1 {
+    font-size: clamp(2.8rem, 4.9vw, 4rem);
+  }
+
+  .about-page .about-page-photo img {
+    width: min(100%, 390px);
+    height: 440px;
+  }
+}
+
+@media (max-width: 850px) {
+  .about-page .about-page-hero {
+    padding-top: 54px;
+    padding-bottom: 52px;
+  }
+
+  .about-page .about-page-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-page .about-page-intro {
+    max-width: 100%;
+  }
+
+  .about-page .about-page-intro h1 {
+    max-width: 100%;
+    font-size: clamp(2.8rem, 8vw, 3.8rem);
+  }
+
+  .about-page .about-page-photo {
+    max-width: 460px;
+    min-height: 420px;
+    margin-inline: auto;
+  }
+
+  .about-page .about-page-photo img {
+    width: min(100%, 380px);
+    height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-page .about-page-intro h1 {
+    font-size: clamp(2.45rem, 12vw, 3.35rem);
+    line-height: 1.02;
+  }
+
+  .about-page .about-page-photo {
+    min-height: 360px;
+  }
+
+  .about-page .about-page-photo-bg {
+    top: 18px;
+    right: 8px;
+    border-radius: 24px;
+  }
+
+  .about-page .about-page-photo img {
+    width: 100%;
+    height: 360px;
+    border-radius: 22px;
+    border-width: 6px;
+  }
+
+  .about-page .network-dot-2,
+  .about-page .network-dot-3 {
+    display: none;
+  }
+}
