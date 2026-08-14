@@ -2324,3 +2324,16 @@ font-size:clamp(3rem,15vw,4.8rem);
     margin-left: 0;
   }
 }
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.site-navigation {
+  margin-left: auto;
+}
+
+.language-link {
+  margin-left: 16px;
+}
