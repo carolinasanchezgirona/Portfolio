@@ -21,25 +21,728 @@
 
   <link rel="stylesheet" href="project.css">
 
+
+  <!-- =====================================================
+       DEMEMORIA VISUAL IDENTITY
+       Coral + violet = clinical / human / neuropsychology
+  ====================================================== -->
+
+  <style>
+
+    body.dememoria-project {
+      --dememoria-coral: #f97360;
+      --dememoria-coral-dark: #d95d4c;
+      --dememoria-coral-soft: #fff2ee;
+
+      --dememoria-violet: #7c3aed;
+      --dememoria-violet-soft: #f5f0ff;
+
+      --dememoria-teal: #14b8a6;
+
+      --dememoria-text: #172026;
+      --dememoria-secondary: #626e75;
+      --dememoria-border: #dce3e6;
+
+      background: #ffffff;
+      color: var(--dememoria-text);
+    }
+
+
+    /* =====================================================
+       HEADER
+    ====================================================== */
+
+    body.dememoria-project .project-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+
+      border-bottom:
+        1px solid rgba(220, 227, 230, 0.85);
+
+      background:
+        rgba(255, 255, 255, 0.94);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+
+    body.dememoria-project .project-header-inner {
+      display: flex;
+      min-height: 76px;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+
+    body.dememoria-project .project-brand {
+      color: var(--dememoria-text);
+
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+
+    body.dememoria-project .project-nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+
+      margin-left: auto;
+    }
+
+
+    body.dememoria-project .project-nav a {
+      color: var(--dememoria-secondary);
+
+      font-size: 0.86rem;
+      text-decoration: none;
+
+      transition: color 0.18s ease;
+    }
+
+
+    body.dememoria-project .project-nav a:hover {
+      color: var(--dememoria-coral);
+    }
+
+
+    body.dememoria-project .language-link {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      font-family: "Courier New", monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+
+    body.dememoria-project .language-link a {
+      color: var(--dememoria-secondary);
+      text-decoration: none;
+    }
+
+
+    body.dememoria-project .language-link .current-language {
+      color: var(--dememoria-violet);
+    }
+
+
+    /* =====================================================
+       SHARED CONTAINER
+    ====================================================== */
+
+    body.dememoria-project .project-container {
+      width: min(
+        calc(100% - 56px),
+        1180px
+      );
+
+      margin-inline: auto;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    body.dememoria-project .project-hero {
+      position: relative;
+      overflow: hidden;
+
+      padding: 120px 0 105px;
+
+      background:
+        radial-gradient(
+          circle at 87% 20%,
+          rgba(124, 58, 237, 0.14),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 70% 82%,
+          rgba(249, 115, 96, 0.12),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #ffffff 0%,
+          var(--dememoria-coral-soft) 52%,
+          var(--dememoria-violet-soft) 100%
+        );
+    }
+
+
+    body.dememoria-project .project-hero::after {
+      position: absolute;
+
+      right: 7%;
+      bottom: 0;
+
+      width: 190px;
+      height: 5px;
+
+      border-radius: 999px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--dememoria-coral),
+          var(--dememoria-violet),
+          var(--dememoria-teal)
+        );
+
+      content: "";
+    }
+
+
+    body.dememoria-project .project-eyebrow {
+      margin-bottom: 22px;
+
+      color: var(--dememoria-coral);
+
+      font-size: 0.76rem;
+      font-weight: 750;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+
+    body.dememoria-project .project-hero h1 {
+      max-width: 900px;
+
+      margin-bottom: 32px;
+
+      font-size:
+        clamp(4rem, 8vw, 7.6rem);
+
+      font-weight: 500;
+      line-height: 0.95;
+
+      letter-spacing: -0.065em;
+    }
+
+
+    body.dememoria-project .project-lead {
+      max-width: 820px;
+
+      margin-bottom: 25px;
+
+      font-size:
+        clamp(1.25rem, 2.2vw, 1.7rem);
+
+      line-height: 1.5;
+
+      letter-spacing: -0.025em;
+    }
+
+
+    body.dememoria-project .project-summary {
+      max-width: 780px;
+
+      padding-left: 22px;
+
+      border-left:
+        3px solid var(--dememoria-violet);
+
+      color: var(--dememoria-secondary);
+
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       MAIN LAYOUT
+    ====================================================== */
+
+    body.dememoria-project .project-main {
+      padding: 110px 0;
+    }
+
+
+    body.dememoria-project .project-grid {
+      display: grid;
+
+      grid-template-columns:
+        230px minmax(0, 1fr);
+
+      gap: 80px;
+
+      align-items: start;
+    }
+
+
+    /* =====================================================
+       SIDEBAR
+    ====================================================== */
+
+    body.dememoria-project .project-sidebar {
+      position: sticky;
+      top: 110px;
+
+      padding: 26px;
+
+      border:
+        1px solid rgba(249, 115, 96, 0.20);
+
+      border-radius: 16px;
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--dememoria-coral-soft),
+          #ffffff 75%
+        );
+    }
+
+
+    body.dememoria-project .project-sidebar-title {
+      margin-bottom: 18px;
+
+      color: var(--dememoria-violet);
+
+      font-family: "Courier New", monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+
+    body.dememoria-project .project-sidebar nav {
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
+    }
+
+
+    body.dememoria-project .project-sidebar a {
+      color: var(--dememoria-secondary);
+
+      font-size: 0.82rem;
+      line-height: 1.4;
+
+      text-decoration: none;
+
+      transition:
+        color 0.18s ease,
+        padding-left 0.18s ease;
+    }
+
+
+    body.dememoria-project .project-sidebar a:hover {
+      padding-left: 5px;
+
+      color: var(--dememoria-coral);
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ====================================================== */
+
+    body.dememoria-project .project-content {
+      min-width: 0;
+    }
+
+
+    body.dememoria-project .project-section {
+      position: relative;
+
+      margin-bottom: 26px;
+      padding: 42px 40px;
+
+      border:
+        1px solid rgba(23, 32, 38, 0.06);
+
+      border-radius: 18px;
+
+      background: #ffffff;
+
+      transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
+    }
+
+
+    body.dememoria-project
+    .project-section:nth-child(4n + 1) {
+      background:
+        linear-gradient(
+          135deg,
+          var(--dememoria-coral-soft),
+          #ffffff 65%
+        );
+    }
+
+
+    body.dememoria-project
+    .project-section:nth-child(4n + 3) {
+      background:
+        linear-gradient(
+          135deg,
+          var(--dememoria-violet-soft),
+          #ffffff 65%
+        );
+    }
+
+
+    body.dememoria-project .project-section:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 18px 42px
+        rgba(23, 32, 38, 0.06);
+    }
+
+
+    body.dememoria-project .project-number {
+      margin-bottom: 18px;
+
+      color: var(--dememoria-coral);
+
+      font-family: "Courier New", monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+
+      letter-spacing: 0.10em;
+    }
+
+
+    body.dememoria-project .project-section h2 {
+      max-width: 740px;
+
+      margin-bottom: 24px;
+
+      font-size:
+        clamp(2rem, 4vw, 3.5rem);
+
+      font-weight: 500;
+      line-height: 1.08;
+
+      letter-spacing: -0.045em;
+    }
+
+
+    body.dememoria-project
+    .project-section h2::after {
+      display: block;
+
+      width: 46px;
+      height: 3px;
+
+      margin-top: 16px;
+
+      border-radius: 999px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--dememoria-coral),
+          var(--dememoria-violet)
+        );
+
+      content: "";
+    }
+
+
+    body.dememoria-project .project-section p {
+      max-width: 780px;
+
+      margin-bottom: 18px;
+
+      color: var(--dememoria-secondary);
+
+      font-size: 1.01rem;
+      line-height: 1.82;
+    }
+
+
+    body.dememoria-project
+    .project-section p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* =====================================================
+       PRINCIPLE CARDS
+    ====================================================== */
+
+    body.dememoria-project .principles-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+
+      margin-top: 30px;
+    }
+
+
+    body.dememoria-project .principle-card {
+      padding: 26px;
+
+      border-radius: 14px;
+    }
+
+
+    body.dememoria-project
+    .principle-card:nth-child(odd) {
+      background:
+        var(--dememoria-coral-soft);
+    }
+
+
+    body.dememoria-project
+    .principle-card:nth-child(even) {
+      background:
+        var(--dememoria-violet-soft);
+    }
+
+
+    body.dememoria-project .principle-card h3 {
+      margin-bottom: 10px;
+
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+
+    body.dememoria-project
+    .principle-card:nth-child(odd) h3 {
+      color: var(--dememoria-coral-dark);
+    }
+
+
+    body.dememoria-project
+    .principle-card:nth-child(even) h3 {
+      color: var(--dememoria-violet);
+    }
+
+
+    body.dememoria-project
+    .principle-card p {
+      margin: 0;
+
+      font-size: 0.95rem;
+    }
+
+
+    /* =====================================================
+       FUTURE DIRECTION
+    ====================================================== */
+
+    body.dememoria-project
+    #future-direction {
+      border-left:
+        5px solid var(--dememoria-violet);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--dememoria-violet-soft),
+          var(--dememoria-coral-soft)
+        );
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    body.dememoria-project .project-footer {
+      padding: 50px 0;
+
+      border-top:
+        1px solid rgba(23, 32, 38, 0.07);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--dememoria-coral-soft),
+          var(--dememoria-violet-soft)
+        );
+    }
+
+
+    body.dememoria-project .project-footer-inner {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+
+    body.dememoria-project .project-footer p {
+      color: var(--dememoria-secondary);
+
+      font-size: 0.82rem;
+    }
+
+
+    body.dememoria-project .project-footer a {
+      color: var(--dememoria-violet);
+
+      font-size: 0.82rem;
+      font-weight: 700;
+
+      text-decoration:
+        underline var(--dememoria-coral);
+
+      text-underline-offset: 5px;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ====================================================== */
+
+    @media (max-width: 900px) {
+
+      body.dememoria-project
+      .project-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+      }
+
+
+      body.dememoria-project
+      .project-sidebar {
+        position: static;
+      }
+
+
+      body.dememoria-project
+      .project-sidebar nav {
+        display: grid;
+
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+
+    @media (max-width: 680px) {
+
+      body.dememoria-project
+      .project-container {
+        width:
+          calc(100% - 40px);
+      }
+
+
+      body.dememoria-project
+      .project-header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+
+      body.dememoria-project
+      .project-nav {
+        margin-left: 0;
+      }
+
+
+      body.dememoria-project
+      .project-hero {
+        padding: 80px 0 70px;
+      }
+
+
+      body.dememoria-project
+      .project-hero h1 {
+        font-size:
+          clamp(3.5rem, 18vw, 5.5rem);
+      }
+
+
+      body.dememoria-project
+      .project-main {
+        padding: 70px 0;
+      }
+
+
+      body.dememoria-project
+      .project-section {
+        padding: 30px 22px;
+      }
+
+
+      body.dememoria-project
+      .principles-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      body.dememoria-project
+      .project-sidebar nav {
+        grid-template-columns: 1fr;
+      }
+
+
+      body.dememoria-project
+      .project-footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 
 <body class="dememoria-project">
 
+
   <!-- =====================================================
        HEADER
   ====================================================== -->
 
-  <header>
+  <header class="project-header">
 
-    <div class="container header-inner">
+    <div class="project-container project-header-inner">
 
       <a
-        class="brand"
+        class="project-brand"
         href="../index.html"
       >
         Carolina Sánchez Girona
       </a>
+
+
+      <nav
+        class="project-nav"
+        aria-label="Project navigation"
+      >
+
+        <a href="../projects.html">
+          Projects
+        </a>
+
+        <a href="../index.html#contact">
+          Contact
+        </a>
+
+      </nav>
 
 
       <div
@@ -61,684 +764,555 @@
 
       </div>
 
-
-      <a
-        class="back"
-        href="../projects.html"
-      >
-        ← Back to Projects
-      </a>
-
     </div>
 
   </header>
 
 
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
-
-  <section class="container hero">
-
-    <p class="eyebrow">
-      Neuropsychology · Cognitive Health
-    </p>
-
-    <h1>
-      Dememoria
-    </h1>
-
-    <p>
-      A neuropsychology and cognitive health project focused on cognitive
-      assessment, dementia, emotional support and clinically meaningful care.
-    </p>
-
-    <p>
-      Dememoria brings together clinical practice, cognitive intervention,
-      professional education and communication around cognition and brain health.
-    </p>
-
-  </section>
+  <main>
 
 
-  <!-- =====================================================
-       CONTENT
-  ====================================================== -->
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-  <div class="container content">
+    <section class="project-hero">
 
+      <div class="project-container">
 
-    <!-- ===================================================
-         SIDEBAR
-    ==================================================== -->
+        <p class="project-eyebrow">
+          Neuropsychology · Cognitive Health
+        </p>
 
-    <aside class="sidebar">
+        <h1>
+          Dememoria
+        </h1>
 
-      <h3>
-        Contents
-      </h3>
+        <p class="project-lead">
 
-      <nav>
+          A neuropsychology and cognitive health project focused on
+          cognitive assessment, dementia, emotional support and
+          clinically meaningful care.
 
-        <a href="#overview">
-          Overview
-        </a>
+        </p>
 
-        <a href="#origin">
-          Origin
-        </a>
+        <p class="project-summary">
 
-        <a href="#clinical-focus">
-          Clinical focus
-        </a>
+          Dememoria brings together clinical practice, cognitive
+          intervention, professional education and communication
+          around cognition and brain health.
 
-        <a href="#assessment">
-          Assessment
-        </a>
+        </p>
 
-        <a href="#intervention">
-          Intervention
-        </a>
+      </div>
 
-        <a href="#families">
-          Families and care
-        </a>
-
-        <a href="#education">
-          Education
-        </a>
-
-        <a href="#digital">
-          Digital development
-        </a>
-
-        <a href="#principles">
-          Principles
-        </a>
-
-        <a href="#future">
-          Future direction
-        </a>
-
-      </nav>
-
-    </aside>
+    </section>
 
 
-    <!-- ===================================================
+    <!-- =====================================================
          MAIN CONTENT
-    ==================================================== -->
+    ====================================================== -->
 
-    <main class="project-content">
+    <section class="project-main">
 
-
-      <!-- =================================================
-           01 · OVERVIEW
-      ================================================== -->
-
-      <section id="overview">
-
-        <p class="section-label">
-          01
-        </p>
-
-        <h2>
-          Overview
-        </h2>
-
-        <p>
-          Dememoria is a professional project centred on neuropsychology,
-          cognitive health and the clinical realities of cognitive decline.
-        </p>
-
-        <p>
-          It was developed from direct clinical experience with older adults,
-          people living with cognitive impairment and dementia, and their
-          families.
-        </p>
-
-        <p>
-          The project combines assessment, intervention, emotional care and
-          communication with a strong emphasis on clinical usefulness,
-          individual functioning and person-centred care.
-        </p>
-
-      </section>
+      <div class="project-container project-grid">
 
 
-      <!-- =================================================
-           02 · ORIGIN
-      ================================================== -->
+        <!-- SIDEBAR -->
 
-      <section id="origin">
+        <aside class="project-sidebar">
 
-        <p class="section-label">
-          02
-        </p>
+          <p class="project-sidebar-title">
+            Dememoria
+          </p>
 
-        <h2>
-          Origin
-        </h2>
+          <nav aria-label="Dememoria sections">
 
-        <p>
-          Dememoria emerged from professional work in neuropsychology,
-          cognitive assessment and dementia care.
-        </p>
+            <a href="#overview">
+              01 · Overview
+            </a>
 
-        <p>
-          Clinical practice repeatedly highlighted the same issue:
-          cognitive difficulties are rarely experienced as isolated test
-          scores.
-        </p>
+            <a href="#origin">
+              02 · Origin
+            </a>
 
-        <p>
-          Memory changes, loss of autonomy, emotional adjustment,
-          uncertainty and family stress are often deeply interconnected.
-        </p>
+            <a href="#clinical-focus">
+              03 · Clinical focus
+            </a>
 
-        <p>
-          Dememoria was developed to approach cognitive health from this
-          broader clinical perspective.
-        </p>
+            <a href="#assessment">
+              04 · Assessment
+            </a>
 
-      </section>
+            <a href="#intervention">
+              05 · Intervention
+            </a>
 
+            <a href="#families">
+              06 · Families and care
+            </a>
 
-      <!-- =================================================
-           03 · CLINICAL FOCUS
-      ================================================== -->
+            <a href="#education">
+              07 · Education
+            </a>
 
-      <section id="clinical-focus">
+            <a href="#digital-development">
+              08 · Digital development
+            </a>
 
-        <p class="section-label">
-          03
-        </p>
+            <a href="#principles">
+              09 · Principles
+            </a>
 
-        <h2>
-          Clinical focus
-        </h2>
+            <a href="#future-direction">
+              10 · Future direction
+            </a>
 
-        <p>
-          The clinical perspective behind Dememoria integrates cognitive,
-          emotional, functional and contextual information.
-        </p>
+          </nav>
+
+        </aside>
 
 
-        <div class="project-list">
+        <!-- CONTENT -->
 
-          <article>
+        <div class="project-content">
 
-            <h3>
-              Cognition
-            </h3>
 
-            <p>
-              Memory, attention, executive functions, language,
-              visuospatial abilities and other cognitive domains.
+          <!-- 01 -->
+
+          <section
+            class="project-section"
+            id="overview"
+          >
+
+            <p class="project-number">
+              01
             </p>
 
-          </article>
-
-
-          <article>
-
-            <h3>
-              Functioning
-            </h3>
+            <h2>
+              Overview
+            </h2>
 
             <p>
-              The impact of cognitive change on autonomy, routines,
-              decision-making and everyday activities.
+
+              Dememoria is a professional project developed around
+              neuropsychology, cognition and cognitive health.
+
             </p>
-
-          </article>
-
-
-          <article>
-
-            <h3>
-              Emotional health
-            </h3>
 
             <p>
-              Anxiety, grief, fear, adjustment and the emotional meaning
-              associated with cognitive change.
+
+              Its purpose is to connect rigorous clinical assessment
+              with meaningful intervention, communication and support
+              for people experiencing cognitive change and for the
+              families involved in their care.
+
             </p>
 
-          </article>
+          </section>
 
 
-          <article>
+          <!-- 02 -->
 
-            <h3>
-              Context
-            </h3>
+          <section
+            class="project-section"
+            id="origin"
+          >
+
+            <p class="project-number">
+              02
+            </p>
+
+            <h2>
+              Origin
+            </h2>
 
             <p>
-              Family dynamics, support networks, living environment and
-              individual care needs.
+
+              Dememoria emerged from my professional experience in
+              neuropsychology, particularly in cognitive assessment,
+              dementia and work with older adults.
+
             </p>
 
-          </article>
+            <p>
+
+              Clinical practice repeatedly showed me that cognitive
+              difficulties cannot be understood through isolated test
+              scores. Their meaning depends on the person's history,
+              environment, daily functioning, emotional experience and
+              support network.
+
+            </p>
+
+          </section>
+
+
+          <!-- 03 -->
+
+          <section
+            class="project-section"
+            id="clinical-focus"
+          >
+
+            <p class="project-number">
+              03
+            </p>
+
+            <h2>
+              Clinical focus
+            </h2>
+
+            <p>
+
+              The clinical foundation of Dememoria is centred on the
+              person rather than on a diagnosis alone.
+
+            </p>
+
+            <p>
+
+              Cognitive symptoms are considered together with emotional
+              state, functional changes, family context and the
+              practical demands of everyday life.
+
+            </p>
+
+          </section>
+
+
+          <!-- 04 -->
+
+          <section
+            class="project-section"
+            id="assessment"
+          >
+
+            <p class="project-number">
+              04
+            </p>
+
+            <h2>
+              Neuropsychological assessment
+            </h2>
+
+            <p>
+
+              Neuropsychological assessment provides structured
+              information about cognitive functioning, but its value
+              comes from clinical interpretation.
+
+            </p>
+
+            <p>
+
+              Dememoria approaches assessment as a process that
+              integrates cognitive performance, clinical history,
+              functional information and observation in order to
+              understand what a cognitive profile means in the person's
+              actual life.
+
+            </p>
+
+          </section>
+
+
+          <!-- 05 -->
+
+          <section
+            class="project-section"
+            id="intervention"
+          >
+
+            <p class="project-number">
+              05
+            </p>
+
+            <h2>
+              Cognitive and psychological intervention
+            </h2>
+
+            <p>
+
+              Intervention is adapted to the person's cognitive
+              abilities, difficulties, emotional needs and everyday
+              context.
+
+            </p>
+
+            <p>
+
+              The objective is not simply to complete cognitive
+              exercises, but to support autonomy, participation,
+              confidence and meaningful functioning whenever possible.
+
+            </p>
+
+          </section>
+
+
+          <!-- 06 -->
+
+          <section
+            class="project-section"
+            id="families"
+          >
+
+            <p class="project-number">
+              06
+            </p>
+
+            <h2>
+              Families and care
+            </h2>
+
+            <p>
+
+              Cognitive change affects more than the person experiencing
+              it. Families frequently need information, emotional
+              support and practical guidance as roles and daily routines
+              change.
+
+            </p>
+
+            <p>
+
+              For this reason, family work and communication are an
+              important part of the Dememoria approach.
+
+            </p>
+
+          </section>
+
+
+          <!-- 07 -->
+
+          <section
+            class="project-section"
+            id="education"
+          >
+
+            <p class="project-number">
+              07
+            </p>
+
+            <h2>
+              Education and communication
+            </h2>
+
+            <p>
+
+              Dememoria also extends beyond individual clinical work
+              through educational resources and communication about
+              cognition, dementia, neuropsychology and brain health.
+
+            </p>
+
+            <p>
+
+              Translating clinical and scientific knowledge into
+              understandable information is part of improving how people
+              navigate cognitive health.
+
+            </p>
+
+          </section>
+
+
+          <!-- 08 -->
+
+          <section
+            class="project-section"
+            id="digital-development"
+          >
+
+            <p class="project-number">
+              08
+            </p>
+
+            <h2>
+              Digital development
+            </h2>
+
+            <p>
+
+              As my work increasingly connects neuropsychology with
+              Biomedical Engineering, data and technology, Dememoria
+              also provides a clinical reference point for digital
+              development.
+
+            </p>
+
+            <p>
+
+              The central question remains the same: whether a new tool,
+              platform or technological approach genuinely responds to a
+              meaningful cognitive or clinical need.
+
+            </p>
+
+          </section>
+
+
+          <!-- 09 -->
+
+          <section
+            class="project-section"
+            id="principles"
+          >
+
+            <p class="project-number">
+              09
+            </p>
+
+            <h2>
+              Principles
+            </h2>
+
+
+            <div class="principles-grid">
+
+              <article class="principle-card">
+
+                <h3>
+                  Clinical meaning
+                </h3>
+
+                <p>
+
+                  Cognitive information should always be interpreted
+                  within the person's broader clinical and everyday
+                  context.
+
+                </p>
+
+              </article>
+
+
+              <article class="principle-card">
+
+                <h3>
+                  Person-centred care
+                </h3>
+
+                <p>
+
+                  Intervention should respond to individual needs,
+                  abilities, priorities and environments.
+
+                </p>
+
+              </article>
+
+
+              <article class="principle-card">
+
+                <h3>
+                  Responsible practice
+                </h3>
+
+                <p>
+
+                  Clinical decisions should remain transparent,
+                  evidence-informed and professionally supervised.
+
+                </p>
+
+              </article>
+
+
+              <article class="principle-card">
+
+                <h3>
+                  Useful technology
+                </h3>
+
+                <p>
+
+                  Technology is valuable when it solves meaningful
+                  problems rather than simply adding complexity.
+
+                </p>
+
+              </article>
+
+            </div>
+
+          </section>
+
+
+          <!-- 10 -->
+
+          <section
+            class="project-section"
+            id="future-direction"
+          >
+
+            <p class="project-number">
+              10
+            </p>
+
+            <h2>
+              Future direction
+            </h2>
+
+            <p>
+
+              Dememoria continues to represent the clinical foundation
+              of my work in cognitive health.
+
+            </p>
+
+            <p>
+
+              Its future is increasingly connected with digital
+              education, structured cognitive resources and
+              interdisciplinary work across neuropsychology,
+              neuroscience and technology.
+
+            </p>
+
+            <p>
+
+              As my technical work develops, Dememoria remains the
+              clinical reference point for evaluating whether emerging
+              tools are meaningful for real people, real environments
+              and real cognitive needs.
+
+            </p>
+
+          </section>
+
 
         </div>
 
-      </section>
+      </div>
 
+    </section>
 
-      <!-- =================================================
-           04 · ASSESSMENT
-      ================================================== -->
-
-      <section id="assessment">
-
-        <p class="section-label">
-          04
-        </p>
-
-        <h2>
-          Neuropsychological assessment
-        </h2>
-
-        <p>
-          Assessment is one of the central components of Dememoria.
-        </p>
-
-        <p>
-          The objective is not simply to obtain cognitive scores, but to
-          understand performance within the person's broader clinical,
-          emotional and functional context.
-        </p>
-
-
-        <div class="project-list">
-
-          <article>
-
-            <h3>
-              Clinical interview
-            </h3>
-
-            <p>
-              Exploration of clinical history, symptoms, daily functioning,
-              emotional state and relevant contextual factors.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <h3>
-              Cognitive testing
-            </h3>
-
-            <p>
-              Selection and interpretation of neuropsychological tools
-              according to the referral question and individual
-              characteristics.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <h3>
-              Functional interpretation
-            </h3>
-
-            <p>
-              Integration of cognitive performance with autonomy,
-              behaviour and everyday functioning.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <h3>
-              Clinical formulation
-            </h3>
-
-            <p>
-              Development of working hypotheses integrating cognitive,
-              emotional, functional and contextual information.
-            </p>
-
-          </article>
-
-        </div>
-
-      </section>
-
-
-      <!-- =================================================
-           05 · INTERVENTION
-      ================================================== -->
-
-      <section id="intervention">
-
-        <p class="section-label">
-          05
-        </p>
-
-        <h2>
-          Cognitive and psychological intervention
-        </h2>
-
-        <p>
-          Dememoria approaches cognitive intervention as more than the
-          completion of cognitive exercises.
-        </p>
-
-        <p>
-          Depending on individual needs, intervention may include cognitive
-          stimulation, compensatory strategies, psychoeducation, emotional
-          support and adaptation to changes in everyday functioning.
-        </p>
-
-
-        <div class="project-list">
-
-          <article>
-
-            <h3>
-              Cognitive stimulation
-            </h3>
-
-            <p>
-              Structured activities designed around relevant cognitive
-              processes, individual abilities and therapeutic objectives.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <h3>
-              Compensatory strategies
-            </h3>
-
-            <p>
-              Routines, environmental supports and practical tools intended
-              to facilitate everyday functioning and autonomy.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <h3>
-              Psychoeducation
-            </h3>
-
-            <p>
-              Clear information about cognitive change, dementia,
-              assessment and realistic expectations.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <h3>
-              Emotional support
-            </h3>
-
-            <p>
-              Psychological intervention when cognitive difficulties are
-              accompanied by anxiety, grief, uncertainty or loss of
-              confidence.
-            </p>
-
-          </article>
-
-        </div>
-
-      </section>
-
-
-      <!-- =================================================
-           06 · FAMILIES
-      ================================================== -->
-
-      <section id="families">
-
-        <p class="section-label">
-          06
-        </p>
-
-        <h2>
-          Families and care
-        </h2>
-
-        <p>
-          Cognitive decline affects more than one person.
-        </p>
-
-        <p>
-          Families frequently need information, emotional support and
-          practical strategies for understanding behavioural changes,
-          communicating effectively and adapting care.
-        </p>
-
-        <p>
-          Dememoria therefore considers family support part of the wider
-          clinical context rather than a secondary component of care.
-        </p>
-
-      </section>
-
-
-      <!-- =================================================
-           07 · EDUCATION
-      ================================================== -->
-
-      <section id="education">
-
-        <p class="section-label">
-          07
-        </p>
-
-        <h2>
-          Education and communication
-        </h2>
-
-        <p>
-          Another dimension of Dememoria involves translating
-          neuropsychological knowledge into clear, rigorous and useful
-          information.
-        </p>
-
-        <p>
-          Cognitive health and dementia are frequently surrounded by fear,
-          misinformation and overly simplistic messages.
-        </p>
-
-        <p>
-          Professional communication can help people understand symptoms,
-          assessment, cognitive change and dementia without creating false
-          certainty or unnecessary alarm.
-        </p>
-
-      </section>
-
-
-      <!-- =================================================
-           08 · DIGITAL DEVELOPMENT
-      ================================================== -->
-
-      <section id="digital">
-
-        <p class="section-label">
-          08
-        </p>
-
-        <h2>
-          Digital development
-        </h2>
-
-        <p>
-          Dememoria has progressively expanded beyond direct clinical care
-          into digital content, educational materials and professional
-          resources.
-        </p>
-
-        <p>
-          This digital dimension creates a bridge between clinical
-          experience and more scalable forms of knowledge dissemination.
-        </p>
-
-        <p>
-          It has also contributed to the conceptual foundation of later
-          projects exploring the intersection between neuropsychology,
-          cognitive health and technology.
-        </p>
-
-      </section>
-
-
-      <!-- =================================================
-           09 · PRINCIPLES
-      ================================================== -->
-
-      <section id="principles">
-
-        <p class="section-label">
-          09
-        </p>
-
-        <h2>
-          Principles
-        </h2>
-
-
-        <div class="project-list">
-
-          <article>
-
-            <h3>
-              Person-centred
-            </h3>
-
-            <p>
-              Cognitive difficulties should be understood in relation to
-              the person, their history and their everyday functioning,
-              rather than through diagnosis alone.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <h3>
-              Clinically grounded
-            </h3>
-
-            <p>
-              Assessment and intervention should remain connected to
-              observed functioning, clinical reasoning and realistic goals.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <h3>
-              Clear
-            </h3>
-
-            <p>
-              Complex neuropsychological information should be communicated
-              clearly without sacrificing scientific rigour.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <h3>
-              Ethical
-            </h3>
-
-            <p>
-              Privacy, dignity, informed decision-making and professional
-              responsibility remain central throughout the project.
-            </p>
-
-          </article>
-
-        </div>
-
-      </section>
-
-
-      <!-- =================================================
-           10 · FUTURE
-      ================================================== -->
-
-      <section id="future">
-
-        <p class="section-label">
-          10
-        </p>
-
-        <h2>
-          Future direction
-        </h2>
-
-        <p>
-          Dememoria continues to represent the clinical foundation of my
-          work in cognitive health.
-        </p>
-
-        <p>
-          Its future development is increasingly connected with digital
-          education, structured cognitive resources and interdisciplinary
-          work across neuropsychology, neuroscience and technology.
-        </p>
-
-        <p>
-          The project also provides a clinical reference point for
-          evaluating whether emerging technologies remain meaningful for
-          real people, real environments and real cognitive needs.
-        </p>
-
-      </section>
-
-
-    </main>
-
-  </div>
+  </main>
 
 
   <!-- =====================================================
        FOOTER
   ====================================================== -->
 
-  <footer>
+  <footer class="project-footer">
 
-    <div class="container footer-inner">
+    <div class="project-container project-footer-inner">
 
       <p>
-        © 2026 Carolina Sánchez Girona
+        © 2026 Carolina Sánchez Girona · Dememoria
       </p>
 
       <a href="../projects.html">
-        Back to Projects
+        Back to projects ↑
       </a>
 
     </div>
 
   </footer>
+
 
 </body>
 
