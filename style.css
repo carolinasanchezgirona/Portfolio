@@ -3295,3 +3295,186 @@ a:focus-visible {
   }
 
 }
+/* =======================================================
+   WRITING PAGE · COLOUR SYSTEM
+   Editorial continuity with the homepage writing section
+======================================================= */
+
+
+/* -------------------------------------------------------
+   HERO
+------------------------------------------------------- */
+
+.writing-page-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 84% 18%,
+      rgba(124, 58, 237, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 72% 80%,
+      rgba(249, 115, 96, 0.10),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      var(--violet-soft) 50%,
+      var(--coral-soft) 100%
+    );
+}
+
+.writing-page-hero::after {
+  position: absolute;
+  right: 7%;
+  bottom: 0;
+  width: 175px;
+  height: 5px;
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      90deg,
+      var(--violet),
+      var(--coral),
+      var(--teal)
+    );
+  content: "";
+}
+
+.writing-page-hero .eyebrow {
+  color: var(--violet);
+}
+
+.writing-page-intro {
+  padding-left: 22px;
+  border-left: 3px solid var(--coral);
+}
+
+
+/* -------------------------------------------------------
+   FEATURED ARTICLE
+------------------------------------------------------- */
+
+.writing-page-hero + .section .featured-writing {
+  border-left-color: var(--violet);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--violet-soft),
+      var(--coral-soft) 100%
+    );
+}
+
+.writing-page-hero + .section
+.featured-writing .writing-category {
+  color: var(--violet);
+}
+
+.writing-page-hero + .section
+.featured-writing {
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+.writing-page-hero + .section
+.featured-writing:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 20px 48px rgba(23, 32, 38, 0.09);
+}
+
+
+/* -------------------------------------------------------
+   ARTICLE / WRITING LIST
+------------------------------------------------------- */
+
+.writing-link {
+  position: relative;
+}
+
+.writing-link::before {
+  position: absolute;
+  top: 50%;
+  left: -18px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--coral);
+  content: "";
+  opacity: 0;
+  transform: translateY(-50%);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.writing-link:hover::before {
+  opacity: 1;
+  transform:
+    translateY(-50%)
+    translateX(4px);
+}
+
+
+/* -------------------------------------------------------
+   WRITING PRINCIPLES / SUPPORTING CARDS
+------------------------------------------------------- */
+
+.writing-principles article:nth-child(4n + 1) {
+  background: var(--violet-soft);
+}
+
+.writing-principles article:nth-child(4n + 2) {
+  background: var(--coral-soft);
+}
+
+.writing-principles article:nth-child(4n + 3) {
+  background: var(--teal-soft);
+}
+
+.writing-principles article:nth-child(4n + 4) {
+  background: var(--blue-soft);
+}
+
+.writing-principles article:nth-child(4n + 1)
+.writing-principle-number {
+  color: var(--violet);
+}
+
+.writing-principles article:nth-child(4n + 2)
+.writing-principle-number {
+  color: var(--coral);
+}
+
+.writing-principles article:nth-child(4n + 3)
+.writing-principle-number {
+  color: var(--teal);
+}
+
+.writing-principles article:nth-child(4n + 4)
+.writing-principle-number {
+  color: var(--blue);
+}
+
+
+/* -------------------------------------------------------
+   MOBILE
+------------------------------------------------------- */
+
+@media (max-width: 640px) {
+
+  .writing-page-intro {
+    padding-left: 16px;
+  }
+
+  .writing-link::before {
+    display: none;
+  }
+
+}
