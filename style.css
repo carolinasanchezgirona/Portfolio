@@ -19,6 +19,22 @@
   --accent-vivid-dark: #ca5548;
   --accent-vivid-soft: #f7d8d3;
 
+  /* Expanded accent palette */
+  --blue: #3b82f6;
+  --blue-soft: #eef5ff;
+
+  --teal: #14b8a6;
+  --teal-soft: #ecfdf9;
+
+  --violet: #7c3aed;
+  --violet-soft: #f5f0ff;
+
+  --coral: #f97360;
+  --coral-soft: #fff2ee;
+
+  --sage: #6faf8f;
+  --sage-soft: #eef7f1;
+
   --border: #dce3e6;
   --border-dark: #40545d;
 
@@ -2245,6 +2261,7 @@ font-size:clamp(3rem,15vw,4.8rem);
 }
 
 }
+
 /* =======================================================
    LANGUAGE LINKS
 ======================================================= */
@@ -2253,47 +2270,7 @@ font-size:clamp(3rem,15vw,4.8rem);
   display: flex;
   align-items: center;
   gap: 7px;
-  margin-left: 24px;
-  flex-shrink: 0;
-
-  font-family: "Courier New", monospace;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.language-link a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.language-link a:hover {
-  color: var(--accent);
-}
-
-.language-link .current-language {
-  color: var(--accent);
-}
-
-.language-link > span:not(.current-language) {
-  color: var(--border);
-}
-
-@media (max-width: 720px) {
-  .language-link {
-    margin-left: 0;
-  }
-}
-/* =======================================================
-   LANGUAGE LINKS
-======================================================= */
-
-.language-link {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-left: 24px;
+  margin-left: 16px;
   flex-shrink: 0;
   font-family: "Courier New", monospace;
   font-size: 0.72rem;
@@ -2308,32 +2285,473 @@ font-size:clamp(3rem,15vw,4.8rem);
 }
 
 .language-link a:hover {
-  color: var(--accent);
+  color: var(--violet);
 }
 
 .language-link .current-language {
-  color: var(--accent);
+  color: var(--violet);
 }
 
 .language-link > span:not(.current-language) {
   color: var(--border);
-}
-
-@media (max-width: 720px) {
-  .language-link {
-    margin-left: 0;
-  }
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-  gap: 24px;
 }
 
 .site-navigation {
   margin-left: auto;
 }
 
-.language-link {
-  margin-left: 16px;
+@media (max-width: 720px) {
+  .language-link {
+    margin-left: 0;
+  }
+}
+
+
+/* =======================================================
+   VISUAL REFRESH
+   More colour, while keeping the editorial/scientific feel
+======================================================= */
+
+/* Global accents */
+
+.section-number {
+  color: var(--violet);
+}
+
+.eyebrow {
+  color: var(--teal);
+}
+
+.eyebrow-light {
+  color: #7dd3c7;
+}
+
+.button-primary {
+  border-color: var(--violet);
+  background: var(--violet);
+}
+
+.button-primary span {
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  border-color: #6d28d9;
+  background: #6d28d9;
+  box-shadow: 0 14px 34px rgba(124, 58, 237, 0.2);
+}
+
+.text-link,
+.projects-page-link,
+.project-showcase-link {
+  color: var(--violet);
+}
+
+.text-link::after {
+  background: var(--coral);
+}
+
+
+/* Header */
+
+.site-navigation a::after {
+  background: var(--coral);
+}
+
+
+/* Ambient background */
+
+.ambient-orb-one {
+  background:
+    radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.12),
+      rgba(59, 130, 246, 0) 70%
+    );
+}
+
+.ambient-orb-two {
+  background:
+    radial-gradient(
+      circle,
+      rgba(249, 115, 96, 0.1),
+      rgba(249, 115, 96, 0) 72%
+    );
+}
+
+.ambient-orb-three {
+  background:
+    radial-gradient(
+      circle,
+      rgba(20, 184, 166, 0.1),
+      rgba(20, 184, 166, 0) 72%
+    );
+}
+
+
+/* About */
+
+.portrait-frame::after {
+  border-color: var(--coral);
+}
+
+.about-role-line {
+  border-left-color: var(--coral);
+}
+
+.fact-item {
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.fact-item:hover {
+  position: relative;
+  z-index: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(23, 32, 38, 0.08);
+}
+
+.fact-item:nth-child(1) {
+  border-top: 3px solid var(--violet);
+}
+
+.fact-item:nth-child(2) {
+  border-top: 3px solid var(--blue);
+}
+
+.fact-item:nth-child(3) {
+  border-top: 3px solid var(--teal);
+}
+
+.fact-item:nth-child(4) {
+  border-top: 3px solid var(--coral);
+}
+
+.fact-item:nth-child(1) .fact-label {
+  color: var(--violet);
+}
+
+.fact-item:nth-child(2) .fact-label {
+  color: var(--blue);
+}
+
+.fact-item:nth-child(3) .fact-label {
+  color: var(--teal);
+}
+
+.fact-item:nth-child(4) .fact-label {
+  color: var(--coral);
+}
+
+
+/* Research */
+
+.research-section {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(244, 247, 255, 0.97),
+      rgba(246, 251, 250, 0.97)
+    );
+}
+
+.research-card {
+  border-radius: 14px;
+}
+
+.research-card:nth-child(1) {
+  border-top: 4px solid var(--violet);
+}
+
+.research-card:nth-child(2) {
+  border-top: 4px solid var(--blue);
+}
+
+.research-card:nth-child(3) {
+  border-top: 4px solid var(--coral);
+}
+
+.research-card:nth-child(4) {
+  border-top: 4px solid var(--teal);
+}
+
+.research-card:nth-child(1) .research-index,
+.research-card:nth-child(1) .research-category {
+  color: var(--violet);
+}
+
+.research-card:nth-child(2) .research-index,
+.research-card:nth-child(2) .research-category {
+  color: var(--blue);
+}
+
+.research-card:nth-child(3) .research-index,
+.research-card:nth-child(3) .research-category {
+  color: var(--coral);
+}
+
+.research-card:nth-child(4) .research-index,
+.research-card:nth-child(4) .research-category {
+  color: var(--teal);
+}
+
+.research-topics li {
+  border-color: transparent;
+  background: var(--violet-soft);
+}
+
+.research-card:nth-child(2) .research-topics li {
+  background: var(--blue-soft);
+}
+
+.research-card:nth-child(3) .research-topics li {
+  background: var(--coral-soft);
+}
+
+.research-card:nth-child(4) .research-topics li {
+  background: var(--teal-soft);
+}
+
+
+/* Home project showcase */
+
+.project-showcase-item:nth-child(1) .project-showcase-category {
+  color: var(--blue);
+}
+
+.project-showcase-item:nth-child(2) .project-showcase-category {
+  color: var(--violet);
+}
+
+.project-showcase-item:nth-child(3) .project-showcase-category {
+  color: var(--teal);
+}
+
+.project-showcase-item:nth-child(1) .project-showcase-meta span:first-child {
+  color: var(--blue);
+}
+
+.project-showcase-item:nth-child(2) .project-showcase-meta span:first-child {
+  color: var(--violet);
+}
+
+.project-showcase-item:nth-child(3) .project-showcase-meta span:first-child {
+  color: var(--teal);
+}
+
+.project-showcase-tags li {
+  border-color: transparent;
+  background: var(--background-soft);
+}
+
+
+/* Projects page */
+
+.projects-page-card {
+  border-radius: 14px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.projects-page-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
+}
+
+.projects-page-card:nth-child(1) {
+  border-top: 4px solid var(--blue);
+}
+
+.projects-page-card:nth-child(2) {
+  border-top: 4px solid var(--violet);
+}
+
+.projects-page-card:nth-child(3) {
+  border-top: 4px solid var(--teal);
+}
+
+.projects-page-card:nth-child(1) .projects-page-label {
+  color: var(--blue);
+}
+
+.projects-page-card:nth-child(2) .projects-page-label {
+  color: var(--violet);
+}
+
+.projects-page-card:nth-child(3) .projects-page-label {
+  color: var(--teal);
+}
+
+
+/* Featured project / featured writing.
+   This also gives the Writing-page featured article a more editorial card treatment. */
+
+.featured-writing {
+  border: 1px solid rgba(249, 115, 96, 0.24);
+  border-left: 5px solid var(--coral);
+  border-radius: 18px;
+  padding: 42px;
+  background:
+    linear-gradient(
+      135deg,
+      var(--coral-soft),
+      #ffffff 66%
+    );
+  box-shadow: 0 18px 44px rgba(23, 32, 38, 0.055);
+}
+
+.featured-writing .writing-category {
+  color: var(--coral);
+}
+
+
+/* Project philosophy */
+
+.projects-philosophy-grid article:nth-child(1) {
+  background: var(--blue-soft);
+}
+
+.projects-philosophy-grid article:nth-child(2) {
+  background: var(--violet-soft);
+}
+
+.projects-philosophy-grid article:nth-child(3) {
+  background: var(--teal-soft);
+}
+
+.projects-philosophy-grid article:nth-child(1) .projects-philosophy-number {
+  color: var(--blue);
+}
+
+.projects-philosophy-grid article:nth-child(2) .projects-philosophy-number {
+  color: var(--violet);
+}
+
+.projects-philosophy-grid article:nth-child(3) .projects-philosophy-number {
+  color: var(--teal);
+}
+
+
+/* Future work */
+
+.future-project-item > span {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--violet-soft);
+  color: var(--violet);
+}
+
+
+/* Research page */
+
+.research-area-card:nth-child(1) {
+  background: var(--violet-soft);
+}
+
+.research-area-card:nth-child(2) {
+  background: var(--teal-soft);
+}
+
+.research-area-card:nth-child(3) {
+  background: var(--blue-soft);
+}
+
+.research-area-card:nth-child(4) {
+  background: var(--coral-soft);
+}
+
+.research-area-card:nth-child(1) .research-area-label {
+  color: var(--violet);
+}
+
+.research-area-card:nth-child(2) .research-area-label {
+  color: var(--teal);
+}
+
+.research-area-card:nth-child(3) .research-area-label {
+  color: var(--blue);
+}
+
+.research-area-card:nth-child(4) .research-area-label {
+  color: var(--coral);
+}
+
+
+/* Writing */
+
+.writing-section {
+  background:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(124, 58, 237, 0.16),
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 84% 76%,
+      rgba(20, 184, 166, 0.12),
+      transparent 30%
+    ),
+    var(--background-dark);
+}
+
+.writing-link span:last-child {
+  color: #fb8c7c;
+}
+
+
+/* Contact */
+
+.contact-section {
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue-soft),
+      var(--violet-soft) 52%,
+      var(--teal-soft)
+    );
+}
+
+.contact-email {
+  color: var(--violet);
+  text-decoration-color: var(--coral);
+}
+
+
+/* Small visual details */
+
+.timeline-year,
+.interest-number,
+.writing-principle-number,
+.research-question-number,
+.research-development-number,
+.research-principle-number,
+.research-output-type {
+  color: var(--violet);
+}
+
+.research-output-item > a {
+  color: var(--violet);
+}
+
+a:focus-visible {
+  outline-color: var(--coral);
+}
+
+
+/* Responsive adjustments for the coloured featured card */
+
+@media (max-width: 900px) {
+  .featured-writing {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .featured-writing {
+    padding: 24px;
+    border-radius: 14px;
+  }
 }
