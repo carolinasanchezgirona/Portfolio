@@ -155,8 +155,9 @@
     const signer = String(data.get("signer_name") || "").trim();
     if (!state.selected) return showMessage("Selecciona primero una fecha y una hora.", "error");
     if (!name) return showMessage("Escribe tu nombre y apellidos.", "error");
-    if (!email && !phone) return showMessage("Indica un correo electrónico o un teléfono.", "error");
+    if (!email) return showMessage("Escribe tu correo electrónico.", "error");
     if (email && !form.elements.patient_email.checkValidity()) return showMessage("Comprueba que el correo electrónico sea válido.", "error");
+    if (!phone) return showMessage("Escribe tu número de teléfono.", "error");
     if (!data.get("privacy_acknowledged") || !data.get("informed_consent_accepted") || !data.get("cancellation_accepted")) return showMessage("Debes leer y marcar las tres casillas de aceptación.", "error");
     if (!signer) return showMessage("Escribe tu nombre y apellidos en el campo de firma electrónica.", "error");
     if (signer.toLocaleLowerCase("es") !== name.toLocaleLowerCase("es")) return showMessage("La firma debe coincidir con el nombre y apellidos indicados.", "error");
