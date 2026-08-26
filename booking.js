@@ -120,7 +120,11 @@
     els.summary.textContent = "Todavía no has elegido un horario."; els.status.textContent = "Consultando disponibilidad…";
     els.first.hidden = true; els.toggle.hidden = true; els.times.replaceChildren();
     try {
-      const response = await fetch(`${REST_URL}/rpc/get_available_appointment_starts`, { method: "POST", headers, body: JSON.stringify({ p_duration_minutes: state.duration, p_days: 30 }) });
+      const response = await fetch(`${REST_URL}/rpc/get_public_appointment_starts`, {
+        method: "POST",
+        headers,
+        body: "{}"
+      });
       if (!response.ok) throw new Error("No se ha podido consultar la disponibilidad.");
       state.slots = await response.json();
       if (state.slots.length) {
