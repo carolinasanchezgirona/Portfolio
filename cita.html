@@ -20,14 +20,11 @@
   </div></header>
 
   <main class="booking-main">
-    <section class="container booking-intro"><p class="eyebrow">Consulta profesional · Reserva online</p><h1>Pedir cita</h1><p>Elige el tipo de sesión y reserva directamente el horario que mejor te encaje.</p></section>
+    <section class="container booking-intro"><p class="eyebrow">Consulta profesional · Reserva online</p><h1>Pedir cita</h1><p>Consulta la primera cita disponible o abre el calendario para elegir otra fecha.</p></section>
     <section class="container booking-flow" aria-labelledby="booking-heading">
       <div class="booking-panel service-panel">
-        <div class="booking-panel-heading"><span class="booking-step" aria-hidden="true">01</span><div><p class="eyebrow">Tipo de sesión</p><h2 id="booking-heading">¿Qué sesión necesitas?</h2></div></div>
-        <div class="service-options" role="radiogroup" aria-label="Tipo de sesión">
-          <label class="service-option"><input type="radio" name="service" value="30" checked><span><strong>Sesión breve</strong><small>30 minutos</small><b>40 €</b></span></label>
-          <label class="service-option"><input type="radio" name="service" value="45"><span><strong>Sesión estándar</strong><small>45 minutos</small><b>60 €</b></span></label>
-        </div>
+        <div class="booking-panel-heading"><span class="booking-step" aria-hidden="true">01</span><div><p class="eyebrow">Tipo de sesión</p><h2 id="booking-heading">Sesión profesional</h2></div></div>
+        <div class="service-fixed"><span><strong>Sesión de psicología o neuropsicología</strong><small>60 minutos</small><b>60 €</b></span></div>
       </div>
 
       <div class="booking-panel availability-panel">
@@ -56,12 +53,12 @@
         <div class="acceptances">
           <label class="privacy-check"><input name="privacy_acknowledged" type="checkbox" required><span>Declaro haber leído la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad y protección de datos</a>.</span></label>
           <label class="privacy-check"><input name="informed_consent_accepted" type="checkbox" required><span>He leído y acepto el <a href="consentimiento-informado.html" target="_blank" rel="noopener">consentimiento informado para la intervención psicológica</a>.</span></label>
-          <label class="privacy-check"><input name="cancellation_accepted" type="checkbox" required><span>He leído y acepto la <a href="#cancellation-information">política de cancelación y ausencia</a>, incluido el cobro del 50 % si cancelo con menos de 24 horas de antelación o no asisto.</span></label>
+          <label class="privacy-check"><input name="cancellation_accepted" type="checkbox" required><span>He leído y acepto la <a href="#cancellation-information">política de cancelación y ausencia</a>, incluido el cobro del 50 % de la sesión (30 €) si cancelo con menos de 24 horas de antelación o no asisto.</span></label>
         </div>
         <div class="form-field signature-field"><label for="signer-name">Firma electrónica · escribe tu nombre y apellidos</label><input id="signer-name" name="signer_name" type="text" autocomplete="name" maxlength="120" required><p class="form-help">Al confirmar, esta firma queda asociada a la fecha, la cita y las versiones aceptadas.</p></div>
         <details id="privacy-information" class="privacy-details"><summary>Información básica de privacidad · versión 1.1</summary><p>Responsable: Carolina Sánchez Girona, titular de Dememoria. Finalidad: gestionar la cita y la relación asistencial. Se recogen únicamente datos identificativos, de contacto y de la reserva; no indiques aquí el motivo de consulta. Derechos y contacto: <a href="mailto:contact@carolinasanchezgirona.com">contact@carolinasanchezgirona.com</a>. <a href="privacidad.html" target="_blank" rel="noopener">Consultar el documento completo</a>.</p></details>
         <details id="consent-information" class="privacy-details"><summary>Resumen del consentimiento informado · versión 1.1</summary><p>La intervención psicológica o neuropsicológica requiere participación activa y puede implicar abordar contenidos emocionalmente difíciles. Se explicarán objetivos, técnicas, límites de confidencialidad y alternativas. Puedes formular preguntas y retirar el consentimiento sin perjuicio de la asistencia que corresponda. La atención online no sustituye un servicio de emergencias. <a href="consentimiento-informado.html" target="_blank" rel="noopener">Consultar el documento completo</a>.</p></details>
-        <details id="cancellation-information" class="privacy-details"><summary>Cancelaciones y ausencias · versión 1.0</summary><p>Puedes cancelar o cambiar la cita sin coste avisando con al menos 24 horas. Las cancelaciones con menos de 24 horas y las inasistencias podrán generar el cobro del 50 %: 20 € en sesiones de 30 minutos y 30 € en sesiones de 45 minutos. Las causas justificadas o de fuerza mayor se valorarán individualmente.</p></details>
+        <details id="cancellation-information" class="privacy-details"><summary>Cancelaciones y ausencias · versión 1.1</summary><p>Puedes cancelar o cambiar la cita sin coste avisando con al menos 24 horas. Las cancelaciones con menos de 24 horas y las inasistencias podrán generar el cobro del 50 % de la sesión, equivalente a 30 €. Las causas justificadas o de fuerza mayor se valorarán individualmente.</p></details>
         <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
         <button id="booking-submit" class="button button-primary booking-submit" type="submit" disabled>Confirmar reserva <span aria-hidden="true">→</span></button>
       </form>
