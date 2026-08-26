@@ -1,182 +1,70 @@
-(() => {
-  "use strict";
-  const REST_URL = "https://grgyvdxkjdstdyumdfyg.supabase.co/rest/v1";
-  const KEY = "sb_publishable_b2MRfP0bPti87V2FXCzHGw_Y9vvcbii";
-  const ZONE = "Europe/Madrid";
-  const headers = {
-    apikey: KEY,
-    Authorization: `Bearer ${KEY}`,
-    "Content-Type": "application/json"
-  };
-  const $ = (selector) => document.querySelector(selector);
-  const form = $("#booking-form");
-  if (!form) return;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reserva una sesión de psicología o neuropsicología con Carolina Sánchez Girona.">
+  <title>Pedir cita | Carolina Sánchez Girona</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../booking.css">
+</head>
+<body>
+  <div class="ambient-background" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-one"></div><div class="ambient-orb ambient-orb-two"></div>
+    <div class="ambient-orb ambient-orb-three"></div><div class="ambient-grid"></div>
+  </div>
+  <header class="site-header"><div class="container header-inner">
+    <a class="site-name" href="index.html">Carolina Sánchez Girona</a>
+    <nav class="site-navigation" aria-label="Navegación principal"><a href="about.html">Sobre mí</a><a href="research.html">Investigación</a><a href="projects.html">Proyectos</a><a href="writing.html">Artículos</a><a href="index.html#contact">Contacto</a></nav>
+    <div class="language-link"><span class="current-language">ES</span></div>
+  </div></header>
 
-  const state = { duration: 60, slots: [], selected: null, month: null, selectedDate: null };
-  const els = {
-    status: $("#slots-status"), first: $("#first-available"), toggle: $("#toggle-calendar"), calendar: $("#calendar-section"),
-    title: $("#calendar-title"), grid: $("#calendar-grid"), times: $("#day-times"), prev: $("#calendar-prev"), next: $("#calendar-next"),
-    selected: $("#selected-slot"), summary: $("#selection-summary"), submit: $("#booking-submit"), message: $("#form-message")
-  };
-  const dateFmt = new Intl.DateTimeFormat("es-ES", { weekday: "long", day: "numeric", month: "long", timeZone: ZONE });
-  const timeFmt = new Intl.DateTimeFormat("es-ES", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: ZONE });
-  const monthFmt = new Intl.DateTimeFormat("es-ES", { month: "long", year: "numeric", timeZone: "UTC" });
+  <main class="booking-main">
+    <section class="container booking-intro"><p class="eyebrow">Consulta profesional · Reserva online</p><h1>Pedir cita</h1><p>Consulta la primera cita disponible o abre el calendario para elegir otra fecha.</p></section>
+    <section class="container booking-flow" aria-labelledby="booking-heading">
+      <div class="booking-panel service-panel">
+        <div class="booking-panel-heading"><span class="booking-step" aria-hidden="true">01</span><div><p class="eyebrow">Tipo de sesión</p><h2 id="booking-heading">Sesión profesional</h2></div></div>
+        <div class="service-fixed"><span><strong>Sesión de psicología o neuropsicología</strong><small>60 minutos</small><b>60 €</b></span></div>
+      </div>
 
-  function dateKey(iso) {
-    const parts = new Intl.DateTimeFormat("en-CA", { year: "numeric", month: "2-digit", day: "2-digit", timeZone: ZONE }).formatToParts(new Date(iso));
-    const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
-    return `${values.year}-${values.month}-${values.day}`;
-  }
-  const sentenceCase = (value) => value.charAt(0).toUpperCase() + value.slice(1);
-  const price = () => 60;
-  const formatSlot = (slot) => `${sentenceCase(dateFmt.format(new Date(slot.starts_at)))}, ${timeFmt.format(new Date(slot.starts_at))}–${timeFmt.format(new Date(slot.ends_at))}`;
-  function showMessage(text, type = "") {
-    els.message.textContent = text;
-    els.message.className = `form-message${type ? ` form-message-${type}` : ""}`;
-  }
-  function selectSlot(slot) {
-    state.selected = slot;
-    els.selected.value = slot.starts_at;
-    els.summary.innerHTML = `<strong>${formatSlot(slot)}</strong><span>${state.duration} minutos · ${price()} €</span>`;
-    els.submit.disabled = false;
-    showMessage("");
-    document.querySelectorAll(".time-option, .first-slot-button").forEach((button) => {
-      const selected = button.dataset.startsAt === slot.starts_at;
-      button.classList.toggle("is-selected", selected);
-      button.setAttribute("aria-pressed", String(selected));
-    });
-  }
-  function slotButton(slot, className) {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = className;
-    button.dataset.startsAt = slot.starts_at;
-    button.setAttribute("aria-pressed", "false");
-    button.textContent = className === "time-option" ? timeFmt.format(new Date(slot.starts_at)) : formatSlot(slot);
-    button.addEventListener("click", () => selectSlot(slot));
-    return button;
-  }
-  function renderFirst() {
-    els.first.replaceChildren();
-    if (!state.slots.length) {
-      els.status.textContent = "No hay citas disponibles en los próximos 30 días. Puedes contactar por correo electrónico.";
-      els.first.hidden = true; els.toggle.hidden = true; els.calendar.hidden = true;
-      return;
-    }
-    els.status.textContent = "Primera cita disponible";
-    const label = document.createElement("span");
-    label.textContent = `${state.duration} minutos · ${price()} €`;
-    els.first.append(slotButton(state.slots[0], "first-slot-button"), label);
-    els.first.hidden = false; els.toggle.hidden = false;
-  }
-  function slotsByDate() {
-    return state.slots.reduce((map, slot) => {
-      const key = dateKey(slot.starts_at);
-      if (!map.has(key)) map.set(key, []);
-      map.get(key).push(slot);
-      return map;
-    }, new Map());
-  }
-  function renderTimes(key) {
-    state.selectedDate = key;
-    const daySlots = slotsByDate().get(key) || [];
-    els.times.replaceChildren();
-    const heading = document.createElement("h4");
-    heading.textContent = daySlots.length ? sentenceCase(dateFmt.format(new Date(daySlots[0].starts_at))) : "Sin horarios";
-    const options = document.createElement("div");
-    options.className = "time-options";
-    daySlots.forEach((slot) => options.append(slotButton(slot, "time-option")));
-    els.times.append(heading, options);
-    renderCalendar();
-  }
-  function renderCalendar() {
-    const available = slotsByDate();
-    const year = state.month.getUTCFullYear();
-    const month = state.month.getUTCMonth();
-    const firstWeekday = (new Date(Date.UTC(year, month, 1)).getUTCDay() + 6) % 7;
-    const totalDays = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
-    els.title.textContent = sentenceCase(monthFmt.format(state.month));
-    els.grid.replaceChildren();
-    for (let i = 0; i < firstWeekday; i += 1) {
-      const empty = document.createElement("span"); empty.className = "calendar-empty"; els.grid.append(empty);
-    }
-    for (let day = 1; day <= totalDays; day += 1) {
-      const key = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-      const button = document.createElement("button");
-      button.type = "button"; button.className = "calendar-day"; button.textContent = day; button.disabled = !available.has(key);
-      button.classList.toggle("has-slots", available.has(key)); button.classList.toggle("is-selected", state.selectedDate === key);
-      button.setAttribute("aria-label", available.has(key) ? `${day}, con citas disponibles` : `${day}, sin disponibilidad`);
-      if (available.has(key)) button.addEventListener("click", () => renderTimes(key));
-      els.grid.append(button);
-    }
-    const firstDate = new Date(state.slots[0].starts_at);
-    const lastDate = new Date(state.slots[state.slots.length - 1].starts_at);
-    const firstMonth = new Date(Date.UTC(firstDate.getFullYear(), firstDate.getMonth(), 1));
-    const lastMonth = new Date(Date.UTC(lastDate.getFullYear(), lastDate.getMonth(), 1));
-    els.prev.disabled = state.month <= firstMonth; els.next.disabled = state.month >= lastMonth;
-  }
-  async function loadSlots() {
-    state.selected = null; els.selected.value = ""; els.submit.disabled = true;
-    els.summary.textContent = "Todavía no has elegido un horario."; els.status.textContent = "Consultando disponibilidad…";
-    els.first.hidden = true; els.toggle.hidden = true; els.times.replaceChildren();
-    try {
-      const response = await fetch(`${REST_URL}/rpc/get_available_appointment_starts`, { method: "POST", headers, body: JSON.stringify({ p_duration_minutes: state.duration, p_days: 30 }) });
-      if (!response.ok) throw new Error("No se ha podido consultar la disponibilidad.");
-      state.slots = await response.json();
-      if (state.slots.length) {
-        const first = new Date(state.slots[0].starts_at);
-        state.month = new Date(Date.UTC(first.getFullYear(), first.getMonth(), 1));
-      }
-      renderFirst();
-    } catch (error) {
-      els.status.textContent = "No hemos podido cargar los horarios. Inténtalo de nuevo dentro de unos minutos.";
-      console.error(error);
-    }
-  }
+      <div class="booking-panel availability-panel">
+        <div class="booking-panel-heading"><span class="booking-step" aria-hidden="true">02</span><div><p class="eyebrow">Disponibilidad</p><h2>Elige fecha y hora</h2></div></div>
+        <div id="slots-status" class="booking-status" role="status" aria-live="polite">Consultando disponibilidad…</div>
+        <div id="first-available" class="first-available" hidden></div>
+        <button id="toggle-calendar" class="text-button" type="button" hidden>Elegir otra fecha</button>
+        <div id="calendar-section" class="calendar-section" hidden>
+          <div class="calendar-toolbar"><button id="calendar-prev" class="calendar-nav" type="button" aria-label="Mes anterior">←</button><h3 id="calendar-title"></h3><button id="calendar-next" class="calendar-nav" type="button" aria-label="Mes siguiente">→</button></div>
+          <div class="calendar-weekdays" aria-hidden="true"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+          <div id="calendar-grid" class="calendar-grid" role="grid" aria-label="Calendario de citas"></div>
+          <div id="day-times" class="day-times" aria-live="polite"></div>
+        </div>
+      </div>
 
-  els.toggle.addEventListener("click", () => {
-    els.calendar.hidden = !els.calendar.hidden;
-    els.toggle.textContent = els.calendar.hidden ? "Elegir otra fecha" : "Ocultar calendario";
-    if (!els.calendar.hidden) renderCalendar();
-  });
-  els.prev.addEventListener("click", () => { state.month = new Date(Date.UTC(state.month.getUTCFullYear(), state.month.getUTCMonth() - 1, 1)); renderCalendar(); });
-  els.next.addEventListener("click", () => { state.month = new Date(Date.UTC(state.month.getUTCFullYear(), state.month.getUTCMonth() + 1, 1)); renderCalendar(); });
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const data = new FormData(form);
-    const name = String(data.get("patient_name") || "").trim();
-    const email = String(data.get("patient_email") || "").trim();
-    const phone = String(data.get("patient_phone") || "").trim();
-    const signer = String(data.get("signer_name") || "").trim();
-    if (!state.selected) return showMessage("Selecciona primero una fecha y una hora.", "error");
-    if (!name) return showMessage("Escribe tu nombre y apellidos.", "error");
-    if (!email && !phone) return showMessage("Indica un correo electrónico o un teléfono.", "error");
-    if (email && !form.elements.patient_email.checkValidity()) return showMessage("Comprueba que el correo electrónico sea válido.", "error");
-    if (!data.get("privacy_acknowledged") || !data.get("informed_consent_accepted") || !data.get("cancellation_accepted")) return showMessage("Debes leer y marcar las tres casillas de aceptación.", "error");
-    if (!signer) return showMessage("Escribe tu nombre y apellidos en el campo de firma electrónica.", "error");
-    if (signer.toLocaleLowerCase("es") !== name.toLocaleLowerCase("es")) return showMessage("La firma debe coincidir con el nombre y apellidos indicados.", "error");
-
-    els.submit.disabled = true; els.submit.textContent = "Registrando…";
-    try {
-      const response = await fetch(`${REST_URL}/rpc/create_calendar_booking`, {
-        method: "POST", headers,
-        body: JSON.stringify({ p_starts_at: state.selected.starts_at, p_duration_minutes: state.duration, p_patient_name: name,
-          p_patient_email: email || null, p_patient_phone: phone || null, p_privacy_acknowledged: true,
-          p_cancellation_accepted: true, p_informed_consent_accepted: true, p_signer_name: signer })
-      });
-      if (!response.ok) {
-        const body = await response.json().catch(() => ({}));
-        throw new Error(String(body.message || "").includes("ya no está disponible") ? "Ese horario acaba de reservarse. Elige otro." : "No se ha podido registrar la reserva.");
-      }
-      form.reset(); state.duration = 60;
-      showMessage("Reserva registrada correctamente. Recibirás la confirmación por el canal indicado.", "success");
-      await loadSlots();
-    } catch (error) {
-      showMessage(`${error.message} Inténtalo de nuevo o contacta por correo electrónico.`, "error"); els.submit.disabled = false;
-    } finally {
-      els.submit.innerHTML = 'Confirmar reserva <span aria-hidden="true">→</span>';
-    }
-  });
-  loadSlots();
-})();
+      <form id="booking-form" class="booking-form" novalidate>
+        <div class="booking-panel-heading"><span class="booking-step" aria-hidden="true">03</span><div><p class="eyebrow">Datos y aceptación</p><h2>Completa la reserva</h2></div></div>
+        <input id="selected-slot" name="starts_at" type="hidden">
+        <div id="selection-summary" class="selection-summary">Todavía no has elegido un horario.</div>
+        <div class="form-field"><label for="patient-name">Nombre y apellidos</label><input id="patient-name" name="patient_name" type="text" autocomplete="name" maxlength="120" required></div>
+        <div class="form-grid">
+          <div class="form-field"><label for="patient-email">Correo electrónico</label><input id="patient-email" name="patient_email" type="email" autocomplete="email" maxlength="254"></div>
+          <div class="form-field"><label for="patient-phone">Teléfono</label><input id="patient-phone" name="patient_phone" type="tel" autocomplete="tel" maxlength="30"></div>
+        </div>
+        <p class="form-help">Indica al menos un canal de contacto. No incluyas información clínica ni el motivo de consulta.</p>
+        <div class="acceptances">
+          <label class="privacy-check"><input name="privacy_acknowledged" type="checkbox" required><span>Declaro haber leído la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad y protección de datos</a>.</span></label>
+          <label class="privacy-check"><input name="informed_consent_accepted" type="checkbox" required><span>He leído y acepto el <a href="consentimiento-informado.html" target="_blank" rel="noopener">consentimiento informado para la intervención psicológica</a>.</span></label>
+          <label class="privacy-check"><input name="cancellation_accepted" type="checkbox" required><span>He leído y acepto la <a href="#cancellation-information">política de cancelación y ausencia</a>, incluido el cobro del 50 % de la sesión (30 €) si cancelo con menos de 24 horas de antelación o no asisto.</span></label>
+        </div>
+        <div class="form-field signature-field"><label for="signer-name">Firma electrónica · escribe tu nombre y apellidos</label><input id="signer-name" name="signer_name" type="text" autocomplete="name" maxlength="120" required><p class="form-help">Al confirmar, esta firma queda asociada a la fecha, la cita y los documentos aceptados.</p></div>
+        <details id="privacy-information" class="privacy-details"><summary>Información básica de privacidad</summary><p>Responsable: Carolina Sánchez Girona, titular de Dememoria. Finalidad: gestionar la cita y la relación asistencial. Se recogen únicamente datos identificativos, de contacto y de la reserva; no indiques aquí el motivo de consulta. Derechos y contacto: <a href="mailto:contact@carolinasanchezgirona.com">contact@carolinasanchezgirona.com</a>. <a href="privacidad.html" target="_blank" rel="noopener">Consultar el documento completo</a>.</p></details>
+        <details id="consent-information" class="privacy-details"><summary>Resumen del consentimiento informado</summary><p>La intervención psicológica o neuropsicológica requiere participación activa y puede implicar abordar contenidos emocionalmente difíciles. Se explicarán objetivos, técnicas, límites de confidencialidad y alternativas. Puedes formular preguntas y retirar el consentimiento sin perjuicio de la asistencia que corresponda. La atención online no sustituye un servicio de emergencias. <a href="consentimiento-informado.html" target="_blank" rel="noopener">Consultar el documento completo</a>.</p></details>
+        <details id="cancellation-information" class="privacy-details"><summary>Cancelaciones y ausencias</summary><p>Puedes cancelar o cambiar la cita sin coste avisando con al menos 24 horas. Las cancelaciones con menos de 24 horas y las inasistencias podrán generar el cobro del 50 % de la sesión, equivalente a 30 €. Las causas justificadas o de fuerza mayor se valorarán individualmente.</p></details>
+        <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+        <button id="booking-submit" class="button button-primary booking-submit" type="submit" disabled>Confirmar reserva <span aria-hidden="true">→</span></button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><p>© 2026 Carolina Sánchez Girona</p><a href="index.html#contact">Contacto</a></div></footer>
+  <script src="../booking.js" defer></script>
+</body>
+</html>
