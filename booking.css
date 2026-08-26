@@ -1,6 +1,7 @@
 .booking-main {
   min-height: calc(100vh - 160px);
   padding: 86px 0 120px;
+  overflow-x: clip;
 }
 
 .booking-intro {
@@ -10,10 +11,10 @@
 
 .booking-intro h1 {
   max-width: 760px;
-  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
   font-weight: 500;
-  line-height: 0.94;
-  letter-spacing: -0.065em;
+  line-height: 1;
+  letter-spacing: -0.05em;
 }
 
 .booking-intro > p:last-child {
@@ -185,6 +186,27 @@
 .service-option:hover > span { border-color: var(--accent); transform: translateY(-1px); }
 .service-option input:focus-visible + span { outline: 3px solid rgba(47, 93, 115, 0.24); outline-offset: 2px; }
 .service-option input:checked + span { border-color: var(--accent); background: #edf5f7; box-shadow: inset 4px 0 0 var(--accent); }
+
+.service-fixed > span {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "name price"
+    "duration price";
+  column-gap: 24px;
+  row-gap: 8px;
+  align-items: center;
+  min-height: 116px;
+  border: 1px solid var(--accent);
+  border-radius: 16px;
+  background: #edf5f7;
+  box-shadow: inset 4px 0 0 var(--accent);
+  padding: 18px 20px;
+}
+
+.service-fixed strong { grid-area: name; font-size: 0.98rem; line-height: 1.35; }
+.service-fixed small { grid-area: duration; color: var(--text-secondary); }
+.service-fixed b { grid-area: price; color: var(--accent); font-size: 1.35rem; white-space: nowrap; }
 
 .first-available {
   display: grid;
@@ -381,7 +403,7 @@
   opacity: 0.48;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1120px) {
   .booking-layout {
     grid-template-columns: 1fr;
   }
@@ -397,6 +419,10 @@
 
   .booking-intro {
     margin-bottom: 38px;
+  }
+
+  .booking-intro h1 {
+    font-size: clamp(2.35rem, 13vw, 3.35rem);
   }
 
   .booking-panel,
@@ -423,5 +449,10 @@
 
   .service-options { grid-template-columns: 1fr; }
   .service-option > span { min-height: 105px; }
+  .service-fixed > span {
+    grid-template-columns: 1fr;
+    grid-template-areas: "name" "duration" "price";
+    gap: 7px;
+  }
   .time-options { grid-template-columns: repeat(3, 1fr); }
 }
