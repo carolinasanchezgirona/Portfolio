@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Reserva una cita profesional con Carolina Sánchez Girona. Consulta los horarios disponibles y solicita tu cita online."
+  >
+  <title>Pedir cita | Carolina Sánchez Girona</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../booking.css">
+</head>
+
+<body>
+  <div class="ambient-background" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-one"></div>
+    <div class="ambient-orb ambient-orb-two"></div>
+    <div class="ambient-orb ambient-orb-three"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="index.html">Carolina Sánchez Girona</a>
+
+      <nav class="site-navigation" aria-label="Navegación principal">
+        <a href="about.html">Sobre mí</a>
+        <a href="research.html">Investigación</a>
+        <a href="projects.html">Proyectos</a>
+        <a href="writing.html">Artículos</a>
+        <a href="index.html#contact">Contacto</a>
+      </nav>
+
+      <div class="language-link" aria-label="Idioma de la página">
+        <span class="current-language">ES</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="booking-main">
+    <section class="container booking-intro">
+      <p class="eyebrow">Consulta profesional · Reserva online</p>
+      <h1>Pedir cita</h1>
+      <p>
+        Selecciona uno de los horarios disponibles y deja un canal de contacto.
+        Recibirás la confirmación cuando la solicitud se haya registrado.
+      </p>
+    </section>
+
+    <section class="container booking-layout" aria-labelledby="booking-heading">
+      <div class="booking-panel">
+        <div class="booking-panel-heading">
+          <span class="booking-step" aria-hidden="true">01</span>
+          <div>
+            <p class="eyebrow">Disponibilidad</p>
+            <h2 id="booking-heading">Elige un horario</h2>
+          </div>
+        </div>
+
+        <div id="slots-status" class="booking-status" role="status" aria-live="polite">
+          Consultando horarios disponibles…
+        </div>
+
+        <div id="slots-list" class="slots-list" aria-label="Horarios disponibles"></div>
+      </div>
+
+      <form id="booking-form" class="booking-form" novalidate>
+        <div class="booking-panel-heading">
+          <span class="booking-step" aria-hidden="true">02</span>
+          <div>
+            <p class="eyebrow">Datos de contacto</p>
+            <h2>Completa la reserva</h2>
+          </div>
+        </div>
+
+        <input id="selected-slot" name="slot_id" type="hidden">
+
+        <div class="form-field">
+          <label for="patient-name">Nombre y apellidos</label>
+          <input
+            id="patient-name"
+            name="patient_name"
+            type="text"
+            autocomplete="name"
+            maxlength="120"
+            required
+          >
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="patient-email">Correo electrónico</label>
+            <input
+              id="patient-email"
+              name="patient_email"
+              type="email"
+              autocomplete="email"
+              maxlength="254"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="patient-phone">Teléfono</label>
+            <input
+              id="patient-phone"
+              name="patient_phone"
+              type="tel"
+              autocomplete="tel"
+              maxlength="30"
+            >
+          </div>
+        </div>
+
+        <p class="form-help">Indica al menos un canal de contacto. No incluyas información clínica ni el motivo de consulta.</p>
+
+        <label class="privacy-check" for="privacy-accepted">
+          <input id="privacy-accepted" name="privacy_accepted" type="checkbox" required>
+          <span>
+            He leído la información básica sobre privacidad y acepto que mis datos se utilicen para gestionar esta solicitud de cita.
+          </span>
+        </label>
+
+        <details class="privacy-details">
+          <summary>Información básica sobre privacidad</summary>
+          <p>
+            Responsable: Carolina Sánchez Girona. Finalidad: gestionar la solicitud y contactar contigo en relación con la cita. No se solicita información clínica en este formulario. Puedes ejercer tus derechos escribiendo a
+            <a href="mailto:contact@carolinasanchezgirona.com">contact@carolinasanchezgirona.com</a>.
+          </p>
+        </details>
+
+        <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+
+        <button id="booking-submit" class="button button-primary booking-submit" type="submit" disabled>
+          Confirmar solicitud
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Carolina Sánchez Girona</p>
+      <a href="index.html#contact">Contacto</a>
+    </div>
+  </footer>
+
+  <script src="../booking.js" defer></script>
+</body>
+
+</html>
