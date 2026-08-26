@@ -44,6 +44,11 @@
         <div class="booking-panel-heading"><span class="booking-step" aria-hidden="true">03</span><div><p class="eyebrow">Datos y aceptación</p><h2>Completa la reserva</h2></div></div>
         <input id="selected-slot" name="starts_at" type="hidden">
         <div id="selection-summary" class="selection-summary">Todavía no has elegido un horario.</div>
+        <fieldset class="patient-type-fieldset">
+          <legend>¿Es tu primera visita?</legend>
+          <label class="patient-type-option"><input type="radio" name="patient_type" value="new" checked><span><strong>Es mi primera visita</strong><small>Completaré la documentación necesaria.</small></span></label>
+          <label class="patient-type-option"><input type="radio" name="patient_type" value="existing"><span><strong>Ya soy paciente</strong><small>Quiero programar mi próxima visita.</small></span></label>
+        </fieldset>
         <div class="form-field"><label for="patient-name">Nombre y apellidos</label><input id="patient-name" name="patient_name" type="text" autocomplete="name" maxlength="120" required></div>
         <div class="form-grid">
           <div class="form-field"><label for="patient-email">Correo electrónico</label><input id="patient-email" name="patient_email" type="email" autocomplete="email" maxlength="254" required></div>
@@ -51,13 +56,17 @@
         </div>
         <p class="form-help">Todos los campos son obligatorios. No incluyas información clínica ni el motivo de consulta.</p>
         <div class="acceptances">
-          <label class="privacy-check"><input name="privacy_acknowledged" type="checkbox" required><span>Declaro haber leído la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad y protección de datos</a>.</span></label>
-          <label class="privacy-check"><input name="informed_consent_accepted" type="checkbox" required><span>He leído y acepto el <a href="consentimiento-informado.html" target="_blank" rel="noopener">consentimiento informado para la intervención psicológica</a>.</span></label>
+          <div id="new-patient-documents">
+            <label class="privacy-check"><input name="privacy_acknowledged" type="checkbox" required><span>Declaro haber leído la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad y protección de datos</a>.</span></label>
+            <label class="privacy-check"><input name="informed_consent_accepted" type="checkbox" required><span>He leído y acepto el <a href="consentimiento-informado.html" target="_blank" rel="noopener">consentimiento informado para la intervención psicológica</a>.</span></label>
+          </div>
           <label class="privacy-check"><input name="cancellation_accepted" type="checkbox" required><span>He leído y acepto la <a href="#cancellation-information">política de cancelación y ausencia</a>, incluido el cobro del 50 % de la sesión (30 €) si cancelo con menos de 24 horas de antelación o no asisto.</span></label>
         </div>
-        <div class="form-field signature-field"><label for="signer-name">Firma electrónica · escribe tu nombre y apellidos</label><input id="signer-name" name="signer_name" type="text" autocomplete="name" maxlength="120" required><p class="form-help">Al confirmar, esta firma queda asociada a la fecha, la cita y los documentos aceptados.</p></div>
-        <details id="privacy-information" class="privacy-details"><summary>Información básica de privacidad</summary><p>Responsable: Carolina Sánchez Girona, titular de Dememoria. Finalidad: gestionar la cita y la relación asistencial. Se recogen únicamente datos identificativos, de contacto y de la reserva; no indiques aquí el motivo de consulta. Derechos y contacto: <a href="mailto:contact@carolinasanchezgirona.com">contact@carolinasanchezgirona.com</a>. <a href="privacidad.html" target="_blank" rel="noopener">Consultar el documento completo</a>.</p></details>
-        <details id="consent-information" class="privacy-details"><summary>Resumen del consentimiento informado</summary><p>La intervención psicológica o neuropsicológica requiere participación activa y puede implicar abordar contenidos emocionalmente difíciles. Se explicarán objetivos, técnicas, límites de confidencialidad y alternativas. Puedes formular preguntas y retirar el consentimiento sin perjuicio de la asistencia que corresponda. La atención online no sustituye un servicio de emergencias. <a href="consentimiento-informado.html" target="_blank" rel="noopener">Consultar el documento completo</a>.</p></details>
+        <div id="new-patient-signature" class="form-field signature-field"><label for="signer-name">Firma electrónica · escribe tu nombre y apellidos</label><input id="signer-name" name="signer_name" type="text" autocomplete="name" maxlength="120" required><p class="form-help">Al confirmar, esta firma queda asociada a la fecha, la cita y los documentos aceptados.</p></div>
+        <div id="new-patient-information">
+          <details id="privacy-information" class="privacy-details"><summary>Información básica de privacidad</summary><p>Responsable: Carolina Sánchez Girona, titular de Dememoria. Finalidad: gestionar la cita y la relación asistencial. Se recogen únicamente datos identificativos, de contacto y de la reserva; no indiques aquí el motivo de consulta. Derechos y contacto: <a href="mailto:contact@carolinasanchezgirona.com">contact@carolinasanchezgirona.com</a>. <a href="privacidad.html" target="_blank" rel="noopener">Consultar el documento completo</a>.</p></details>
+          <details id="consent-information" class="privacy-details"><summary>Resumen del consentimiento informado</summary><p>La intervención psicológica o neuropsicológica requiere participación activa y puede implicar abordar contenidos emocionalmente difíciles. Se explicarán objetivos, técnicas, límites de confidencialidad y alternativas. Puedes formular preguntas y retirar el consentimiento sin perjuicio de la asistencia que corresponda. La atención online no sustituye un servicio de emergencias. <a href="consentimiento-informado.html" target="_blank" rel="noopener">Consultar el documento completo</a>.</p></details>
+        </div>
         <details id="cancellation-information" class="privacy-details"><summary>Cancelaciones y ausencias</summary><p>Puedes cancelar o cambiar la cita sin coste avisando con al menos 24 horas. Las cancelaciones con menos de 24 horas y las inasistencias podrán generar el cobro del 50 % de la sesión, equivalente a 30 €. Las causas justificadas o de fuerza mayor se valorarán individualmente.</p></details>
         <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
         <button id="booking-submit" class="button button-primary booking-submit" type="submit" disabled>Confirmar reserva <span aria-hidden="true">→</span></button>
@@ -65,6 +74,6 @@
     </section>
   </main>
   <footer class="site-footer"><div class="container footer-inner"><p>© 2026 Carolina Sánchez Girona</p><a href="index.html#contact">Contacto</a></div></footer>
-  <script src="../booking.js?v=20260826-5" defer></script>
+  <script src="../booking.js?v=20260826-6" defer></script>
 </body>
 </html>
