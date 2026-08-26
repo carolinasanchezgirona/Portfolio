@@ -13,6 +13,7 @@
 
   const $ = (selector) => document.querySelector(selector);
   const form = $("#booking-form");
+
   if (!form) return;
 
   const state = {
@@ -80,6 +81,8 @@
   const sentenceCase = (value) =>
     value.charAt(0).toUpperCase() + value.slice(1);
 
+  const price = () => 60;
+
   const formatSlot = (slot) =>
     `${sentenceCase(dateFmt.format(new Date(slot.starts_at)))}, ` +
     `${timeFmt.format(new Date(slot.starts_at))}–` +
@@ -115,7 +118,7 @@
 
     els.summary.innerHTML =
       `<strong>${formatSlot(slot)}</strong>` +
-      `<span>60 minutos · 60 €</span>`;
+      `<span>${state.duration} minutos · ${price()} €</span>`;
 
     els.submit.disabled = false;
     showMessage("");
@@ -143,6 +146,7 @@
         : formatSlot(slot);
 
     button.addEventListener("click", () => selectSlot(slot));
+
     return button;
   }
 
@@ -163,7 +167,7 @@
     els.status.textContent = "Primera cita disponible";
 
     const label = document.createElement("span");
-    label.textContent = "60 minutos · 60 €";
+    label.textContent = `${state.duration} minutos · ${price()} €`;
 
     els.first.append(
       slotButton(state.slots[0], "first-slot-button"),
@@ -178,9 +182,11 @@
     return state.slots.reduce((map, slot) => {
       const key = dateKey(slot.starts_at);
 
-      if (!map.has(key)) map.set(key, []);
-      map.get(key).push(slot);
+      if (!map.has(key)) {
+        map.set(key, []);
+      }
 
+      map.get(key).push(slot);
       return map;
     }, new Map());
   }
@@ -280,8 +286,10 @@
     state.selected = null;
     els.selected.value = "";
     els.submit.disabled = true;
+
     els.summary.textContent = "Todavía no has elegido un horario.";
     els.status.textContent = "Consultando disponibilidad…";
+
     els.first.hidden = true;
     els.toggle.hidden = true;
     els.times.replaceChildren();
@@ -329,7 +337,9 @@
       ? "Elegir otra fecha"
       : "Ocultar calendario";
 
-    if (!els.calendar.hidden) renderCalendar();
+    if (!els.calendar.hidden) {
+      renderCalendar();
+    }
   });
 
   els.prev.addEventListener("click", () => {
@@ -366,6 +376,158 @@
     event.preventDefault();
 
     const data = new FormData(form);
-    const name = String(data.get("patient_name") || "").trim();
-    const email = String(data.get("patient_email") || "").trim();
-    const phone = String(data.get
+
+    const name =
+      String(data.get("patient_name") || "").trim();
+
+    const email =
+      String(data.get("patient_email") || "").trim();
+
+    const phone =
+      String(data.get("patient_phone") || "").trim();
+
+    const signer =
+      String(data.get("signer_name") || "").trim();
+
+    const patientType =
+      String(data.get("patient_type") || "new");
+
+    const isExisting = patientType === "existing";
+
+    if (!state.selected) {
+      return showMessage(
+        "Selecciona primero una fecha y una hora.",
+        "error"
+      );
+    }
+
+    if (!name) {
+      return showMessage(
+        "Escribe tu nombre y apellidos.",
+        "error"
+      );
+    }
+
+    if (!email) {
+      return showMessage(
+        "Escribe tu correo electrónico.",
+        "error"
+      );
+    }
+
+    if (!form.elements.patient_email.checkValidity()) {
+      return showMessage(
+        "Comprueba que el correo electrónico sea válido.",
+        "error"
+      );
+    }
+
+    if (!phone) {
+      return showMessage(
+        "Escribe tu número de teléfono.",
+        "error"
+      );
+    }
+
+    if (!data.get("cancellation_accepted")) {
+      return showMessage(
+        "Debes aceptar la política de cancelación y ausencia.",
+        "error"
+      );
+    }
+
+    if (
+      !isExisting &&
+      (
+        !data.get("privacy_acknowledged") ||
+        !data.get("informed_consent_accepted")
+      )
+    ) {
+      return showMessage(
+        "Debes leer y aceptar la privacidad y el consentimiento informado.",
+        "error"
+      );
+    }
+
+    if (!isExisting && !signer) {
+      return showMessage(
+        "Escribe tu nombre y apellidos en el campo de firma electrónica.",
+        "error"
+      );
+    }
+
+    if (
+      !isExisting &&
+      signer.toLocaleLowerCase("es") !==
+        name.toLocaleLowerCase("es")
+    ) {
+      return showMessage(
+        "La firma debe coincidir con el nombre y apellidos indicados.",
+        "error"
+      );
+    }
+
+    els.submit.disabled = true;
+    els.submit.textContent = "Registrando…";
+
+    try {
+      const response = await fetch(
+        `${REST_URL}/rpc/create_calendar_booking`,
+        {
+          method: "POST",
+          headers,
+          body: JSON.stringify({
+            p_starts_at: state.selected.starts_at,
+            p_duration_minutes: state.duration,
+            p_patient_name: name,
+            p_patient_email: email,
+            p_patient_phone: phone,
+            p_patient_type: patientType,
+            p_privacy_acknowledged: !isExisting,
+            p_cancellation_accepted: true,
+            p_informed_consent_accepted: !isExisting,
+            p_signer_name: isExisting ? null : signer
+          })
+        }
+      );
+
+      if (!response.ok) {
+        const body = await response.json().catch(() => ({}));
+
+        throw new Error(
+          String(body.message || "").includes(
+            "ya no está disponible"
+          )
+            ? "Ese horario acaba de reservarse. Elige otro."
+            : "No se ha podido registrar la reserva."
+        );
+      }
+
+      form.reset();
+      state.duration = 60;
+
+      showMessage(
+        isExisting
+          ? "Solicitud registrada. El horario queda reservado mientras comprobamos que eres paciente actual."
+          : "Reserva registrada correctamente. Recibirás la confirmación por el canal indicado.",
+        "success"
+      );
+
+      updatePatientType();
+      await loadSlots();
+    } catch (error) {
+      showMessage(
+        `${error.message} Inténtalo de nuevo o contacta por correo electrónico.`,
+        "error"
+      );
+
+      els.submit.disabled = false;
+    } finally {
+      els.submit.innerHTML =
+        'Confirmar reserva <span aria-hidden="true">→</span>';
+    }
+  });
+
+  updatePatientType();
+  loadSlots();
+})();
