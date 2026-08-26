@@ -3,12 +3,16 @@
   const REST_URL = "https://grgyvdxkjdstdyumdfyg.supabase.co/rest/v1";
   const KEY = "sb_publishable_b2MRfP0bPti87V2FXCzHGw_Y9vvcbii";
   const ZONE = "Europe/Madrid";
-  const headers = { apikey: KEY, "Content-Type": "application/json" };
+  const headers = {
+    apikey: KEY,
+    Authorization: `Bearer ${KEY}`,
+    "Content-Type": "application/json"
+  };
   const $ = (selector) => document.querySelector(selector);
   const form = $("#booking-form");
   if (!form) return;
 
-  const state = { duration: 30, slots: [], selected: null, month: null, selectedDate: null };
+  const state = { duration: 60, slots: [], selected: null, month: null, selectedDate: null };
   const els = {
     status: $("#slots-status"), first: $("#first-available"), toggle: $("#toggle-calendar"), calendar: $("#calendar-section"),
     title: $("#calendar-title"), grid: $("#calendar-grid"), times: $("#day-times"), prev: $("#calendar-prev"), next: $("#calendar-next"),
@@ -24,7 +28,7 @@
     return `${values.year}-${values.month}-${values.day}`;
   }
   const sentenceCase = (value) => value.charAt(0).toUpperCase() + value.slice(1);
-  const price = () => state.duration === 30 ? 40 : 60;
+  const price = () => 60;
   const formatSlot = (slot) => `${sentenceCase(dateFmt.format(new Date(slot.starts_at)))}, ${timeFmt.format(new Date(slot.starts_at))}–${timeFmt.format(new Date(slot.ends_at))}`;
   function showMessage(text, type = "") {
     els.message.textContent = text;
@@ -130,9 +134,6 @@
     }
   }
 
-  document.querySelectorAll('input[name="service"]').forEach((input) => input.addEventListener("change", () => {
-    state.duration = Number(input.value); state.selectedDate = null; loadSlots();
-  }));
   els.toggle.addEventListener("click", () => {
     els.calendar.hidden = !els.calendar.hidden;
     els.toggle.textContent = els.calendar.hidden ? "Elegir otra fecha" : "Ocultar calendario";
@@ -168,7 +169,7 @@
         const body = await response.json().catch(() => ({}));
         throw new Error(String(body.message || "").includes("ya no está disponible") ? "Ese horario acaba de reservarse. Elige otro." : "No se ha podido registrar la reserva.");
       }
-      form.reset(); document.querySelector('input[name="service"][value="30"]').checked = true; state.duration = 30;
+      form.reset(); state.duration = 60;
       showMessage("Reserva registrada correctamente. Recibirás la confirmación por el canal indicado.", "success");
       await loadSlots();
     } catch (error) {
