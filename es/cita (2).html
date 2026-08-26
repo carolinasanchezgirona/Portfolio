@@ -46,10 +46,10 @@
         <div id="selection-summary" class="selection-summary">Todavía no has elegido un horario.</div>
         <div class="form-field"><label for="patient-name">Nombre y apellidos</label><input id="patient-name" name="patient_name" type="text" autocomplete="name" maxlength="120" required></div>
         <div class="form-grid">
-          <div class="form-field"><label for="patient-email">Correo electrónico</label><input id="patient-email" name="patient_email" type="email" autocomplete="email" maxlength="254"></div>
-          <div class="form-field"><label for="patient-phone">Teléfono</label><input id="patient-phone" name="patient_phone" type="tel" autocomplete="tel" maxlength="30"></div>
+          <div class="form-field"><label for="patient-email">Correo electrónico</label><input id="patient-email" name="patient_email" type="email" autocomplete="email" maxlength="254" required></div>
+          <div class="form-field"><label for="patient-phone">Teléfono</label><input id="patient-phone" name="patient_phone" type="tel" autocomplete="tel" maxlength="30" required></div>
         </div>
-        <p class="form-help">Indica al menos un canal de contacto. No incluyas información clínica ni el motivo de consulta.</p>
+        <p class="form-help">Todos los campos son obligatorios. No incluyas información clínica ni el motivo de consulta.</p>
         <div class="acceptances">
           <label class="privacy-check"><input name="privacy_acknowledged" type="checkbox" required><span>Declaro haber leído la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad y protección de datos</a>.</span></label>
           <label class="privacy-check"><input name="informed_consent_accepted" type="checkbox" required><span>He leído y acepto el <a href="consentimiento-informado.html" target="_blank" rel="noopener">consentimiento informado para la intervención psicológica</a>.</span></label>
@@ -65,6 +65,6 @@
     </section>
   </main>
   <footer class="site-footer"><div class="container footer-inner"><p>© 2026 Carolina Sánchez Girona</p><a href="index.html#contact">Contacto</a></div></footer>
-  <script src="../booking.js?v=20260826-4" defer></script>
+  <script src="../booking.js?v=20260826-5" defer></script>
 </body>
 </html>
