@@ -1,8 +1,12 @@
 (() => {
   "use strict";
 
-  const REST_URL = "https://grgyvdxkjdstdyumdfyg.supabase.co/rest/v1";
-  const KEY = "sb_publishable_b2MRfP0bPti87V2FXCzHGw_Y9vvcbii";
+  const REST_URL =
+    "https://grgyvdxkjdstdyumdfyg.supabase.co/rest/v1";
+
+  const KEY =
+    "sb_publishable_b2MRfP0bPti87V2FXCzHGw_Y9vvcbii";
+
   const ZONE = "Europe/Madrid";
 
   const headers = {
@@ -14,7 +18,9 @@
   const $ = (selector) => document.querySelector(selector);
   const form = $("#booking-form");
 
-  if (!form) return;
+  if (!form) {
+    return;
+  }
 
   const state = {
     duration: 60,
@@ -78,24 +84,34 @@
     return `${values.year}-${values.month}-${values.day}`;
   }
 
-  const sentenceCase = (value) =>
-    value.charAt(0).toUpperCase() + value.slice(1);
+  function sentenceCase(value) {
+    return value.charAt(0).toUpperCase() + value.slice(1);
+  }
 
-  const price = () => 60;
+  function price() {
+    return 60;
+  }
 
-  const formatSlot = (slot) =>
-    `${sentenceCase(dateFmt.format(new Date(slot.starts_at)))}, ` +
-    `${timeFmt.format(new Date(slot.starts_at))}–` +
-    `${timeFmt.format(new Date(slot.ends_at))}`;
+  function formatSlot(slot) {
+    const start = new Date(slot.starts_at);
+    const end = new Date(slot.ends_at);
+
+    return (
+      `${sentenceCase(dateFmt.format(start))}, ` +
+      `${timeFmt.format(start)}–${timeFmt.format(end)}`
+    );
+  }
 
   function showMessage(text, type = "") {
     els.message.textContent = text;
+
     els.message.className =
       `form-message${type ? ` form-message-${type}` : ""}`;
   }
 
   function updatePatientType() {
-    const existing = form.elements.patient_type.value === "existing";
+    const existing =
+      form.elements.patient_type.value === "existing";
 
     els.newDocuments.hidden = existing;
     els.newSignature.hidden = existing;
@@ -116,9 +132,10 @@
     state.selected = slot;
     els.selected.value = slot.starts_at;
 
-    els.summary.innerHTML =
-      `<strong>${formatSlot(slot)}</strong>` +
-      `<span>${state.duration} minutos · ${price()} €</span>`;
+    els.summary.innerHTML = `
+      <strong>${formatSlot(slot)}</strong>
+      <span>${state.duration} minutos · ${price()} €</span>
+    `;
 
     els.submit.disabled = false;
     showMessage("");
@@ -126,9 +143,14 @@
     document
       .querySelectorAll(".time-option, .first-slot-button")
       .forEach((button) => {
-        const selected = button.dataset.startsAt === slot.starts_at;
+        const selected =
+          button.dataset.startsAt === slot.starts_at;
+
         button.classList.toggle("is-selected", selected);
-        button.setAttribute("aria-pressed", String(selected));
+        button.setAttribute(
+          "aria-pressed",
+          String(selected)
+        );
       });
   }
 
@@ -145,7 +167,9 @@
         ? timeFmt.format(new Date(slot.starts_at))
         : formatSlot(slot);
 
-    button.addEventListener("click", () => selectSlot(slot));
+    button.addEventListener("click", () => {
+      selectSlot(slot);
+    });
 
     return button;
   }
@@ -161,16 +185,22 @@
       els.first.hidden = true;
       els.toggle.hidden = true;
       els.calendar.hidden = true;
+
       return;
     }
 
     els.status.textContent = "Primera cita disponible";
 
     const label = document.createElement("span");
-    label.textContent = `${state.duration} minutos · ${price()} €`;
+
+    label.textContent =
+      `${state.duration} minutos · ${price()} €`;
 
     els.first.append(
-      slotButton(state.slots[0], "first-slot-button"),
+      slotButton(
+        state.slots[0],
+        "first-slot-button"
+      ),
       label
     );
 
@@ -187,6 +217,7 @@
       }
 
       map.get(key).push(slot);
+
       return map;
     }, new Map());
   }
@@ -194,59 +225,102 @@
   function renderTimes(key) {
     state.selectedDate = key;
 
-    const daySlots = slotsByDate().get(key) || [];
+    const daySlots =
+      slotsByDate().get(key) || [];
+
     els.times.replaceChildren();
 
-    const heading = document.createElement("h4");
+    const heading =
+      document.createElement("h4");
 
     heading.textContent = daySlots.length
-      ? sentenceCase(dateFmt.format(new Date(daySlots[0].starts_at)))
+      ? sentenceCase(
+          dateFmt.format(
+            new Date(daySlots[0].starts_at)
+          )
+        )
       : "Sin horarios";
 
-    const options = document.createElement("div");
+    const options =
+      document.createElement("div");
+
     options.className = "time-options";
 
     daySlots.forEach((slot) => {
-      options.append(slotButton(slot, "time-option"));
+      options.append(
+        slotButton(slot, "time-option")
+      );
     });
 
     els.times.append(heading, options);
+
     renderCalendar();
   }
 
   function renderCalendar() {
     const available = slotsByDate();
-    const year = state.month.getUTCFullYear();
-    const month = state.month.getUTCMonth();
+
+    const year =
+      state.month.getUTCFullYear();
+
+    const month =
+      state.month.getUTCMonth();
 
     const firstWeekday =
-      (new Date(Date.UTC(year, month, 1)).getUTCDay() + 6) % 7;
+      (
+        new Date(
+          Date.UTC(year, month, 1)
+        ).getUTCDay() + 6
+      ) % 7;
 
     const totalDays =
-      new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+      new Date(
+        Date.UTC(year, month + 1, 0)
+      ).getUTCDate();
 
-    els.title.textContent = sentenceCase(monthFmt.format(state.month));
+    els.title.textContent =
+      sentenceCase(
+        monthFmt.format(state.month)
+      );
+
     els.grid.replaceChildren();
 
-    for (let i = 0; i < firstWeekday; i += 1) {
-      const empty = document.createElement("span");
+    for (
+      let index = 0;
+      index < firstWeekday;
+      index += 1
+    ) {
+      const empty =
+        document.createElement("span");
+
       empty.className = "calendar-empty";
+
       els.grid.append(empty);
     }
 
-    for (let day = 1; day <= totalDays; day += 1) {
+    for (
+      let day = 1;
+      day <= totalDays;
+      day += 1
+    ) {
       const key =
-        `${year}-${String(month + 1).padStart(2, "0")}-` +
+        `${year}-` +
+        `${String(month + 1).padStart(2, "0")}-` +
         `${String(day).padStart(2, "0")}`;
 
-      const button = document.createElement("button");
+      const button =
+        document.createElement("button");
 
       button.type = "button";
       button.className = "calendar-day";
       button.textContent = day;
       button.disabled = !available.has(key);
 
-      button.classList.toggle("has-slots", available.has(key));
+      button.classList.toggle(
+        "has-slots",
+        available.has(key)
+      );
+
       button.classList.toggle(
         "is-selected",
         state.selectedDate === key
@@ -260,26 +334,48 @@
       );
 
       if (available.has(key)) {
-        button.addEventListener("click", () => renderTimes(key));
+        button.addEventListener(
+          "click",
+          () => renderTimes(key)
+        );
       }
 
       els.grid.append(button);
     }
 
-    const firstDate = new Date(state.slots[0].starts_at);
+    const firstDate =
+      new Date(state.slots[0].starts_at);
+
     const lastDate =
-      new Date(state.slots[state.slots.length - 1].starts_at);
+      new Date(
+        state.slots[
+          state.slots.length - 1
+        ].starts_at
+      );
 
-    const firstMonth = new Date(
-      Date.UTC(firstDate.getFullYear(), firstDate.getMonth(), 1)
-    );
+    const firstMonth =
+      new Date(
+        Date.UTC(
+          firstDate.getFullYear(),
+          firstDate.getMonth(),
+          1
+        )
+      );
 
-    const lastMonth = new Date(
-      Date.UTC(lastDate.getFullYear(), lastDate.getMonth(), 1)
-    );
+    const lastMonth =
+      new Date(
+        Date.UTC(
+          lastDate.getFullYear(),
+          lastDate.getMonth(),
+          1
+        )
+      );
 
-    els.prev.disabled = state.month <= firstMonth;
-    els.next.disabled = state.month >= lastMonth;
+    els.prev.disabled =
+      state.month <= firstMonth;
+
+    els.next.disabled =
+      state.month >= lastMonth;
   }
 
   async function loadSlots() {
@@ -287,11 +383,15 @@
     els.selected.value = "";
     els.submit.disabled = true;
 
-    els.summary.textContent = "Todavía no has elegido un horario.";
-    els.status.textContent = "Consultando disponibilidad…";
+    els.summary.textContent =
+      "Todavía no has elegido un horario.";
+
+    els.status.textContent =
+      "Consultando disponibilidad…";
 
     els.first.hidden = true;
     els.toggle.hidden = true;
+
     els.times.replaceChildren();
 
     try {
@@ -313,11 +413,19 @@
       state.slots = await response.json();
 
       if (state.slots.length) {
-        const first = new Date(state.slots[0].starts_at);
+        const first =
+          new Date(
+            state.slots[0].starts_at
+          );
 
-        state.month = new Date(
-          Date.UTC(first.getFullYear(), first.getMonth(), 1)
-        );
+        state.month =
+          new Date(
+            Date.UTC(
+              first.getFullYear(),
+              first.getMonth(),
+              1
+            )
+          );
       }
 
       renderFirst();
@@ -330,203 +438,266 @@
     }
   }
 
-  els.toggle.addEventListener("click", () => {
-    els.calendar.hidden = !els.calendar.hidden;
+  els.toggle.addEventListener(
+    "click",
+    () => {
+      els.calendar.hidden =
+        !els.calendar.hidden;
 
-    els.toggle.textContent = els.calendar.hidden
-      ? "Elegir otra fecha"
-      : "Ocultar calendario";
+      els.toggle.textContent =
+        els.calendar.hidden
+          ? "Elegir otra fecha"
+          : "Ocultar calendario";
 
-    if (!els.calendar.hidden) {
+      if (!els.calendar.hidden) {
+        renderCalendar();
+      }
+    }
+  );
+
+  els.prev.addEventListener(
+    "click",
+    () => {
+      state.month =
+        new Date(
+          Date.UTC(
+            state.month.getUTCFullYear(),
+            state.month.getUTCMonth() - 1,
+            1
+          )
+        );
+
       renderCalendar();
     }
-  });
+  );
 
-  els.prev.addEventListener("click", () => {
-    state.month = new Date(
-      Date.UTC(
-        state.month.getUTCFullYear(),
-        state.month.getUTCMonth() - 1,
-        1
-      )
-    );
+  els.next.addEventListener(
+    "click",
+    () => {
+      state.month =
+        new Date(
+          Date.UTC(
+            state.month.getUTCFullYear(),
+            state.month.getUTCMonth() + 1,
+            1
+          )
+        );
 
-    renderCalendar();
-  });
-
-  els.next.addEventListener("click", () => {
-    state.month = new Date(
-      Date.UTC(
-        state.month.getUTCFullYear(),
-        state.month.getUTCMonth() + 1,
-        1
-      )
-    );
-
-    renderCalendar();
-  });
+      renderCalendar();
+    }
+  );
 
   document
-    .querySelectorAll('input[name="patient_type"]')
+    .querySelectorAll(
+      'input[name="patient_type"]'
+    )
     .forEach((input) => {
-      input.addEventListener("change", updatePatientType);
+      input.addEventListener(
+        "change",
+        updatePatientType
+      );
     });
 
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
+  form.addEventListener(
+    "submit",
+    async (event) => {
+      event.preventDefault();
 
-    const data = new FormData(form);
+      const data = new FormData(form);
 
-    const name =
-      String(data.get("patient_name") || "").trim();
+      const name =
+        String(
+          data.get("patient_name") || ""
+        ).trim();
 
-    const email =
-      String(data.get("patient_email") || "").trim();
+      const email =
+        String(
+          data.get("patient_email") || ""
+        ).trim();
 
-    const phone =
-      String(data.get("patient_phone") || "").trim();
+      const phone =
+        String(
+          data.get("patient_phone") || ""
+        ).trim();
 
-    const signer =
-      String(data.get("signer_name") || "").trim();
+      const signer =
+        String(
+          data.get("signer_name") || ""
+        ).trim();
 
-    const patientType =
-      String(data.get("patient_type") || "new");
+      const patientType =
+        String(
+          data.get("patient_type") || "new"
+        );
 
-    const isExisting = patientType === "existing";
+      const isExisting =
+        patientType === "existing";
 
-    if (!state.selected) {
-      return showMessage(
-        "Selecciona primero una fecha y una hora.",
-        "error"
-      );
-    }
-
-    if (!name) {
-      return showMessage(
-        "Escribe tu nombre y apellidos.",
-        "error"
-      );
-    }
-
-    if (!email) {
-      return showMessage(
-        "Escribe tu correo electrónico.",
-        "error"
-      );
-    }
-
-    if (!form.elements.patient_email.checkValidity()) {
-      return showMessage(
-        "Comprueba que el correo electrónico sea válido.",
-        "error"
-      );
-    }
-
-    if (!phone) {
-      return showMessage(
-        "Escribe tu número de teléfono.",
-        "error"
-      );
-    }
-
-    if (!data.get("cancellation_accepted")) {
-      return showMessage(
-        "Debes aceptar la política de cancelación y ausencia.",
-        "error"
-      );
-    }
-
-    if (
-      !isExisting &&
-      (
-        !data.get("privacy_acknowledged") ||
-        !data.get("informed_consent_accepted")
-      )
-    ) {
-      return showMessage(
-        "Debes leer y aceptar la privacidad y el consentimiento informado.",
-        "error"
-      );
-    }
-
-    if (!isExisting && !signer) {
-      return showMessage(
-        "Escribe tu nombre y apellidos en el campo de firma electrónica.",
-        "error"
-      );
-    }
-
-    if (
-      !isExisting &&
-      signer.toLocaleLowerCase("es") !==
-        name.toLocaleLowerCase("es")
-    ) {
-      return showMessage(
-        "La firma debe coincidir con el nombre y apellidos indicados.",
-        "error"
-      );
-    }
-
-    els.submit.disabled = true;
-    els.submit.textContent = "Registrando…";
-
-    try {
-      const response = await fetch(
-        `${REST_URL}/rpc/create_calendar_booking`,
-        {
-          method: "POST",
-          headers,
-          body: JSON.stringify({
-            p_starts_at: state.selected.starts_at,
-            p_duration_minutes: state.duration,
-            p_patient_name: name,
-            p_patient_email: email,
-            p_patient_phone: phone,
-            p_patient_type: patientType,
-            p_privacy_acknowledged: !isExisting,
-            p_cancellation_accepted: true,
-            p_informed_consent_accepted: !isExisting,
-            p_signer_name: isExisting ? null : signer
-          })
-        }
-      );
-
-      if (!response.ok) {
-        const body = await response.json().catch(() => ({}));
-
-        throw new Error(
-          String(body.message || "").includes(
-            "ya no está disponible"
-          )
-            ? "Ese horario acaba de reservarse. Elige otro."
-            : "No se ha podido registrar la reserva."
+      if (!state.selected) {
+        return showMessage(
+          "Selecciona primero una fecha y una hora.",
+          "error"
         );
       }
 
-      form.reset();
-      state.duration = 60;
+      if (!name) {
+        return showMessage(
+          "Escribe tu nombre y apellidos.",
+          "error"
+        );
+      }
 
-      showMessage(
-        isExisting
-          ? "Solicitud registrada. El horario queda reservado mientras comprobamos que eres paciente actual."
-          : "Reserva registrada correctamente. Recibirás la confirmación por el canal indicado.",
-        "success"
-      );
+      if (!email) {
+        return showMessage(
+          "Escribe tu correo electrónico.",
+          "error"
+        );
+      }
 
-      updatePatientType();
-      await loadSlots();
-    } catch (error) {
-      showMessage(
-        `${error.message} Inténtalo de nuevo o contacta por correo electrónico.`,
-        "error"
-      );
+      if (
+        !form.elements.patient_email.checkValidity()
+      ) {
+        return showMessage(
+          "Comprueba que el correo electrónico sea válido.",
+          "error"
+        );
+      }
 
-      els.submit.disabled = false;
-    } finally {
-      els.submit.innerHTML =
-        'Confirmar reserva <span aria-hidden="true">→</span>';
+      if (!phone) {
+        return showMessage(
+          "Escribe tu número de teléfono.",
+          "error"
+        );
+      }
+
+      if (
+        !data.get("cancellation_accepted")
+      ) {
+        return showMessage(
+          "Debes leer la política de cancelación y asistencia.",
+          "error"
+        );
+      }
+
+      if (
+        !isExisting &&
+        (
+          !data.get("privacy_acknowledged") ||
+          !data.get("informed_consent_accepted")
+        )
+      ) {
+        return showMessage(
+          "Debes leer y aceptar la privacidad y el consentimiento informado.",
+          "error"
+        );
+      }
+
+      if (!isExisting && !signer) {
+        return showMessage(
+          "Escribe tu nombre y apellidos en el campo de firma electrónica.",
+          "error"
+        );
+      }
+
+      if (
+        !isExisting &&
+        signer.toLocaleLowerCase("es") !==
+          name.toLocaleLowerCase("es")
+      ) {
+        return showMessage(
+          "La firma debe coincidir con el nombre y apellidos indicados.",
+          "error"
+        );
+      }
+
+      els.submit.disabled = true;
+      els.submit.textContent = "Registrando…";
+
+      try {
+        const response = await fetch(
+          `${REST_URL}/rpc/create_calendar_booking`,
+          {
+            method: "POST",
+            headers,
+
+            body: JSON.stringify({
+              p_starts_at:
+                state.selected.starts_at,
+
+              p_duration_minutes:
+                state.duration,
+
+              p_patient_name:
+                name,
+
+              p_patient_email:
+                email,
+
+              p_patient_phone:
+                phone,
+
+              p_patient_type:
+                patientType,
+
+              p_privacy_acknowledged:
+                !isExisting,
+
+              p_cancellation_accepted:
+                true,
+
+              p_informed_consent_accepted:
+                !isExisting,
+
+              p_signer_name:
+                isExisting ? null : signer
+            })
+          }
+        );
+
+        if (!response.ok) {
+          const body =
+            await response
+              .json()
+              .catch(() => ({}));
+
+          const unavailable =
+            String(body.message || "")
+              .includes(
+                "ya no está disponible"
+              );
+
+          throw new Error(
+            unavailable
+              ? "Ese horario acaba de reservarse. Elige otro."
+              : "No se ha podido registrar la reserva."
+          );
+        }
+
+        form.reset();
+        state.duration = 60;
+
+        showMessage(
+          isExisting
+            ? "Solicitud registrada. El horario queda reservado mientras comprobamos que eres paciente actual."
+            : "Reserva registrada correctamente. Recibirás la confirmación por el canal indicado.",
+          "success"
+        );
+
+        updatePatientType();
+        await loadSlots();
+      } catch (error) {
+        showMessage(
+          `${error.message} Inténtalo de nuevo o contacta por correo electrónico.`,
+          "error"
+        );
+
+        els.submit.disabled = false;
+      } finally {
+        els.submit.innerHTML =
+          'Confirmar reserva <span aria-hidden="true">→</span>';
+      }
     }
-  });
+  );
 
   updatePatientType();
   loadSlots();
