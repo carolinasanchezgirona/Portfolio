@@ -18,7 +18,7 @@ type BookingRecord = {
 };
 
 type DatabaseWebhookPayload = {
-  type: "INSERT" | "UPDATE" | "DELETE";
+  type: "INSERT" | "UPDATE" | "DELETE" | "REMINDER";
   table: string;
   schema: string;
   record: BookingRecord | null;
@@ -119,7 +119,7 @@ async function sendEmail(options: {
 
 function buildPatientEmail(
   booking: BookingRecord,
-  kind: "new_booking" | "existing_pending" | "existing_confirmed"
+  kind: "new_booking" | "existing_pending" | "existing_confirmed" | "reminder"
 ) {
   const patientName = escapeHtml(booking.patient_name);
   const date = capitalize(formatDate(booking.starts_at));
@@ -131,15 +131,24 @@ function buildPatientEmail(
       ? "Hemos recibido tu solicitud de cita"
       : kind === "existing_confirmed"
       ? "Tu cita ha sido confirmada"
+      : kind === "reminder"
+      ? "Recordatorio: tu cita es mañana"
       : "Confirmación de tu cita con Carolina Sánchez Girona";
 
-  const heading = kind === "existing_pending" ? "Hemos recibido tu solicitud" : "Tu cita está confirmada";
+  const heading =
+    kind === "existing_pending"
+      ? "Hemos recibido tu solicitud"
+      : kind === "reminder"
+      ? "Tu cita es mañana"
+      : "Tu cita está confirmada";
 
   const statusText =
     kind === "existing_pending"
       ? "Comprobaremos que ya estás en seguimiento y recibirás la confirmación definitiva. Mientras tanto, el horario queda reservado."
       : kind === "existing_confirmed"
       ? "Tu cita ha sido revisada y queda confirmada."
+      : kind === "reminder"
+      ? "Este es un recordatorio de tu cita de mañana."
       : "La reserva se ha registrado correctamente.";
 
   const html = `
@@ -274,8 +283,7 @@ Deno.serve(async (request) => {
     }
   }
 
-  // Caso 2: una reserva 'pending' de paciente existente pasa a 'confirmed' —
-  // solo se avisa al paciente, la profesional ya lo sabe porque es quien la confirmó.
+  // Caso 2: una reserva 'pending' de paciente existente pasa a 'confirmed'.
   if (payload.type === "UPDATE" && payload.old_record?.status === "pending" && booking.status === "confirmed") {
     const patientEmailContent = buildPatientEmail(booking, "existing_confirmed");
     try {
@@ -293,6 +301,27 @@ Deno.serve(async (request) => {
     } catch (error) {
       console.error("Error al enviar el correo de confirmación", error);
       return json({ error: "No se ha podido enviar el correo de confirmación" }, 502);
+    }
+  }
+
+  // Caso 3: recordatorio programado 24h antes de una cita confirmada.
+  if (payload.type === "REMINDER" && booking.status === "confirmed") {
+    const patientEmailContent = buildPatientEmail(booking, "reminder");
+    try {
+      await sendEmail({
+        toEmail: booking.patient_email,
+        toName: booking.patient_name,
+        replyToEmail: SENDER_EMAIL,
+        replyToName: SENDER_NAME,
+        subject: patientEmailContent.subject,
+        htmlContent: patientEmailContent.html,
+        textContent: patientEmailContent.text,
+        tag: "booking-reminder",
+      });
+      return json({ ok: true, booking_id: booking.id });
+    } catch (error) {
+      console.error("Error al enviar el recordatorio", error);
+      return json({ error: "No se ha podido enviar el recordatorio" }, 502);
     }
   }
 
