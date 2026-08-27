@@ -75,7 +75,7 @@
     els.first.replaceChildren();
     if (!state.slots.length) {
       els.status.textContent = "No hay citas disponibles en los próximos 30 días. Puedes contactar por correo electrónico.";
-      els.first.hidden = true; els.toggle.hidden = true; els.calendar.hidden = false;
+      els.first.hidden = true; els.toggle.hidden = true; els.calendar.hidden = true;
       return;
     }
     els.status.textContent = "Primera cita disponible";
@@ -133,7 +133,7 @@
   async function loadSlots() {
     state.selected = null; els.selected.value = ""; els.submit.disabled = true;
     els.summary.textContent = "Todavía no has elegido un horario."; els.status.textContent = "Consultando disponibilidad…";
-    els.first.hidden = true; els.toggle.hidden = false; els.calendar.hidden = false; els.toggle.textContent = "Ocultar calendario"; els.times.replaceChildren();
+    els.first.hidden = true; els.toggle.hidden = true; els.calendar.hidden = true; els.toggle.textContent = "Elegir otra fecha"; els.times.replaceChildren();
     try {
       const response = await fetch(`${REST_URL}/rpc/get_public_appointment_starts`, {
         method: "POST",
