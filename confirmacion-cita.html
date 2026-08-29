@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Confirmación de cita</title>
+</head>
+<body style="margin:0;background:#f4f7f8;font-family:Arial,sans-serif;color:#24343d;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:20px">
+  <div id="box" style="max-width:480px;background:#ffffff;border-radius:18px;padding:36px;border:1px solid #dce5e8;text-align:center">
+    <p style="font-size:40px;margin:0 0 12px" id="icon">…</p>
+    <h1 style="font-size:22px;margin:0 0 12px" id="title">Cargando…</h1>
+    <p style="color:#4a5a63;line-height:1.5" id="message"></p>
+  </div>
+
+  <script>
+    var ESTADOS = {
+      ok: {
+        icon: "✅",
+        title: "Cita confirmada",
+        message: "Gracias, tu cita ha quedado confirmada. Recibirás un correo de confirmación."
+      },
+      already: {
+        icon: "✅",
+        title: "Ya estaba confirmada",
+        message: "Esta cita ya había sido confirmada anteriormente. ¡Nos vemos pronto!"
+      },
+      cancelled: {
+        icon: "⚠️",
+        title: "Cita cancelada",
+        message: "Esta cita ha sido cancelada y ya no puede confirmarse. Contacta con la consulta si necesitas más información."
+      },
+      invalid: {
+        icon: "⚠️",
+        title: "Enlace no válido",
+        message: "Este enlace de confirmación no es correcto o ya no está activo."
+      },
+      notfound: {
+        icon: "⚠️",
+        title: "No encontrada",
+        message: "No hemos encontrado esta cita. Si crees que es un error, escríbenos."
+      },
+      error: {
+        icon: "⚠️",
+        title: "Error",
+        message: "No se ha podido confirmar la cita. Inténtalo de nuevo o contacta con la consulta."
+      }
+    };
+
+    var params = new URLSearchParams(window.location.search);
+    var estado = ESTADOS[params.get("state")] || ESTADOS.error;
+
+    document.getElementById("icon").textContent = estado.icon;
+    document.getElementById("title").textContent = estado.title;
+    document.getElementById("message").textContent = estado.message;
+    document.title = estado.title;
+  </script>
+</body>
+</html>
