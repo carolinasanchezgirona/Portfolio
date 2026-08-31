@@ -1,0 +1,11 @@
+## Citas y agenda
+
+**Decisión confirmada (30/08):** los datos de citas viven exclusivamente en 
+Supabase del proyecto Portfolio (`portal-pacientes`, Frankfurt). Mineuri NO 
+duplica ni migra estos datos.
+
+El panel de Agenda dentro de Mineuri es solo una vista: se conecta a esa 
+base de datos por detrás usando la `service_role key` (guardada solo en 
+servidor, nunca expuesta al navegador). Si en el futuro se plantea mover 
+los datos de verdad a la base de Mineuri (Neon), será una decisión nueva, 
+tomada con conocimiento del riesgo — no algo que se haga de pasada.
