@@ -1,1043 +1,475 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Mineuri is a digital cognitive health platform developed by Carolina Sánchez Girona, combining neuropsychology, structured cognitive activities and technology."
-  >
-
-  <title>
-    Mineuri | Carolina Sánchez Girona
-  </title>
-
-  <link rel="stylesheet" href="project.css">
-
-</head>
-
-
-<body class="mineuri-project">
-
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
-
-  <header>
-
-    <div class="container header-inner">
-
-      <a
-        class="brand"
-        href="../index.html"
-      >
-        Carolina Sánchez Girona
-      </a>
-
-
-      <div
-        class="language-link"
-        aria-label="Language selector"
-      >
-
-        <span class="current-language">
-          EN
-        </span>
-
-        <span aria-hidden="true">
-          /
-        </span>
-
-        <a href="../es/projects/mineuri.html">
-          ES
-        </a>
-
-      </div>
-
-
-      <a
-        class="back"
-        href="../projects.html"
-      >
-        ← Back to Projects
-      </a>
-
-    </div>
-
-  </header>
-
-
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
+---
+layout: project-generic.njk
+title: Mineuri | Carolina Sánchez Girona
+description: Mineuri is a digital cognitive health platform developed by Carolina Sánchez Girona, combining neuropsychology, structured cognitive activities and technology.
+lang: en
+langPrefix: ""
+slug: mineuri
+bodyClass: mineuri-project
+backLabel: "← Back to Projects"
+---
 
   <section class="container hero">
 
-    <p class="eyebrow">
-      Cognitive Health · Digital Product
-    </p>
+    <p class="eyebrow">Cognitive Health · Digital Product</p>
 
-    <h1>
-      Mineuri
-    </h1>
+    <h1>Mineuri</h1>
 
     <p>
-
       A digital cognitive health platform designed to transform
       neuropsychological knowledge into structured, scalable and
       clinically reviewed cognitive activities.
-
     </p>
 
     <p>
-
       Mineuri combines cognitive training, clinical reasoning,
       content architecture and digital product development in a
       single evolving system.
-
     </p>
 
   </section>
 
-
-  <!-- =====================================================
-       CONTENT
-  ====================================================== -->
-
   <div class="container content">
-
-
-    <!-- ===================================================
-         SIDEBAR
-    ==================================================== -->
 
     <aside class="sidebar">
 
-      <h3>
-        Contents
-      </h3>
+      <h3>Contents</h3>
 
       <nav>
-
-        <a href="#overview">
-          Overview
-        </a>
-
-        <a href="#problem">
-          The problem
-        </a>
-
-        <a href="#clinical-rationale">
-          Clinical rationale
-        </a>
-
-        <a href="#architecture">
-          Cognitive architecture
-        </a>
-
-        <a href="#activity-system">
-          Activity system
-        </a>
-
-        <a href="#clinical-review">
-          Clinical review
-        </a>
-
-        <a href="#technology">
-          Technology
-        </a>
-
-        <a href="#development">
-          Development process
-        </a>
-
-        <a href="#status">
-          Current status
-        </a>
-
-        <a href="#roadmap">
-          Roadmap
-        </a>
-
+        <a href="#overview">Overview</a>
+        <a href="#problem">The problem</a>
+        <a href="#clinical-rationale">Clinical rationale</a>
+        <a href="#architecture">Cognitive architecture</a>
+        <a href="#activity-system">Activity system</a>
+        <a href="#clinical-review">Clinical review</a>
+        <a href="#technology">Technology</a>
+        <a href="#development">Development process</a>
+        <a href="#status">Current status</a>
+        <a href="#roadmap">Roadmap</a>
       </nav>
 
     </aside>
 
-
-    <!-- ===================================================
-         PROJECT CONTENT
-    ==================================================== -->
-
     <main class="project-content">
 
-
-      <!-- =================================================
-           01 · OVERVIEW
-      ================================================== -->
-
       <section id="overview">
-
-        <p class="section-label">
-          01
-        </p>
-
-        <h2>
-          Overview
-        </h2>
-
+        <p class="section-label">01</p>
+        <h2>Overview</h2>
         <p>
-
           Mineuri is a digital platform focused on cognitive health and
           everyday cognitive functioning.
-
         </p>
-
         <p>
-
           The project emerged from clinical experience in
           neuropsychology and cognitive intervention, together with the
           need for more structured, traceable and adaptable digital tools.
-
         </p>
-
         <p>
-
           Rather than functioning as a simple collection of exercises,
           Mineuri is designed as a system in which cognitive domains,
           task structure, difficulty, clinical review and product
           architecture are connected.
-
         </p>
-
       </section>
 
-
-      <!-- =================================================
-           02 · THE PROBLEM
-      ================================================== -->
-
       <section id="problem">
-
-        <p class="section-label">
-          02
-        </p>
-
-        <h2>
-          The problem
-        </h2>
-
+        <p class="section-label">02</p>
+        <h2>The problem</h2>
         <p>
-
           Cognitive stimulation tools are often fragmented, repetitive
           or poorly connected to a clear cognitive framework.
-
         </p>
-
         <p>
-
           In clinical practice, professionals frequently need activities
           that are easy to adapt, easy to document and sufficiently
           structured to match a specific therapeutic or cognitive goal.
-
         </p>
-
         <p>
-
           At the same time, digital products can easily prioritise
           interface and volume over clinical coherence.
-
         </p>
-
         <p>
-
           Mineuri was designed around a different question:
           how can cognitive content be organised as a product without
           losing its clinical logic?
-
         </p>
-
       </section>
 
-
-      <!-- =================================================
-           03 · CLINICAL RATIONALE
-      ================================================== -->
-
       <section id="clinical-rationale">
-
-        <p class="section-label">
-          03
-        </p>
-
-        <h2>
-          Clinical rationale
-        </h2>
-
+        <p class="section-label">03</p>
+        <h2>Clinical rationale</h2>
         <p>
-
           The platform is grounded in neuropsychological models of
           cognition and in the practical demands of cognitive
           intervention.
-
         </p>
-
         <p>
-
           Activities are not treated as isolated games. Each one belongs
           to a defined cognitive area, includes a specific task logic and
           can be organised according to difficulty and therapeutic use.
-
         </p>
-
 
         <div class="project-list">
 
           <article>
-
-            <h3>
-              Cognitive specificity
-            </h3>
-
+            <h3>Cognitive specificity</h3>
             <p>
-
               Each activity should have a clear primary cognitive target
               rather than relying on vague categories such as
-              “brain training”.
-
+              "brain training".
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Functional relevance
-            </h3>
-
+            <h3>Functional relevance</h3>
             <p>
-
               Whenever possible, tasks should connect with processes that
               are meaningful for everyday cognition and autonomy.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Adaptability
-            </h3>
-
+            <h3>Adaptability</h3>
             <p>
-
               The system should support different levels of complexity
               and allow professionals to select tasks according to the
               person and clinical objective.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Traceability
-            </h3>
-
+            <h3>Traceability</h3>
             <p>
-
               Content should remain identifiable, reviewable and
               version-controlled throughout the development process.
-
             </p>
-
           </article>
 
         </div>
 
       </section>
 
-
-      <!-- =================================================
-           04 · COGNITIVE ARCHITECTURE
-      ================================================== -->
-
       <section id="architecture">
-
-        <p class="section-label">
-          04
-        </p>
-
-        <h2>
-          Cognitive architecture
-        </h2>
-
+        <p class="section-label">04</p>
+        <h2>Cognitive architecture</h2>
         <p>
-
           Mineuri organises its content into major cognitive domains,
           with flexible subfamilies and transversal categories.
-
         </p>
-
         <p>
-
           The purpose of this structure is to create a system that is
           clinically meaningful while remaining flexible enough to grow
           as the product evolves.
-
         </p>
-
 
         <div class="project-list">
 
           <article>
-
-            <h3>
-              Attention
-            </h3>
-
+            <h3>Attention</h3>
             <p>
-
               Sustained, selective and divided attention, processing
               speed and related attentional demands.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Memory
-            </h3>
-
+            <h3>Memory</h3>
             <p>
-
               Encoding, learning, recall, recognition and working-memory
               processes.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Language
-            </h3>
-
+            <h3>Language</h3>
             <p>
-
               Naming, fluency, comprehension, semantic processing and
               verbal production.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Executive functions
-            </h3>
-
+            <h3>Executive functions</h3>
             <p>
-
               Planning, inhibition, flexibility, sequencing, monitoring
               and problem solving.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Visuospatial and perceptual functions
-            </h3>
-
+            <h3>Visuospatial and perceptual functions</h3>
             <p>
-
               Spatial processing, visual discrimination, construction
               and perceptual organisation.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Transversal domains
-            </h3>
-
+            <h3>Transversal domains</h3>
             <p>
-
               Areas such as social cognition, auditory gnosis, temporal
               estimation and dual-task processing can be represented
               across the wider cognitive system.
-
             </p>
-
           </article>
 
         </div>
 
       </section>
 
-
-      <!-- =================================================
-           05 · ACTIVITY SYSTEM
-      ================================================== -->
-
       <section id="activity-system">
-
-        <p class="section-label">
-          05
-        </p>
-
-        <h2>
-          Activity system
-        </h2>
-
+        <p class="section-label">05</p>
+        <h2>Activity system</h2>
         <p>
-
           The core of Mineuri is a structured library of cognitive
           activities built from reusable templates.
-
         </p>
-
         <p>
-
           Each template defines a task logic that can generate multiple
           activities while maintaining consistency in cognitive purpose,
           format and review criteria.
-
         </p>
-
 
         <div class="project-list">
 
           <article>
-
-            <h3>
-              Template-based design
-            </h3>
-
+            <h3>Template-based design</h3>
             <p>
-
               Reusable activity templates allow content to scale without
               losing structural consistency.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Controlled variation
-            </h3>
-
+            <h3>Controlled variation</h3>
             <p>
-
               Stimuli, instructions, difficulty and response demands can
               vary while preserving the underlying task structure.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Difficulty progression
-            </h3>
-
+            <h3>Difficulty progression</h3>
             <p>
-
               Activities can evolve across levels through changes in
               cognitive load, interference, number of stimuli, time or
               task complexity.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Clinical metadata
-            </h3>
-
+            <h3>Clinical metadata</h3>
             <p>
-
               Each activity can be associated with information about its
               cognitive target, level, status and review history.
-
             </p>
-
           </article>
 
         </div>
 
       </section>
 
-
-      <!-- =================================================
-           06 · CLINICAL REVIEW
-      ================================================== -->
-
       <section id="clinical-review">
-
-        <p class="section-label">
-          06
-        </p>
-
-        <h2>
-          Clinical review
-        </h2>
-
+        <p class="section-label">06</p>
+        <h2>Clinical review</h2>
         <p>
-
           One of the central design decisions in Mineuri is that content
           should not move directly from creation to publication.
-
         </p>
-
         <p>
-
           The platform includes a structured review process intended to
           preserve clinical coherence, detect inconsistencies and maintain
           a transparent version history.
-
         </p>
-
 
         <div class="project-list">
 
           <article>
-
-            <h3>
-              Review status
-            </h3>
-
+            <h3>Review status</h3>
             <p>
-
               Activities can move through defined validation states before
               being considered ready for publication.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Version control
-            </h3>
-
+            <h3>Version control</h3>
             <p>
-
               Changes can be documented rather than silently replacing
               previous versions.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Human oversight
-            </h3>
-
+            <h3>Human oversight</h3>
             <p>
-
               Clinical judgement remains part of the review process even
               when automation supports content production or management.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Auditability
-            </h3>
-
+            <h3>Auditability</h3>
             <p>
-
               The system is designed so that key decisions about content
               can remain traceable over time.
-
             </p>
-
           </article>
 
         </div>
 
       </section>
 
-
-      <!-- =================================================
-           07 · TECHNOLOGY
-      ================================================== -->
-
       <section id="technology">
-
-        <p class="section-label">
-          07
-        </p>
-
-        <h2>
-          Technology
-        </h2>
-
+        <p class="section-label">07</p>
+        <h2>Technology</h2>
         <p>
-
           Mineuri is being developed as a web-based product with a
           modular architecture intended to support future growth.
-
         </p>
-
         <p>
-
           The technical challenge is not only to display activities, but
           to connect users, content, cognitive structure, review states,
           progression and data in a coherent product architecture.
-
         </p>
-
 
         <div class="project-list">
 
           <article>
-
-            <h3>
-              Web platform
-            </h3>
-
+            <h3>Web platform</h3>
             <p>
-
               Browser-based access allows the product to remain
               independent of a specific physical setting.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Structured content model
-            </h3>
-
+            <h3>Structured content model</h3>
             <p>
-
               Activities are conceived as structured data rather than
               isolated static pages.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Scalable architecture
-            </h3>
-
+            <h3>Scalable architecture</h3>
             <p>
-
               The system is designed to accommodate new cognitive areas,
               templates, activity types and future modules.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Future data layer
-            </h3>
-
+            <h3>Future data layer</h3>
             <p>
-
               The product architecture can later support progress
               tracking, usage data and clinically meaningful outcome
               visualisation.
-
             </p>
-
           </article>
 
         </div>
 
       </section>
 
-
-      <!-- =================================================
-           08 · DEVELOPMENT PROCESS
-      ================================================== -->
-
       <section id="development">
-
-        <p class="section-label">
-          08
-        </p>
-
-        <h2>
-          Development process
-        </h2>
-
+        <p class="section-label">08</p>
+        <h2>Development process</h2>
         <p>
-
           Mineuri has been developed iteratively, moving between clinical
           design, content architecture, technical implementation and
           quality review.
-
         </p>
-
         <p>
-
           A major part of the project involves defining systems before
           scaling content: naming conventions, cognitive categories,
           version histories, review procedures and publication states.
-
         </p>
-
         <p>
-
           This approach reduces the risk of building a large content
           library that later becomes difficult to maintain or validate.
-
         </p>
-
       </section>
 
-
-      <!-- =================================================
-           09 · CURRENT STATUS
-      ================================================== -->
-
       <section id="status">
-
-        <p class="section-label">
-          09
-        </p>
-
-        <h2>
-          Current status
-        </h2>
-
+        <p class="section-label">09</p>
+        <h2>Current status</h2>
         <p>
-
           Mineuri is currently in active product development.
-
         </p>
-
         <p>
-
           The initial content architecture has been defined and the first
           structured activity families are being developed and reviewed.
-
         </p>
-
         <p>
-
           The project currently includes a growing library of templates
           across attention, memory and language, together with a broader
           cognitive taxonomy prepared for future expansion.
-
         </p>
-
         <p>
-
           Development is progressing from content architecture towards a
           functional product capable of integrating activities, users,
           clinical review and progression.
-
         </p>
-
       </section>
 
-
-      <!-- =================================================
-           10 · ROADMAP
-      ================================================== -->
-
       <section id="roadmap">
-
-        <p class="section-label">
-          10
-        </p>
-
-        <h2>
-          Roadmap
-        </h2>
-
+        <p class="section-label">10</p>
+        <h2>Roadmap</h2>
 
         <div class="project-list">
 
           <article>
-
-            <p class="project-tag">
-              Current
-            </p>
-
-            <h3>
-              Content production
-            </h3>
-
+            <p class="project-tag">Current</p>
+            <h3>Content production</h3>
             <p>
-
               Expand the first activity families while preserving review
               and version-control standards.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <p class="project-tag">
-              Next
-            </p>
-
-            <h3>
-              Product integration
-            </h3>
-
+            <p class="project-tag">Next</p>
+            <h3>Product integration</h3>
             <p>
-
               Connect structured activity content with the web platform
               and user-facing experience.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <p class="project-tag">
-              Next
-            </p>
-
-            <h3>
-              Progress visualisation
-            </h3>
-
+            <p class="project-tag">Next</p>
+            <h3>Progress visualisation</h3>
             <p>
-
               Develop clinically meaningful ways of representing
               performance and change without reducing progress to a
               single score.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <p class="project-tag">
-              Future
-            </p>
-
-            <h3>
-              Broader cognitive catalogue
-            </h3>
-
+            <p class="project-tag">Future</p>
+            <h3>Broader cognitive catalogue</h3>
             <p>
-
               Expand into additional cognitive domains and more complex
               task structures.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <p class="project-tag">
-              Future
-            </p>
-
-            <h3>
-              Research layer
-            </h3>
-
+            <p class="project-tag">Future</p>
+            <h3>Research layer</h3>
             <p>
-
               Explore how aggregated, appropriately governed product data
               could contribute to questions about cognitive performance,
               adherence and brain health.
-
             </p>
-
           </article>
 
         </div>
 
       </section>
-
 
     </main>
 
   </div>
-
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
-  <footer>
-
-    <div class="container footer-inner">
-
-      <p>
-        © 2026 Carolina Sánchez Girona
-      </p>
-
-      <a href="../projects.html">
-        Back to Projects
-      </a>
-
-    </div>
-
-  </footer>
-
-</body>
-
-</html>

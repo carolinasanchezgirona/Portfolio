@@ -1,831 +1,362 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="A project by Carolina Sánchez Girona exploring data analysis, physiological signals, visualisation and computational approaches to brain health."
-  >
-
-  <title>
-    Brain Health Data Experiments | Carolina Sánchez Girona
-  </title>
-
-  <link rel="stylesheet" href="project.css">
-
-</head>
-
-
-<body>
-
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
-
-  <header>
-
-    <div class="container header-inner">
-
-      <a
-        class="brand"
-        href="../index.html"
-      >
-        Carolina Sánchez Girona
-      </a>
-
-
-      <div
-        class="language-link"
-        aria-label="Language selector"
-      >
-
-        <span class="current-language">
-          EN
-        </span>
-
-        <span aria-hidden="true">
-          /
-        </span>
-
-        <a href="../es/projects/brain-health-data.html">
-          ES
-        </a>
-
-      </div>
-
-
-      <a
-        class="back"
-        href="../projects.html"
-      >
-        ← Back to Projects
-      </a>
-
-    </div>
-
-  </header>
-
-
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
+---
+layout: project-generic.njk
+title: Brain Health Data Experiments | Carolina Sánchez Girona
+description: A project by Carolina Sánchez Girona exploring data analysis, physiological signals, visualisation and computational approaches to brain health.
+lang: en
+langPrefix: ""
+slug: brain-health-data
+bodyClass: ""
+backLabel: "← Back to Projects"
+---
 
   <section class="container hero">
 
-    <p class="eyebrow">
-      Data and Brain Health
-    </p>
+    <p class="eyebrow">Data and Brain Health</p>
 
-    <h1>
-      Brain Health Data Experiments
-    </h1>
+    <h1>Brain Health Data Experiments</h1>
 
     <p>
-
       A growing collection of small experiments in data analysis,
       visualisation and signal processing applied to questions related to
       cognition, neuroscience and brain health.
-
     </p>
 
-
     <div class="hero-image">
-
-      <img
-        src="../assets/brain-health-data-experiments.png"
-        alt="Brain Health Data Experiments"
-      >
-
+      <img src="/assets/brain-health-data-experiments.png" alt="Brain Health Data Experiments">
     </div>
 
   </section>
 
-
-  <!-- =====================================================
-       CONTENT
-  ====================================================== -->
-
   <div class="container content">
-
-
-    <!-- ===================================================
-         SIDEBAR
-    ==================================================== -->
 
     <aside class="sidebar">
 
-      <h3>
-        Contents
-      </h3>
+      <h3>Contents</h3>
 
       <nav>
-
-        <a href="#overview">
-          Overview
-        </a>
-
-        <a href="#motivation">
-          Motivation
-        </a>
-
-        <a href="#questions">
-          Questions
-        </a>
-
-        <a href="#data">
-          Data types
-        </a>
-
-        <a href="#methods">
-          Methods
-        </a>
-
-        <a href="#experiments">
-          Experiments
-        </a>
-
-        <a href="#principles">
-          Principles
-        </a>
-
-        <a href="#future">
-          Future development
-        </a>
-
+        <a href="#overview">Overview</a>
+        <a href="#motivation">Motivation</a>
+        <a href="#questions">Questions</a>
+        <a href="#data">Data types</a>
+        <a href="#methods">Methods</a>
+        <a href="#experiments">Experiments</a>
+        <a href="#principles">Principles</a>
+        <a href="#future">Future development</a>
       </nav>
 
     </aside>
 
-
-    <!-- ===================================================
-         PROJECT CONTENT
-    ==================================================== -->
-
     <main class="project-content">
 
-
-      <!-- =================================================
-           01 · OVERVIEW
-      ================================================== -->
-
       <section id="overview">
-
-        <p class="section-label">
-          01
-        </p>
-
-        <h2>
-          Overview
-        </h2>
-
+        <p class="section-label">01</p>
+        <h2>Overview</h2>
         <p>
-
           This project brings together small experiments designed to
           explore how data can be used to better understand different
           aspects of brain health.
-
         </p>
-
         <p>
-
           The initial aim is not to build large predictive models, but to
           progressively understand the data themselves: how they are
           obtained, how they are represented, what information they
           contain and where their limitations lie.
-
         </p>
-
         <p>
-
           As my Biomedical Engineering training develops, the project will
           incorporate increasingly advanced techniques in signal
           processing, statistics, programming and computational modelling.
-
         </p>
-
       </section>
 
-
-      <!-- =================================================
-           02 · MOTIVATION
-      ================================================== -->
-
       <section id="motivation">
-
-        <p class="section-label">
-          02
-        </p>
-
-        <h2>
-          Motivation
-        </h2>
-
+        <p class="section-label">02</p>
+        <h2>Motivation</h2>
         <p>
-
           Neuropsychological practice continuously generates information:
           cognitive scores, clinical observations, longitudinal change and
           data about everyday functioning.
-
         </p>
-
         <p>
-
           Biomedical Engineering expands this space by incorporating
           additional sources of information such as physiological signals,
           sensors, neuroimaging and digital data.
-
         </p>
-
         <p>
-
           I am especially interested in understanding how these different
           sources of data can be related without losing the clinical
           context needed to interpret them.
-
         </p>
-
       </section>
 
-
-      <!-- =================================================
-           03 · QUESTIONS
-      ================================================== -->
-
       <section id="questions">
-
-        <p class="section-label">
-          03
-        </p>
-
-        <h2>
-          Questions
-        </h2>
-
+        <p class="section-label">03</p>
+        <h2>Questions</h2>
 
         <div class="project-list">
 
           <article>
-
-            <h3>
-              What information does a signal contain?
-            </h3>
-
+            <h3>What information does a signal contain?</h3>
             <p>
-
               Explore how a physiological measurement can be transformed
               from an apparently complex signal into interpretable
               variables.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              How does a variable change over time?
-            </h3>
-
+            <h3>How does a variable change over time?</h3>
             <p>
-
               Analyse longitudinal data and represent individual
               trajectories of change.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              How can multiple dimensions be represented?
-            </h3>
-
+            <h3>How can multiple dimensions be represented?</h3>
             <p>
-
               Investigate ways of visualising cognitive, functional,
               physiological and contextual information together.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              When is a pattern actually meaningful?
-            </h3>
-
+            <h3>When is a pattern actually meaningful?</h3>
             <p>
-
               Distinguish visually attractive associations from patterns
               that have sufficient statistical and scientific support.
-
             </p>
-
           </article>
 
         </div>
 
       </section>
-
-
-      <!-- =================================================
-           04 · DATA
-      ================================================== -->
 
       <section id="data">
-
-        <p class="section-label">
-          04
-        </p>
-
-        <h2>
-          Data types
-        </h2>
-
+        <p class="section-label">04</p>
+        <h2>Data types</h2>
 
         <div class="project-list">
 
           <article>
-
-            <h3>
-              Cognitive data
-            </h3>
-
+            <h3>Cognitive data</h3>
             <p>
-
               Scores, response times, errors and other variables obtained
               from cognitive and neuropsychological tasks.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Physiological signals
-            </h3>
-
+            <h3>Physiological signals</h3>
             <p>
-
               Data from ECG, EEG, EMG, heart rate and other biomedical
               acquisition systems.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Longitudinal data
-            </h3>
-
+            <h3>Longitudinal data</h3>
             <p>
-
               Repeated measurements that allow changes over time and
               individual trajectories to be examined.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Neuroimaging
-            </h3>
-
+            <h3>Neuroimaging</h3>
             <p>
-
               Future exploration of brain imaging datasets and the tools
               required to process and visualise them.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Functional data
-            </h3>
-
+            <h3>Functional data</h3>
             <p>
-
               Information related to everyday activity, autonomy and
               functioning in real-world contexts.
-
             </p>
-
           </article>
 
         </div>
 
       </section>
-
-
-      <!-- =================================================
-           05 · METHODS
-      ================================================== -->
 
       <section id="methods">
-
-        <p class="section-label">
-          05
-        </p>
-
-        <h2>
-          Methods
-        </h2>
-
+        <p class="section-label">05</p>
+        <h2>Methods</h2>
         <p>
-
           The methods used in this project will evolve alongside my
           technical training.
-
         </p>
-
 
         <div class="project-list">
 
           <article>
-
-            <h3>
-              Python
-            </h3>
-
+            <h3>Python</h3>
             <p>
-
               Programming for scientific analysis, data processing and
               automation of small experiments.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Statistics
-            </h3>
-
+            <h3>Statistics</h3>
             <p>
-
               Descriptive and inferential analysis to understand
               distributions, associations, variability and uncertainty.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Data visualisation
-            </h3>
-
+            <h3>Data visualisation</h3>
             <p>
-
               Representations designed to make patterns easier to
               understand without hiding variability or uncertainty.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Signal processing
-            </h3>
-
+            <h3>Signal processing</h3>
             <p>
-
               Progressive exploration of filtering, transformation,
               feature extraction and biomedical signal analysis.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Modelling
-            </h3>
-
+            <h3>Modelling</h3>
             <p>
-
               Gradual development of mathematical and computational models
               applied to problems related to brain health.
-
             </p>
-
           </article>
 
         </div>
 
       </section>
-
-
-      <!-- =================================================
-           06 · EXPERIMENTS
-      ================================================== -->
 
       <section id="experiments">
-
-        <p class="section-label">
-          06
-        </p>
-
-        <h2>
-          Experiments
-        </h2>
-
+        <p class="section-label">06</p>
+        <h2>Experiments</h2>
         <p>
-
           This section will grow progressively with small reproducible
           projects.
-
         </p>
-
 
         <div class="project-list">
 
           <article>
-
-            <p class="project-tag">
-              Planned
-            </p>
-
-            <h3>
-              Visualising cognitive change
-            </h3>
-
+            <p class="project-tag">Planned</p>
+            <h3>Visualising cognitive change</h3>
             <p>
-
               Development of representations showing the evolution of
               different cognitive domains across repeated assessments.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <p class="project-tag">
-              Planned
-            </p>
-
-            <h3>
-              Physiological signal analysis
-            </h3>
-
+            <p class="project-tag">Planned</p>
+            <h3>Physiological signal analysis</h3>
             <p>
-
               Acquisition or use of a biomedical signal to explore its
               structure, noise, filtering and main characteristics.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <p class="project-tag">
-              Planned
-            </p>
-
-            <h3>
-              Open dataset exploration
-            </h3>
-
+            <p class="project-tag">Planned</p>
+            <h3>Open dataset exploration</h3>
             <p>
-
               Reproducible analysis of a public dataset related to
               neuroscience or brain health.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <p class="project-tag">
-              Future
-            </p>
-
-            <h3>
-              Neuroimaging
-            </h3>
-
+            <p class="project-tag">Future</p>
+            <h3>Neuroimaging</h3>
             <p>
-
               Initial experiments in visualisation and analysis of public
               brain imaging datasets.
-
             </p>
-
           </article>
 
         </div>
 
       </section>
 
-
-      <!-- =================================================
-           07 · PRINCIPLES
-      ================================================== -->
-
       <section id="principles">
-
-        <p class="section-label">
-          07
-        </p>
-
-        <h2>
-          Principles
-        </h2>
-
+        <p class="section-label">07</p>
+        <h2>Principles</h2>
 
         <div class="project-list">
 
           <article>
-
-            <h3>
-              Reproducibility
-            </h3>
-
+            <h3>Reproducibility</h3>
             <p>
-
               Analyses should be understandable, repeatable and open to
               review.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Interpretability
-            </h3>
-
+            <h3>Interpretability</h3>
             <p>
-
               A complex model is not necessarily better if it becomes
               impossible to understand what information it is using.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Context
-            </h3>
-
+            <h3>Context</h3>
             <p>
-
               Biomedical data become meaningful when interpreted within a
               biological and clinical context.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Uncertainty
-            </h3>
-
+            <h3>Uncertainty</h3>
             <p>
-
               Variability and data limitations should remain visible
               rather than being hidden behind apparently precise results.
-
             </p>
-
           </article>
 
-
           <article>
-
-            <h3>
-              Privacy
-            </h3>
-
+            <h3>Privacy</h3>
             <p>
-
               Experiments will use simulated, anonymised or appropriately
               sourced public datasets. No identifiable patient information
               will be published.
-
             </p>
-
           </article>
 
         </div>
 
       </section>
 
-
-      <!-- =================================================
-           08 · FUTURE
-      ================================================== -->
-
       <section id="future">
-
-        <p class="section-label">
-          08
-        </p>
-
-        <h2>
-          Future development
-        </h2>
-
+        <p class="section-label">08</p>
+        <h2>Future development</h2>
         <p>
-
           This project will evolve from small analysis and visualisation
           exercises towards progressively more complex problems.
-
         </p>
-
         <p>
-
           Future areas include physiological signal analysis,
           longitudinal data, neuroimaging and computational models applied
           to brain health.
-
         </p>
-
         <p>
-
           In the longer term, I am particularly interested in exploring
           how different information modalities can be integrated to study
           cognitive and neurological change while maintaining the
           interpretability of the results.
-
         </p>
-
       </section>
-
 
     </main>
 
   </div>
-
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
-  <footer>
-
-    <div class="container footer-inner">
-
-      <p>
-        © 2026 Carolina Sánchez Girona
-      </p>
-
-      <a href="../projects.html">
-        Back to Projects
-      </a>
-
-    </div>
-
-  </footer>
-
-</body>
-
-</html>

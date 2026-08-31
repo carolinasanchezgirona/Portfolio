@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ lang | default('en') }}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ description }}">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="site-name" href="{{ langPrefix }}index.html">Carolina Sánchez Girona</a>
+    <nav class="site-navigation" aria-label="Main navigation">
+      <a href="{{ langPrefix }}about.html">{{ nav.about }}</a>
+      <a href="{{ langPrefix }}research.html">{{ nav.research }}</a>
+      <a href="{{ langPrefix }}projects.html">{{ nav.projects }}</a>
+      <a href="{{ langPrefix }}writing.html">{{ nav.writing }}</a>
+         <a href="/es/cita.html">{{ nav.appointment }}</a>
+      <a href="{{ langPrefix }}index.html#contact">{{ nav.contact }}</a>
+    </nav>
+    <div class="language-link" aria-label="Language selector">
+      {% if lang == 'es' %}
+        <a href="/{{ page.filePathStem | replace('/es/', '/') }}.html">EN</a>
+        <span aria-hidden="true">/</span>
+        <span class="current-language">ES</span>
+      {% else %}
+        <span class="current-language">EN</span>
+        <span aria-hidden="true">/</span>
+        <a href="/es{{ page.filePathStem }}.html">ES</a>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+<main>
+{{ content | safe }}
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2026 Carolina Sánchez Girona</p>
+    <p>Psychology · Neuropsychology · Biomedical Engineering</p>
+  </div>
+</footer>
+
+</body>
+</html>
