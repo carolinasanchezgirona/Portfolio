@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: carolinasanchezgirona/Portfolio
+  branch: main
+  base_url: https://portfolio-cms-auth.carolinasanchezgirona.workers.dev
+
+media_folder: "assets/blog"
+public_folder: "/assets/blog"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Etiquetas", name: "tags", widget: "list" }
+      - { label: "Imagen", name: "image", widget: "image", required: false }
+      - { label: "Texto alternativo de la imagen", name: "imageAlt", widget: "string", required: false }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Contenido", name: "body", widget: "markdown" }

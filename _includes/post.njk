@@ -1,0 +1,31 @@
+---
+layout: base.njk
+---
+
+  <article class="section blog-post">
+
+    <div class="container">
+
+      <p class="eyebrow">
+        {% if tags %}{{ tags | join(" · ") }}{% endif %}
+      </p>
+
+      <h1>{{ title }}</h1>
+
+      <p class="blog-post-meta">
+        {{ date | readableDate }}
+      </p>
+
+      {% if image %}
+      <div class="blog-post-image">
+        <img src="{{ image }}" alt="{{ imageAlt | default(title) }}">
+      </div>
+      {% endif %}
+
+      <div class="blog-post-content">
+        {{ content | safe }}
+      </div>
+
+    </div>
+
+  </article>
