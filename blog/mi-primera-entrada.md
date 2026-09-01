@@ -10,7 +10,7 @@ permalink: /blog/mi-primera-entrada.html
 layout: post.njk
 ---
 
-Al fin funciona. Este es el texto de mi primera entrada. Puedo escribir en **negrita**, en _cursiva_, y organizar el contenido en párrafos normales, sin necesidad de escribir código HTML.
+Este es el texto de mi primera entrada. Puedo escribir en **negrita**, en _cursiva_, y organizar el contenido en párrafos normales, sin necesidad de escribir código HTML.
 
 ## Un subtítulo
 
